@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import '../styles/FAQ.css';
+import HeroSection from '../components/HeroSection';
 
 interface FAQItem {
   question: string;
@@ -50,12 +51,14 @@ const FAQ = () => {
 
   return (
     <div className="faq">
-      <section className="hero">
-        <div className="container">
-          <h1>FAQ</h1>
-          <p>よくあるご質問</p>
-        </div>
-      </section>
+      <HeroSection 
+        title="FAQ"
+        subtitle="よくあるご質問"
+        bgColor="light"
+        textColor="dark"
+        align="center"
+        height="small"
+      />
 
       <section className="faq-content">
         <div className="container">

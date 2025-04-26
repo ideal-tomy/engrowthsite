@@ -1,14 +1,17 @@
 import '../styles/Vision.css';
+import HeroSection from '../components/HeroSection';
 
 const Vision = () => {
   return (
     <div className="vision">
-      <section className="hero">
-        <div className="container">
-          <h1>Vision</h1>
-          <p>誰もが第二言語（英語）を使い、夢を掴む社会を目指して</p>
-        </div>
-      </section>
+      <HeroSection 
+        title="Vision"
+        subtitle="誰もが第二言語（英語）を使い、夢を掴む社会を目指して"
+        bgColor="dark"
+        textColor="light"
+        align="center"
+        height="medium"
+      />
 
       <section className="message">
         <div className="container">

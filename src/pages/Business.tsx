@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import '../styles/Business.css'; // CSSファイルを正しくインポート
 // 共通コンポーネントをインポート
 import SimulationSection from '../components/SimulationSection';
+import HeroSection from '../components/HeroSection';
 
 // 3. 9つの強み グリッド表示 - 内容：アイコン＋強調テキスト＋補足テキスト
 const strengthsData = [
@@ -132,19 +133,14 @@ const Business = () => {
   return (
     <div className="business-page">
       {/* 1. ヒーローセクション */}
-      {/*
-      mdファイル：
-      1. ヒーローセクション
-      タイトル：「ビジネス」
-      背景：ビジネスミーティングのイメージ写真
-      デザイン：暗め背景, 白文字＋金（#d4af37）アクセント, 高級感演出
-      */}
-      <section className="business-hero">
-        <div className="container">
-          <h1>ビジネス</h1>
-          <p>プロフェッショナル向け英語力向上プログラム</p>
-        </div>
-      </section>
+      <HeroSection 
+        title="ビジネス"
+        subtitle="プロフェッショナル向け英語力向上プログラム"
+        bgColor="dark"
+        textColor="light"
+        align="center"
+        height="medium"
+      />
 
       {/* 2. 導入：基礎英語力の底上げ */}
       {/*

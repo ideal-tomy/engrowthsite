@@ -4,6 +4,7 @@ import '../styles/Header.css';
 
 const Header: React.FC = () => {
   const [isScrolled, setIsScrolled] = useState(false);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
   const location = useLocation();
 
   // スクロール検出
@@ -22,13 +23,23 @@ const Header: React.FC = () => {
     };
   }, []);
 
+  // メニュー開閉の処理
+  const toggleMenu = () => {
+    setIsMenuOpen(!isMenuOpen);
+  };
+
   return (
     <header className={`header ${isScrolled ? 'scrolled' : ''}`}>
       <div className="header-container">
         <Link to="/" className="logo">
           Engrowth
         </Link>
-        <nav className="nav">
+        <div className="hamburger-menu" onClick={toggleMenu}>
+          <span className={isMenuOpen ? 'open' : ''}></span>
+          <span className={isMenuOpen ? 'open' : ''}></span>
+          <span className={isMenuOpen ? 'open' : ''}></span>
+        </div>
+        <nav className={`nav ${isMenuOpen ? 'menu-open' : ''}`}>
           <Link to="/vision" className={location.pathname === '/vision' ? 'active' : ''}>Vision</Link>
           <Link to="/services" className={location.pathname === '/services' ? 'active' : ''}>Services</Link>
           <Link to="/business" className={location.pathname === '/business' ? 'active' : ''}>Business</Link>

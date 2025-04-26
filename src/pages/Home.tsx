@@ -1,16 +1,18 @@
 import { Link } from 'react-router-dom';
 import '../styles/Home.css';
+import HeroSection from '../components/HeroSection';
 
 const Home = () => {
   return (
     <div className="home">
-      <section className="hero">
-        <div className="container">
-          <h1>第二言語習得メソッド × 伴走型サポート</h1>
-          <p>確実な成長と挑戦の場を提供する</p>
-          <Link to="/contact" className="cta-button">無料相談はこちら</Link>
-        </div>
-      </section>
+      <HeroSection 
+        title="第二言語習得メソッド × 伴走型サポート"
+        subtitle="確実な成長と挑戦の場を提供する"
+        bgColor="gradient"
+        textColor="light"
+        align="center"
+        height="large"
+      />
 
       <section className="about">
         <div className="container">

@@ -110,6 +110,11 @@
   padding: 3rem 2rem;
 }
 
+/* 新規追加：サービスページのスタイル */
+.services-page {
+  padding-top: 80px;
+}
+
 /* Business関連 */
 .business-container {
   max-width: 1200px;

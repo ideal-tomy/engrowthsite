@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import '../styles/Students.css';
 import SimulationSection from '../components/SimulationSection';
+import HeroSection from '../components/HeroSection';
 
 // シミュレーションデータ
 const simulationTables = [
@@ -62,12 +63,14 @@ const Students = () => {
   return (
     <div className="students-page">
       {/* ヒーローセクション */}
-      <section className="students-hero">
-        <div className="container">
-          <h1>Students</h1>
-          <p>学生のための英語学習プログラム</p>
-        </div>
-      </section>
+      <HeroSection 
+        title="学生"
+        subtitle="学生のための英語学習プログラム"
+        bgColor="primary"
+        textColor="light"
+        align="center"
+        height="medium"
+      />
 
       {/* 導入セクション */}
       <section className="students-introduction fade-in">

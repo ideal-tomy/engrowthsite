@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import '../styles/Contact.css';
+import HeroSection from '../components/HeroSection';
 
 interface FormData {
   name: string;
@@ -32,11 +33,14 @@ const Contact: React.FC = () => {
 
   return (
     <div className="contact">
-      <section className="hero">
-        <h1>Contact</h1>
-        <p>お問い合わせはこちらのフォームからお願いいたします。</p>
-        <p>通常2営業日以内にご返信させていただきます。</p>
-      </section>
+      <HeroSection 
+        title="Contact"
+        subtitle="お問い合わせはこちらのフォームからお願いいたします。通常2営業日以内にご返信させていただきます。"
+        bgColor="light"
+        textColor="dark"
+        align="center"
+        height="small"
+      />
 
       <section className="contact-form">
         <div className="form-container">
