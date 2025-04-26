@@ -166,7 +166,7 @@ const Business = () => {
           </div>
           <div className="intro-image">
             {/* 画像はpublic/images/に配置想定 */}
-            <img src="/images/business-communication.jpg" alt="英語でコミュニケーションをとるビジネスパーソン" />
+            <img src="/images/ビジネスミーティング01.jpeg" alt="英語でコミュニケーションをとるビジネスパーソン" />
           </div>
         </div>
       </section>
