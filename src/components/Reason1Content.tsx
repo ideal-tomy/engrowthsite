@@ -43,7 +43,7 @@ const Reason1Content: React.FC = () => {
             <p>日本人コンサルタントは、同じ母国語を持ち、第二言語習得の難しさを知り得ているからこそ、学習者の不安を取り除き、確実な成長を促すことができます。</p>
           </div>
           <div className="content-image">
-            <img src="/images/japanese-consultant.jpg" alt="日本人コンサルタント" />
+            <img src="/images/business05.jpg" alt="日本人コンサルタント" />
           </div>
         </div>
         

@@ -2,6 +2,123 @@
   padding-top: 80px;
 }
 
+/* 強化された高級感のあるバナータイトル - Services専用 */
+.services-page .luxury-banner-title {
+  margin: 2rem 0 4rem;
+  background: linear-gradient(135deg, #1a2a3a, #8b0000);
+}
+
+.services-page .luxury-banner-title::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url("data:image/svg+xml,%3Csvg width='20' height='20' viewBox='0 0 20 20' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23d4af37' fill-opacity='0.1' fill-rule='evenodd'%3E%3Ccircle cx='3' cy='3' r='3'/%3E%3Ccircle cx='13' cy='13' r='3'/%3E%3C/g%3E%3C/svg%3E");
+  opacity: 0.3;
+  z-index: 0;
+}
+
+.services-page .luxury-banner-title::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 6px;
+  background: linear-gradient(90deg, transparent, #d4af37, transparent);
+}
+
+.services-page .luxury-banner-title h2 {
+  position: relative;
+  font-size: 2.5rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  margin: 0 0 0.5rem 0;
+  color: #fff;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  z-index: 1;
+}
+
+.services-page .luxury-banner-title p {
+  position: relative;
+  max-width: 800px;
+  margin: 1rem auto 0;
+  font-size: 1.2rem;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.9);
+  z-index: 1;
+}
+
+/* CTAボックス内のバナータイトル */
+.services-page .cta-box .luxury-banner-title {
+  margin-top: 0;
+  background: linear-gradient(135deg, #8b0000, #d4af37);
+}
+
+/* バナータイトルのバリエーション */
+.luxury-banner-gold {
+  background: linear-gradient(135deg, #8b0000, #d4af37) !important;
+}
+
+.luxury-banner-dark {
+  background: linear-gradient(135deg, #000, #333) !important;
+}
+
+/* アイコン */
+.banner-icon {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  opacity: 0.9;
+  position: relative;
+  z-index: 1;
+}
+
+/* アクセントライン */
+.banner-accent-line {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 6px;
+  background: linear-gradient(90deg, transparent, #d4af37, transparent);
+  z-index: 1;
+}
+
+/* アニメーション */
+@keyframes bannerShine {
+  0% {
+    background-position: -100% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+.banner-animate {
+  position: relative;
+  overflow: hidden;
+}
+
+.banner-animate::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.2),
+    transparent
+  );
+  background-size: 200% 100%;
+  animation: bannerShine 3s linear infinite;
+  z-index: 0;
+}
+
 .hero {
   background-color: var(--color-off-white);
   padding: 6rem 0;

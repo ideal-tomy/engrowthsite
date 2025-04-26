@@ -2,7 +2,7 @@
 
 :root {
   --color-primary: #8b0000; /* ダークレッド */
-  --color-accent: #d4af37; /* ゴールド */
+  --color-accent: #858585; /* グレー (ロゴの色) */
   --color-navy: #1a2a3a; /* ダークネイビー */
   --color-gray: #f9f9f9; /* 薄いグレー */
   --color-text: #333333; /* 文字色 */
@@ -41,7 +41,7 @@
 }
 
 .hero-bg-gradient {
-  background: linear-gradient(135deg, var(--color-navy), var(--color-primary));
+  background-color: var(--color-primary); /* 単色赤に変更 */
   color: white;
 }
 
@@ -93,7 +93,8 @@
   margin-bottom: 1.5rem;
   position: relative;
   display: inline-block;
-  font-family: var(--font-heading);
+  font-family: var(--font-heading); /* 変数に戻す */
+  /* font-family: 'Noto Serif JP', serif; */ /* 直接指定をコメントアウト */
 }
 
 .hero-underline {
@@ -102,7 +103,7 @@
   left: 10%;
   width: 80%;
   height: 6px;
-  background: linear-gradient(to right, var(--color-primary), var(--color-accent));
+  background: linear-gradient(to right, var(--color-primary), #a1a1a1); /* 少し明るいグレーへ */
   border-radius: 3px;
 }
 
@@ -114,6 +115,7 @@
   margin-left: auto;
   margin-right: auto;
   opacity: 0.9;
+  font-family: var(--font-heading); /* 見出しフォントを適用 */
 }
 
 /* スタイリッシュタイトルスタイル */
@@ -124,36 +126,32 @@
 
 .stylish-title {
   position: relative;
-  display: inline-block;
+  display: block;
+  width: 100%;
   margin-bottom: 1.5rem;
   font-family: var(--font-heading);
   line-height: 1.3;
   font-weight: 700;
+  padding: 0.8rem 1.5rem;
+  border-radius: var(--border-radius);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  text-align: center;
 }
 
 .title-underline {
-  position: absolute;
-  bottom: -10px;
-  left: 0;
-  width: 80px;
-  height: 4px;
-  background: linear-gradient(to right, var(--color-primary), var(--color-accent));
-  border-radius: 2px;
-  transition: width 0.3s ease;
+  display: none;
 }
 
-.title-align-center .title-underline {
-  left: 50%;
-  transform: translateX(-50%);
+.title-align-right .stylish-title {
+  text-align: right;
 }
 
-.title-align-right .title-underline {
-  right: 0;
-  left: auto;
+.title-align-left .stylish-title {
+  text-align: left;
 }
 
-.stylish-title-container:hover .title-underline {
-  width: 120px;
+.title-align-center .stylish-title {
+  /* .stylish-title で中央揃えをデフォルトにした */
 }
 
 .stylish-subtitle {
@@ -161,45 +159,66 @@
   line-height: 1.6;
   color: #666;
   margin-top: 1rem;
+  padding: 0 1rem;
+  text-align: center;
 }
 
 /* タイトルのサイズバリエーション */
 .title-size-small .stylish-title {
-  font-size: 1.5rem;
+  font-size: 1.4rem;
+  padding: 0.6rem 1.2rem;
 }
 
 .title-size-medium .stylish-title {
-  font-size: 2rem;
+  font-size: 1.8rem;
+  padding: 0.8rem 1.5rem;
 }
 
 .title-size-large .stylish-title {
-  font-size: 2.5rem;
+  font-size: 2.2rem;
+  padding: 1rem 1.8rem;
 }
 
 .title-size-xlarge .stylish-title {
-  font-size: 3rem;
+  font-size: 2.6rem;
+  padding: 1.2rem 2rem;
 }
 
-/* タイトルのタイプバリエーション */
+/* タイトルのタイプバリエーション (背景色と文字色を設定) */
 .title-section .stylish-title {
-  color: var(--color-primary);
+  background-color: var(--color-primary);
+  color: white;
 }
 
 .title-major .stylish-title {
-  color: var(--color-navy);
+  background-color: var(--color-navy);
+  color: white;
 }
 
 .title-feature .stylish-title {
-  color: #333;
+  background-color: var(--color-gray);
+  color: var(--color-navy);
+  box-shadow: none;
+  border: 1px solid #eee;
+  text-align: left;
+  width: fit-content;
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  font-size: 1.3rem;
+  margin-bottom: 1rem;
+}
+
+.title-feature + .stylish-subtitle {
+  display: none;
 }
 
 .title-accent .stylish-title {
-  color: var(--color-accent);
+  background-color: var(--color-accent);
+  color: var(--color-navy);
 }
 
 /* ハイライト部分のスタイル */
 .title-highlight {
-  color: var(--color-primary);
   position: relative;
   font-weight: 700;
   display: inline-block;
@@ -212,9 +231,10 @@
   left: 0;
   width: 100%;
   height: 8px;
-  background-color: rgba(212, 175, 55, 0.3);
+  background-color: rgba(255, 255, 255, 0.3);
   z-index: -1;
   border-radius: 4px;
+  display: none;
 }
 
 /* アニメーションエフェクト */
@@ -266,7 +286,7 @@
   left: 0;
   width: 4px;
   height: 0;
-  background: linear-gradient(to bottom, var(--color-primary), var(--color-accent));
+  background: linear-gradient(to bottom, var(--color-primary), #a1a1a1); /* 少し明るいグレーへ */
   transition: var(--transition);
 }
 
@@ -367,7 +387,7 @@
   left: 0;
   width: 100%;
   height: 3px;
-  background: linear-gradient(to right, var(--color-primary), var(--color-accent));
+  background: linear-gradient(to right, var(--color-primary), #a1a1a1); /* 少し明るいグレーへ */
   border-radius: 3px 3px 0 0;
 }
 
@@ -502,7 +522,7 @@
   left: 0;
   width: 100%;
   height: 5px;
-  background: linear-gradient(to right, var(--color-primary), var(--color-accent));
+  background: linear-gradient(to right, var(--color-primary), #a1a1a1); /* 少し明るいグレーへ */
 }
 
 /* 特徴リスト */
@@ -536,7 +556,7 @@
   left: 0;
   right: 0;
   height: 5px;
-  background: linear-gradient(to right, var(--color-primary), var(--color-accent));
+  background: linear-gradient(to right, var(--color-primary), #a1a1a1); /* 少し明るいグレーへ */
 }
 
 .cta-section h2 {
@@ -546,7 +566,7 @@
 
 .cta-button {
   display: inline-block;
-  background: linear-gradient(45deg, var(--color-primary), var(--color-accent));
+  background: linear-gradient(45deg, var(--color-primary), #a1a1a1); /* 少し明るいグレーへ */
   color: white;
   padding: 1rem 2.5rem;
   border-radius: 30px;
@@ -572,7 +592,7 @@
 
 .primary-button {
   display: inline-block;
-  background: linear-gradient(45deg, var(--color-primary), var(--color-accent));
+  background: linear-gradient(45deg, var(--color-primary), #a1a1a1); /* 少し明るいグレーへ */
   color: white;
   padding: 1rem 2rem;
   border-radius: 30px;
@@ -707,4 +727,13 @@
 
 .fade-in {
   animation: fadeIn 0.5s ease forwards;
+}
+
+/* Reason1, 2, 3 の最初のStylishTitleだけに適用するスタイル */
+.reason1 > .stylish-title-container:first-child .stylish-title,
+.reason2 > .stylish-title-container:first-child .stylish-title,
+.reason3 > .stylish-title-container:first-child .stylish-title {
+  background-color: #d3d3d3; /* ライトグレー */
+  color: var(--color-navy); /* ネイビー */
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08); /* 影を少し調整 */
 } 

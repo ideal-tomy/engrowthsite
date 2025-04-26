@@ -73,6 +73,7 @@
   height: 100%;
   position: relative;
   color: var(--color-navy);
+  font-family: var(--font-heading);
 }
 
 .nav a:hover, .nav a.active {

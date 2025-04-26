@@ -7,7 +7,7 @@ const Vision = () => {
       <HeroSection 
         title="Vision"
         subtitle="誰もが第二言語（英語）を使い、夢を掴む社会を目指して"
-        bgColor="dark"
+        bgColor="primary"
         textColor="light"
         align="center"
         height="medium"

@@ -1,10 +1,108 @@
 /* Pages.css - ページ特有のスタイル */
 
+/* FAQページ全体のラッパー */
+.faq-page {
+  padding-top: 80px; /* ヘッダー高さ分のパディングを追加 */
+}
+
 /* 共通ページコンテナ */
 .page-container {
   max-width: 1200px;
   margin: 0 auto;
   padding: 3rem 2rem;
+}
+
+/* 高級感のあるバナータイトル */
+.luxury-banner-title {
+  position: relative;
+  padding: 1.5rem 2rem;
+  background: linear-gradient(135deg, #333 0%, #111 100%);
+  color: #fff;
+  margin: 2rem 0;
+  border-left: 5px solid #b8860b;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+}
+
+.luxury-banner-title h2 {
+  margin: 0;
+  font-size: 1.8rem;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+
+.luxury-banner-title p {
+  margin: 0.5rem 0 0;
+  font-size: 1rem;
+  opacity: 0.8;
+  font-family: var(--font-heading);
+}
+
+/* ゴールドバリアント */
+.luxury-banner-gold {
+  background: linear-gradient(135deg, #b8860b 0%, #daa520 100%);
+  color: #fff;
+  border-left: 5px solid #fff;
+}
+
+/* ダークバリアント */
+.luxury-banner-dark {
+  background: linear-gradient(135deg, #1a1a1a 0%, #333 100%);
+  color: #b8860b;
+  border-left: 5px solid #b8860b;
+}
+
+/* アニメーション効果 */
+@keyframes banner-slide-in {
+  0% {
+    transform: translateX(-20px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+.banner-animate h2 {
+  animation: banner-slide-in 0.5s ease-out forwards;
+}
+
+.banner-animate p {
+  animation: banner-slide-in 0.5s 0.2s ease-out forwards;
+  opacity: 0;
+}
+
+.banner-icon {
+  margin-right: 1rem;
+  font-size: 1.5rem;
+}
+
+@keyframes bannerShine {
+  0% {
+    background-position: -100% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+.banner-animate::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.2),
+    transparent
+  );
+  background-size: 200% 100%;
+  animation: bannerShine 3s linear infinite;
+  z-index: 1;
 }
 
 /* ページヘッダー */
@@ -239,6 +337,81 @@
   padding: 3rem 2rem;
 }
 
+/* カテゴリフィルター */
+.category-filter {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 3rem;
+  flex-wrap: wrap;
+  gap: 1rem; /* ボタン間のスペース */
+}
+
+.category-filter button {
+  /* background-color: #f5f5f5; */ /* 通常時の背景色 (旧) */
+  background-color: var(--color-main); /* 通常時の背景色 (新: 赤) */
+  /* color: var(--color-text-light); */ /* 通常時の文字色 (旧) */
+  color: var(--color-white); /* 通常時の文字色 (新: 白) */
+  /* border: 1px solid #e0e0e0; */ /* 通常時のボーダー (旧) */
+  border: 1px solid var(--color-main); /* 通常時のボーダー (新: 赤) */
+  /* padding: 0.8rem 1.8rem; */ /* パディング (旧) */
+  padding: 0.9rem 2rem; /* パディング (新: 少し大きく) */
+  border-radius: 20px; /* 角を丸める */
+  /* font-size: 0.95rem; */ /* 文字サイズ (旧) */
+  font-size: 1rem; /* 文字サイズ (新: 少し大きく) */
+  /* font-weight: 500; */ /* 太さ (旧) */
+  font-weight: 600; /* 太さ (新: 少し太く) */
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-family: var(--font-heading); /* 見出しフォントを適用 */
+}
+
+.category-filter button:hover {
+  /* background-color: #e0e0e0; */ /* ホバー時の背景色 (旧) */
+  background-color: #f0f0f0; /* ホバー時の背景色 (新: 薄いグレー) */
+  /* color: var(--color-text); */ /* ホバー時の文字色 (旧) */
+  color: var(--color-text); /* ホバー時の文字色 (新: 通常テキスト色) */
+  /* border-color: #ccc; */ /* ホバー時のボーダー (旧) */
+  border-color: #d0d0d0; /* ホバー時のボーダー (新: 少し濃いグレー) */
+  box-shadow: none; /* ホバー時は影を消す */
+}
+
+.category-filter button.active {
+  /* background-color: var(--color-main); */ /* アクティブ時の背景色 (旧) */
+  background-color: #e0e0e0; /* アクティブ時の背景色 (新: グレー) */
+  /* color: var(--color-white); */ /* アクティブ時の文字色 (旧) */
+  color: var(--color-text); /* アクティブ時の文字色 (新: 通常テキスト色) */
+  /* border-color: var(--color-main); */ /* アクティブ時のボーダー (旧) */
+  border-color: #ccc; /* アクティブ時のボーダー (新: やや濃いグレー) */
+  /* box-shadow: 0 2px 8px rgba(139, 0, 0, 0.2); */ /* 影 (旧) */
+  box-shadow: inset 0 1px 3px rgba(0,0,0,0.1); /* 内側の影に変更 */
+}
+
+/* FAQリスト */
+.faq-list {
+  margin-top: 2rem;
+}
+
+.faq-item {
+  background-color: white;
+  padding: 2rem;
+  margin-bottom: 1.5rem;
+  border-radius: var(--border-radius);
+  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+  border-left: 4px solid var(--color-main);
+}
+
+.faq-item h3 {
+  color: var(--color-main);
+  margin: 0 0 1rem 0;
+  font-size: 1.3rem;
+}
+
+.faq-item p {
+  margin: 0;
+  line-height: 1.7;
+  color: var(--color-text-light);
+}
+
 /* Contact関連 */
 .contact-container {
   max-width: 900px;
@@ -449,5 +622,22 @@
   
   .contact-form {
     padding: 2rem;
+  }
+  
+  .luxury-banner-title {
+    padding: 2rem 1.5rem;
+    margin: 2rem 0 3rem;
+  }
+  
+  .luxury-banner-title h2 {
+    font-size: 1.8rem;
+  }
+  
+  .luxury-banner-title p {
+    font-size: 1rem;
+  }
+  
+  .banner-icon {
+    font-size: 2rem;
   }
 } 

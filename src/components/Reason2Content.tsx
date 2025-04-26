@@ -78,7 +78,7 @@ const Reason2Content: React.FC = () => {
       {/* 努力しても伸びない問題 */}
       <section>
         <StylishTitle 
-          title="🔹 「努力しても伸びない」を科学的に撃破する"
+          title="「努力しても伸びない」を科学的に撃破する"
           type="section"
           align="center"
           size="medium"
@@ -95,7 +95,7 @@ const Reason2Content: React.FC = () => {
       {/* 英会話教室の問題点 */}
       <section>
         <StylishTitle 
-          title="🔹 なぜ多くの英会話教室では話せるようにならないのか"
+          title="なぜ多くの英会話教室では話せるようにならないのか"
           type="section"
           align="center"
           size="medium"
@@ -119,7 +119,7 @@ const Reason2Content: React.FC = () => {
       {/* 本質理解 */}
       <section>
         <StylishTitle 
-          title="🔹 本質を理解すれば誰でも「話せる」ようになる"
+          title="本質を理解すれば誰でも「話せる」ようになる"
           type="section"
           align="center"
           size="medium"
@@ -153,7 +153,7 @@ const Reason2Content: React.FC = () => {
       {/* 言語学＋脳科学 */}
       <section>
         <StylishTitle 
-          title="🔹 言語学＋脳科学に基づくアプローチ"
+          title="言語学＋脳科学に基づくアプローチ"
           type="section"
           align="center"
           size="medium"
@@ -183,7 +183,7 @@ const Reason2Content: React.FC = () => {
       {/* Engrowthの取り組み */}
       <section className="highlight-section">
         <StylishTitle 
-          title="🔹 Engrowthでは"
+          title="Engrowthでは"
           type="section"
           align="center"
           size="medium"

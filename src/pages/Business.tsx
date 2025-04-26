@@ -136,7 +136,7 @@ const Business = () => {
       <HeroSection 
         title="ビジネス"
         subtitle="プロフェッショナル向け英語力向上プログラム"
-        bgColor="dark"
+        bgColor="primary"
         textColor="light"
         align="center"
         height="medium"

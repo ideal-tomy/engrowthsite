@@ -51,6 +51,11 @@
   border-top: 1px solid var(--color-gray);
 }
 
+.footer-bottom p {
+  font-family: var(--font-heading);
+  font-size: 0.9rem;
+}
+
 @media (max-width: 768px) {
   .footer-content {
     grid-template-columns: 1fr;

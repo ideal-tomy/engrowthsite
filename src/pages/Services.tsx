@@ -1,11 +1,12 @@
 import React from 'react';
 import '../styles/pages.css';
+import '../styles/Services.css';
 import TabComponent from '../components/TabComponent';
 import Reason1Content from '../components/Reason1Content';
 import Reason2Content from '../components/Reason2Content';
 import Reason3Content from '../components/Reason3Content';
 import HeroSection from '../components/HeroSection';
-import StylishTitle from '../components/StylishTitle';
+import BannerTitle from '../components/BannerTitle';
 
 interface TabItem {
   id: string;
@@ -34,12 +35,9 @@ const Services: React.FC = () => {
       <div className="page-container">
         <div className="section intro-section">
           <div className="container">
-            <StylishTitle 
-              title="Engrowtが選ばれる3つの特徴" 
-              subtitle="他社との違いを明確にする私たちの強み" 
-              type="section" 
-              align="center"
-              size="large"
+            <BannerTitle 
+              title="Engrowtが選ばれる3つの特徴"
+              subtitle="他社との違いを明確にする私たちの強み"
             />
             
             <div className="intro-text">
@@ -52,14 +50,11 @@ const Services: React.FC = () => {
             <TabComponent tabs={tabs} />
             
             <div className="cta-box">
-              <StylishTitle 
-                title="あなたの英語習得の旅を始めましょう" 
-                type="accent" 
-                align="center"
-                size="medium"
+              <BannerTitle 
+                title="あなたの英語習得の旅を始めましょう"
+                subtitle="Engrowtの効果的なメソッドで、ビジネスで通用する英語力を手に入れませんか？"
               />
               <p>
-                Engrowtの効果的なメソッドで、ビジネスで通用する英語力を手に入れませんか？
                 無料カウンセリングであなたに最適なプランをご提案します。
               </p>
               <div className="action-buttons">

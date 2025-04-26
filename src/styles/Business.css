@@ -234,13 +234,14 @@
 
 .duration-tag {
   display: inline-block;
-  background-color: #ff4d4d;
-  color: white;
-  font-size: 0.8rem;
-  padding: 0.2rem 0.5rem;
-  border-radius: 20px;
-  margin-left: 8px;
-  font-weight: bold;
+  background-color: rgba(139, 0, 0, 0.1); /* 赤系の薄い背景 */
+  color: var(--color-primary);
+  padding: 0.2em 0.6em;
+  border-radius: 4px;
+  font-size: 0.8em;
+  margin-left: 0.8em;
+  font-family: var(--font-body);
+  font-weight: 500;
 }
 
 /* 5. 学習デザインの3つの柱 */
@@ -506,12 +507,10 @@
 }
 .pricing-note {
   text-align: center;
+  margin-top: 1.5rem;
+  color: #666;
   font-size: 0.9rem;
-  color: #555;
-  margin-top: 1rem;
-  max-width: 650px;
-  margin: 0 auto;
-  text-align: right;
+  font-family: var(--font-body);
 }
 
 .pricing-note sup {
