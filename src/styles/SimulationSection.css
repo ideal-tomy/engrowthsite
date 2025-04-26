@@ -1,0 +1,22 @@
+.simulation-section {
+  padding: 5rem 0;
+  background-color: #fff; /* 白背景 */
+}
+
+.simulation-block {
+  margin-bottom: 5rem;
+}
+
+.simulation-block:last-child {
+  margin-bottom: 0;
+}
+
+@media (max-width: 768px) {
+  .simulation-section {
+    padding: 3rem 0;
+  }
+  
+  .simulation-block {
+    margin-bottom: 3rem;
+  }
+} 

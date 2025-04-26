@@ -1,0 +1,77 @@
+/* シミュレーションテーブルスタイル */
+.simulation-section {
+  margin-bottom: 3rem;
+}
+
+.simulation-table-container {
+  overflow-x: auto; /* モバイルで横スクロール */
+  margin-bottom: 2.5rem;
+}
+
+.simulation-table {
+  width: 100%;
+  min-width: 600px; /* 横スクロール発生のため */
+  border-collapse: collapse;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+  margin: 0 auto;
+  max-width: 800px;
+}
+
+.simulation-table th,
+.simulation-table td {
+  padding: 1rem;
+  text-align: left;
+  border: 1px solid #e0e0e0;
+}
+
+.simulation-table th {
+  background-color: #ff7f7f; /* ヘッダー: #ff7f7f */
+  color: #fff;
+  font-weight: 700;
+}
+
+.simulation-table tbody tr:nth-child(odd) td {
+  background-color: #ffe6e6; /* 奇数行: #ffe6e6 */
+}
+
+.simulation-table tbody tr:nth-child(even) td {
+  background-color: #fdfdfd; /* 偶数行: #fdfdfd */
+}
+
+/* テーブルセルスタイル */
+.week-column {
+  width: 120px;
+  text-align: center;
+  background-color: #ff7f7f;
+}
+
+.theme-column {
+  text-align: center;
+  background-color: #ff7f7f;
+}
+
+.week-cell {
+  text-align: center;
+  background-color: #d3d3d3 !important;
+  font-weight: bold;
+}
+
+.simulation-title {
+  background-color: #f0f0f0;
+  padding: 0.8rem;
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto 2rem;
+  text-align: left;
+  font-size: 1.3rem;
+  color: #333;
+  border-left: 5px solid #cc0000;
+}
+
+/* モバイル対応 */
+@media (max-width: 768px) {
+  .simulation-title {
+    font-size: 1.1rem;
+    padding: 0.6rem;
+  }
+} 

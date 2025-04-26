@@ -1,0 +1,161 @@
+.services {
+  padding-top: 80px;
+}
+
+.hero {
+  background-color: var(--color-off-white);
+  padding: 6rem 0;
+  text-align: center;
+}
+
+.hero h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1.5rem;
+  color: var(--color-main);
+}
+
+.hero p {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+}
+
+.learning-design {
+  padding: 4rem 0;
+  text-align: center;
+  background-color: var(--color-white);
+}
+
+.learning-design h2 {
+  color: var(--color-main);
+  margin-bottom: 2rem;
+}
+
+.learning-content {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.learning-content p {
+  margin-bottom: 1rem;
+  font-size: 1.1rem;
+}
+
+.learning-content ul {
+  list-style: none;
+  padding: 0;
+}
+
+.learning-content li {
+  margin-bottom: 0.5rem;
+}
+
+.program-structure {
+  padding: 4rem 0;
+  background-color: var(--color-off-white);
+}
+
+.program-structure h2 {
+  text-align: center;
+  color: var(--color-main);
+  margin-bottom: 3rem;
+}
+
+.structure-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
+
+.structure-card {
+  background-color: var(--color-white);
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.structure-card h3 {
+  color: var(--color-main);
+  margin-bottom: 1rem;
+}
+
+.support {
+  padding: 4rem 0;
+  background-color: var(--color-white);
+}
+
+.support h2 {
+  text-align: center;
+  color: var(--color-main);
+  margin-bottom: 3rem;
+}
+
+.support-content {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+}
+
+.support-item {
+  background-color: var(--color-off-white);
+  padding: 2rem;
+  border-radius: 8px;
+  text-align: center;
+}
+
+.support-item h3 {
+  color: var(--color-main);
+  margin-bottom: 1rem;
+}
+
+.results {
+  padding: 4rem 0;
+  background-color: var(--color-off-white);
+}
+
+.results h2 {
+  text-align: center;
+  color: var(--color-main);
+  margin-bottom: 3rem;
+}
+
+.results-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+}
+
+.result-card {
+  background-color: var(--color-white);
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.result-card h3 {
+  color: var(--color-main);
+  margin-bottom: 1rem;
+}
+
+@media (max-width: 768px) {
+  .hero {
+    padding: 4rem 0;
+  }
+
+  .hero h1 {
+    font-size: 2rem;
+  }
+
+  .structure-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .support-content {
+    grid-template-columns: 1fr;
+  }
+
+  .results-grid {
+    grid-template-columns: 1fr;
+  }
+} 

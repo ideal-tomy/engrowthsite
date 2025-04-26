@@ -1,0 +1,218 @@
+.students {
+  padding-top: 80px;
+}
+
+.hero {
+  background-color: var(--color-off-white);
+  padding: 6rem 0;
+  text-align: center;
+}
+
+.hero h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1.5rem;
+  color: var(--color-main);
+}
+
+.hero p {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+}
+
+.persona {
+  padding: 4rem 0;
+  background-color: var(--color-white);
+}
+
+.persona h2 {
+  text-align: center;
+  color: var(--color-main);
+  margin-bottom: 3rem;
+}
+
+.persona-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
+
+.persona-card {
+  background-color: var(--color-off-white);
+  padding: 2rem;
+  border-radius: 8px;
+  text-align: center;
+}
+
+.persona-card h3 {
+  color: var(--color-main);
+  margin-bottom: 1rem;
+}
+
+.learning {
+  padding: 4rem 0;
+  background-color: var(--color-off-white);
+}
+
+.learning h2 {
+  text-align: center;
+  color: var(--color-main);
+  margin-bottom: 3rem;
+}
+
+.learning-steps {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
+
+.learning-step {
+  background-color: var(--color-white);
+  padding: 2rem;
+  border-radius: 8px;
+  text-align: center;
+  position: relative;
+}
+
+.learning-step:not(:last-child)::after {
+  content: "→";
+  position: absolute;
+  right: -1rem;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--color-main);
+}
+
+.learning-step h3 {
+  color: var(--color-main);
+  margin-bottom: 1rem;
+}
+
+.support {
+  padding: 4rem 0;
+  background-color: var(--color-white);
+}
+
+.support h2 {
+  text-align: center;
+  color: var(--color-main);
+  margin-bottom: 3rem;
+}
+
+.support-content {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2rem;
+}
+
+.support-item {
+  background-color: var(--color-off-white);
+  padding: 2rem;
+  border-radius: 8px;
+  text-align: center;
+  position: relative;
+}
+
+.support-item:not(:last-child)::after {
+  content: "→";
+  position: absolute;
+  right: -1rem;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--color-main);
+}
+
+.support-item h3 {
+  color: var(--color-main);
+  margin-bottom: 1rem;
+}
+
+.pricing {
+  padding: 4rem 0;
+  background-color: var(--color-off-white);
+}
+
+.pricing h2 {
+  text-align: center;
+  color: var(--color-main);
+  margin-bottom: 3rem;
+}
+
+.pricing-card {
+  background-color: var(--color-white);
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.pricing-card h3 {
+  color: var(--color-main);
+  margin-bottom: 1rem;
+}
+
+.price {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 1.5rem;
+}
+
+.pricing-card ul {
+  list-style: none;
+  padding: 0;
+  text-align: left;
+}
+
+.pricing-card li {
+  margin-bottom: 0.5rem;
+  padding-left: 1.5rem;
+  position: relative;
+}
+
+.pricing-card li::before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  color: var(--color-main);
+}
+
+@media (max-width: 768px) {
+  .hero {
+    padding: 4rem 0;
+  }
+
+  .hero h1 {
+    font-size: 2rem;
+  }
+
+  .persona-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .learning-steps {
+    grid-template-columns: 1fr;
+  }
+
+  .learning-step:not(:last-child)::after {
+    content: "↓";
+    position: absolute;
+    bottom: -2rem;
+    left: 50%;
+    transform: translateX(-50%);
+    top: auto;
+  }
+
+  .support-content {
+    grid-template-columns: 1fr;
+  }
+
+  .support-item:not(:last-child)::after {
+    content: "↓";
+    position: absolute;
+    bottom: -2rem;
+    left: 50%;
+    transform: translateX(-50%);
+    top: auto;
+  }
+} 

@@ -1,0 +1,127 @@
+.vision {
+  padding-top: 80px;
+}
+
+.hero {
+  background-color: var(--color-off-white);
+  padding: 6rem 0;
+  text-align: center;
+}
+
+.hero h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1.5rem;
+  color: var(--color-main);
+}
+
+.hero p {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+}
+
+.message {
+  padding: 4rem 0;
+  text-align: center;
+  background-color: var(--color-white);
+}
+
+.message h2 {
+  color: var(--color-main);
+  margin-bottom: 2rem;
+}
+
+.message-content {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.message-content p {
+  margin-bottom: 1rem;
+  font-size: 1.1rem;
+}
+
+.solution {
+  padding: 4rem 0;
+  background-color: var(--color-off-white);
+}
+
+.solution h2 {
+  text-align: center;
+  color: var(--color-main);
+  margin-bottom: 3rem;
+}
+
+.solution-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
+
+.solution-card {
+  background-color: var(--color-white);
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.solution-card h3 {
+  color: var(--color-main);
+  margin-bottom: 1rem;
+}
+
+.ecosystem {
+  padding: 4rem 0;
+  background-color: var(--color-white);
+}
+
+.ecosystem h2 {
+  text-align: center;
+  color: var(--color-main);
+  margin-bottom: 3rem;
+}
+
+.ecosystem-content {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+}
+
+.ecosystem-item {
+  background-color: var(--color-off-white);
+  padding: 2rem;
+  border-radius: 8px;
+  text-align: center;
+}
+
+.ecosystem-item h3 {
+  color: var(--color-main);
+  margin-bottom: 1rem;
+}
+
+.ecosystem-item ul {
+  list-style: none;
+  padding: 0;
+}
+
+.ecosystem-item li {
+  margin-bottom: 0.5rem;
+}
+
+@media (max-width: 768px) {
+  .hero {
+    padding: 4rem 0;
+  }
+
+  .hero h1 {
+    font-size: 2rem;
+  }
+
+  .solution-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .ecosystem-content {
+    grid-template-columns: 1fr;
+  }
+} 

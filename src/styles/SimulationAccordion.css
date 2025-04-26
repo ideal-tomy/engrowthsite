@@ -1,0 +1,70 @@
+/* シミュレーションアコーディオンスタイル */
+.simulation-accordion {
+  max-width: 800px;
+  margin: 0 auto 4rem;
+}
+
+.accordion-item {
+  background-color: #fff; /* 白背景 */
+  margin-bottom: 1rem;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  overflow: hidden; /* content非表示のため */
+}
+
+.accordion-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 1.2rem 1.5rem;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  text-align: left;
+  font-family: 'Noto Sans JP', sans-serif;
+  font-size: 1.1rem;
+  color: #8b0000; /* メインカラー */
+  font-weight: 600;
+}
+
+.accordion-icon {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #cc0000; /* アクセントカラー */
+  transition: transform 0.3s ease;
+}
+
+.accordion-item.open .accordion-icon {
+  transform: rotate(45deg);
+}
+
+.accordion-content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease-out, padding 0.4s ease-out;
+  padding: 0 1.5rem; /* 開いた時のpadding */
+}
+
+.accordion-item.open .accordion-content {
+  max-height: 500px; /* 十分な高さを確保 */
+  padding: 1.5rem;
+}
+
+.accordion-content p {
+  margin: 0;
+  color: #555; /* テキストカラー */
+  line-height: 1.7;
+}
+
+/* モバイル対応 */
+@media (max-width: 768px) {
+  .accordion-header {
+    padding: 1rem 1.2rem;
+    font-size: 1rem;
+  }
+  
+  .accordion-content p {
+    font-size: 0.9rem;
+  }
+} 
