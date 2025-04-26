@@ -1,33 +1,117 @@
-.students {
-  padding-top: 80px;
+:root {
+  --color-main: #8b0000;
+  --color-accent: #d4af37;
+  --color-accent-red: #cc0000;
+  --color-white: #ffffff;
+  --color-off-white: #fdfdfd;
+  --color-light-gray: #eeeeee;
+  --color-text: #333333;
 }
 
-.hero {
-  background-color: var(--color-off-white);
-  padding: 6rem 0;
+.students-page {
+  font-family: 'Noto Sans JP', sans-serif;
+  color: var(--color-text);
+}
+
+/* ヒーローセクション */
+.students-hero {
+  background-color: #222;
+  background-image: url('/images/students-hero.jpg');
+  background-size: cover;
+  background-position: center;
+  background-blend-mode: overlay;
+  color: white;
+  padding: 8rem 0;
   text-align: center;
+  position: relative;
 }
 
-.hero h1 {
+.students-hero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.7));
+  z-index: 1;
+}
+
+.students-hero .container {
+  position: relative;
+  z-index: 2;
+}
+
+.students-hero h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: 3.5rem;
+  margin-bottom: 1rem;
+  color: white;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.students-hero p {
+  font-size: 1.3rem;
+  margin-bottom: 2rem;
+  color: white;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+/* 導入セクション */
+.students-introduction {
+  padding: 5rem 0;
+  background-color: var(--color-white);
+}
+
+.intro-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  align-items: center;
+}
+
+.intro-text h2 {
+  font-family: 'Playfair Display', serif;
   font-size: 2.5rem;
   margin-bottom: 1.5rem;
   color: var(--color-main);
 }
 
-.hero p {
-  font-size: 1.2rem;
-  margin-bottom: 2rem;
+.intro-text p {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  margin-bottom: 1.5rem;
 }
 
-.persona {
-  padding: 4rem 0;
-  background-color: var(--color-white);
+.intro-image img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
 }
 
-.persona h2 {
+/* ペルソナセクション */
+.students-persona {
+  padding: 5rem 0;
+  background-color: var(--color-light-gray);
+}
+
+.section-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 2.5rem;
   text-align: center;
-  color: var(--color-main);
   margin-bottom: 3rem;
+  color: var(--color-main);
+  position: relative;
+}
+
+.section-title::after {
+  content: '';
+  display: block;
+  width: 80px;
+  height: 3px;
+  background-color: var(--color-accent);
+  margin: 0.5rem auto 0;
 }
 
 .persona-grid {
@@ -37,182 +121,353 @@
 }
 
 .persona-card {
-  background-color: var(--color-off-white);
-  padding: 2rem;
+  background-color: var(--color-white);
+  padding: 2.5rem 2rem;
   border-radius: 8px;
   text-align: center;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.persona-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+}
+
+.persona-icon {
+  font-size: 3rem;
+  margin-bottom: 1.5rem;
 }
 
 .persona-card h3 {
   color: var(--color-main);
   margin-bottom: 1rem;
+  font-weight: 600;
+  font-size: 1.4rem;
 }
 
-.learning {
-  padding: 4rem 0;
-  background-color: var(--color-off-white);
+/* 3ステップセクション */
+.students-steps {
+  padding: 5rem 0;
+  background-color: var(--color-white);
 }
 
-.learning h2 {
-  text-align: center;
-  color: var(--color-main);
-  margin-bottom: 3rem;
-}
-
-.learning-steps {
+.steps-container {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 2rem;
 }
 
-.learning-step {
-  background-color: var(--color-white);
-  padding: 2rem;
+.step-card {
+  background-color: var(--color-light-gray);
+  padding: 3rem 2rem;
   border-radius: 8px;
   text-align: center;
   position: relative;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s;
 }
 
-.learning-step:not(:last-child)::after {
-  content: "→";
-  position: absolute;
-  right: -1rem;
-  top: 50%;
-  transform: translateY(-50%);
-  color: var(--color-main);
+.step-card:hover {
+  transform: translateY(-8px);
 }
 
-.learning-step h3 {
-  color: var(--color-main);
-  margin-bottom: 1rem;
-}
-
-.support {
-  padding: 4rem 0;
-  background-color: var(--color-white);
-}
-
-.support h2 {
-  text-align: center;
-  color: var(--color-main);
-  margin-bottom: 3rem;
-}
-
-.support-content {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 2rem;
-}
-
-.support-item {
-  background-color: var(--color-off-white);
-  padding: 2rem;
-  border-radius: 8px;
-  text-align: center;
-  position: relative;
-}
-
-.support-item:not(:last-child)::after {
-  content: "→";
-  position: absolute;
-  right: -1rem;
-  top: 50%;
-  transform: translateY(-50%);
-  color: var(--color-main);
-}
-
-.support-item h3 {
-  color: var(--color-main);
-  margin-bottom: 1rem;
-}
-
-.pricing {
-  padding: 4rem 0;
-  background-color: var(--color-off-white);
-}
-
-.pricing h2 {
-  text-align: center;
-  color: var(--color-main);
-  margin-bottom: 3rem;
-}
-
-.pricing-card {
-  background-color: var(--color-white);
-  padding: 2rem;
-  border-radius: 8px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  text-align: center;
-  max-width: 500px;
-  margin: 0 auto;
-}
-
-.pricing-card h3 {
-  color: var(--color-main);
-  margin-bottom: 1rem;
-}
-
-.price {
+.step-number {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50px;
+  height: 50px;
+  background-color: var(--color-main);
+  color: white;
   font-size: 1.5rem;
   font-weight: bold;
-  margin-bottom: 1.5rem;
+  border-radius: 50%;
+  margin: 0 auto 1.5rem;
 }
 
-.pricing-card ul {
+.step-card h3 {
+  color: var(--color-main);
+  margin-bottom: 1rem;
+  font-weight: 600;
+  font-size: 1.4rem;
+}
+
+.step-link {
+  display: inline-block;
+  margin-top: 1.5rem;
+  color: var(--color-main);
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.3s;
+}
+
+.step-link:hover {
+  color: var(--color-accent-red);
+}
+
+/* 詳細ステップセクション */
+.step-detail {
+  padding: 5rem 0;
+  background-color: var(--color-white);
+}
+
+.step-detail.alt-bg {
+  background-color: var(--color-light-gray);
+}
+
+.step-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  align-items: start;
+}
+
+.step-description h3 {
+  color: var(--color-main);
+  margin: 2rem 0 1rem;
+  font-weight: 600;
+  font-size: 1.6rem;
+}
+
+.step-description p {
+  margin-bottom: 1.5rem;
+  line-height: 1.8;
+}
+
+.step-features {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+}
+
+.feature {
+  background-color: var(--color-light-gray);
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.05);
+}
+
+.step-detail.alt-bg .feature {
+  background-color: var(--color-white);
+}
+
+.feature-icon {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.feature h4 {
+  color: var(--color-main);
+  margin-bottom: 0.8rem;
+  font-weight: 600;
+}
+
+.essay-features {
   list-style: none;
   padding: 0;
-  text-align: left;
+  margin: 1.5rem 0;
 }
 
-.pricing-card li {
-  margin-bottom: 0.5rem;
+.essay-features li {
   padding-left: 1.5rem;
   position: relative;
+  margin-bottom: 0.8rem;
+  line-height: 1.6;
 }
 
-.pricing-card li::before {
+.essay-features li::before {
+  content: "•";
+  position: absolute;
+  left: 0;
+  color: var(--color-main);
+  font-weight: bold;
+}
+
+.support-box {
+  background-color: var(--color-white);
+  padding: 2.5rem;
+  border-radius: 8px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+}
+
+.step-detail.alt-bg .support-box {
+  background-color: var(--color-light-gray);
+}
+
+.support-box h3 {
+  color: var(--color-main);
+  margin-bottom: 1.2rem;
+  font-weight: 600;
+  font-size: 1.4rem;
+}
+
+.support-box ul {
+  list-style: none;
+  padding: 0;
+  margin: 1.5rem 0;
+}
+
+.support-box ul li {
+  padding-left: 1.5rem;
+  position: relative;
+  margin-bottom: 0.8rem;
+  line-height: 1.6;
+}
+
+.support-box ul li::before {
   content: "✓";
   position: absolute;
   left: 0;
   color: var(--color-main);
 }
 
-@media (max-width: 768px) {
-  .hero {
-    padding: 4rem 0;
+.benefits {
+  margin: 2rem 0;
+  padding: 1.5rem;
+  background-color: rgba(139, 0, 0, 0.05);
+  border-radius: 8px;
+}
+
+.benefits h4 {
+  margin-bottom: 1.2rem;
+  font-weight: 600;
+  color: var(--color-main);
+}
+
+.benefit-item {
+  margin-bottom: 0.8rem;
+  line-height: 1.6;
+}
+
+.important-note {
+  margin-top: 2rem;
+  padding: 1.5rem;
+  border-left: 4px solid var(--color-main);
+  background-color: rgba(139, 0, 0, 0.05);
+}
+
+.important-note p {
+  margin-bottom: 1rem;
+  line-height: 1.6;
+}
+
+.important-note p:last-child {
+  margin-bottom: 0;
+}
+
+.simulation-intro {
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto 3rem;
+  font-size: 1.1rem;
+  line-height: 1.8;
+}
+
+/* 料金表セクション */
+.students-pricing {
+  padding: 5rem 0;
+  background-color: var(--color-light-gray);
+}
+
+.pricing-table-container {
+  max-width: 900px;
+  margin: 0 auto;
+  background-color: var(--color-white);
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+}
+
+.pricing-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.pricing-table th,
+.pricing-table td {
+  padding: 1.2rem 1.5rem;
+  text-align: left;
+  border-bottom: 1px solid #eee;
+}
+
+.pricing-table th {
+  background-color: var(--color-main);
+  color: white;
+  font-weight: 600;
+}
+
+.period-cell {
+  font-weight: 600;
+  color: var(--color-text);
+}
+
+.price-cell {
+  font-weight: 600;
+  color: var(--color-main);
+}
+
+.monthly-cell {
+  color: #666;
+}
+
+.pricing-note {
+  margin-top: 1.5rem;
+  text-align: center;
+  color: #666;
+  font-size: 0.9rem;
+}
+
+/* フェードインアニメーション */
+.fade-in {
+  animation: fadeIn 1s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* レスポンシブデザイン */
+@media (max-width: 992px) {
+  .intro-grid,
+  .persona-grid,
+  .steps-container,
+  .step-content {
+    grid-template-columns: 1fr;
+    gap: 2rem;
   }
 
-  .hero h1 {
+  .step-content {
+    gap: 3rem;
+  }
+
+  .intro-image {
+    order: -1;
+  }
+}
+
+@media (max-width: 768px) {
+  .students-hero {
+    padding: 6rem 0;
+  }
+
+  .students-hero h1 {
+    font-size: 2.5rem;
+  }
+
+  .section-title {
     font-size: 2rem;
   }
 
-  .persona-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .learning-steps {
-    grid-template-columns: 1fr;
-  }
-
-  .learning-step:not(:last-child)::after {
-    content: "↓";
-    position: absolute;
-    bottom: -2rem;
-    left: 50%;
-    transform: translateX(-50%);
-    top: auto;
-  }
-
-  .support-content {
-    grid-template-columns: 1fr;
-  }
-
-  .support-item:not(:last-child)::after {
-    content: "↓";
-    position: absolute;
-    bottom: -2rem;
-    left: 50%;
-    transform: translateX(-50%);
-    top: auto;
+  .pricing-table th,
+  .pricing-table td {
+    padding: 1rem;
   }
 } 
