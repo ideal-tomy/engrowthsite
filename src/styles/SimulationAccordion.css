@@ -1,7 +1,8 @@
 /* シミュレーションアコーディオンスタイル */
 .simulation-accordion {
   max-width: 800px;
-  margin: 0 auto 4rem;
+  /* margin: 0 auto 4rem; */ /* 上下マージン削除 */
+  margin: 0 auto;
 }
 
 .accordion-item {

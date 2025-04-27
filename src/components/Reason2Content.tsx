@@ -54,16 +54,16 @@ const Reason2Content: React.FC = () => {
 
   // SLA理論のリストアイテム
   const slaItems = [
-    { icon: 'fa-arrow-right', text: '学習者は「インプット（入力）」の質、量を統制すると同時に' },
-    { icon: 'fa-arrow-right', text: '「アウトプット（出力）」で実際に使われる言語のスキルを高める' },
-    { icon: 'fa-arrow-right', text: 'これを続けることで自動化（オートマティション）が起こる' }
+    { icon: 'arrow_forward', text: '学習者は「インプット（入力）」の質、量を統制すると同時に' },
+    { icon: 'arrow_forward', text: '「アウトプット（出力）」で実際に使われる言語のスキルを高める' },
+    { icon: 'arrow_forward', text: 'これを続けることで自動化（オートマティション）が起こる' }
   ];
 
   // 認知負荷理論のリストアイテム
   const cognitiveItems = [
-    { icon: 'fa-arrow-right', text: '最初は意識的な努力を注ぎ込む必要がある' },
-    { icon: 'fa-arrow-right', text: '繰り返しで「意識しなくても出来る」に変わる' },
-    { icon: 'fa-arrow-right', text: 'これにより「言語スパンの自動化」が達成される' }
+    { icon: 'arrow_forward', text: '最初は意識的な努力を注ぎ込む必要がある' },
+    { icon: 'arrow_forward', text: '繰り返しで「意識しなくても出来る」に変わる' },
+    { icon: 'arrow_forward', text: 'これにより「言語スパンの自動化」が達成される' }
   ];
 
   return (
@@ -101,14 +101,22 @@ const Reason2Content: React.FC = () => {
           size="medium"
         />
         <div className="card-grid">
-          {failureReasons.map((item, index) => (
-            <CardComponent 
-              key={index} 
-              title={item.title} 
-              description={item.description}
-              icon={item.icon}
-            />
-          ))}
+          {failureReasons.map((item, index) => {
+            // Material Symbols に対応するアイコン名を決定
+            // let msIcon = ''; // icon 使わないので不要
+            // if (item.title === "インプット偏重") msIcon = 'input';
+            // else if (item.title === "アウトプット不足") msIcon = 'output';
+            // else if (item.title === "科学的アプローチ不在") msIcon = 'science';
+            
+            return (
+              <CardComponent 
+                key={index} 
+                title={item.title} 
+                description={item.description}
+                /* icon={msIcon} */ // icon プロパティを削除
+              />
+            );
+          })}
         </div>
         <div className="content-box">
           <p>⇒ これでは、どれだけ通っても"英語を使いこなす脳"が作られません。</p>
@@ -138,15 +146,25 @@ const Reason2Content: React.FC = () => {
           align="center"
           size="medium"
         />
-        <div className="card-grid card-grid-5">
-          {fiveSteps.map((step, index) => (
-            <CardComponent 
-              key={index} 
-              title={step.title} 
-              description={step.description}
-              icon={step.icon}
-            />
-          ))}
+        <div className="five-steps-container">
+          {fiveSteps.map((step, index) => {
+            // Material Symbols に対応するアイコン名を決定
+            // let msIcon = ''; // icon 使わないので不要
+            // if (step.title === "1. INPUT（インプット）の質と量") msIcon = 'menu_book';
+            // else if (step.title === "2. OUTPUT（アウトプット）の実践") msIcon = 'record_voice_over';
+            // else if (step.title === "3. フィードバックを受ける") msIcon = 'feedback';
+            // else if (step.title === "4. 修正・改善を繰り返す") msIcon = 'sync';
+            // else if (step.title === "5. 習慣化で自動的に継続") msIcon = 'schedule';
+
+            return (
+              <CardComponent 
+                key={index} 
+                title={step.title} 
+                description={step.description}
+                /* icon={msIcon} */ // icon プロパティを削除
+              />
+            );
+          })}
         </div>
       </section>
       

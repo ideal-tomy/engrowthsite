@@ -180,15 +180,15 @@ const Business = () => {
         <div className="container">
           <h2 className="section-title">Engrowth ビジネスプログラムの9つの強み</h2>
           <div className="strengths-grid">
-            <CardComponent icon="support_agent" title="専任のコンサルタントによる毎日の学習サポート" description="毎日のオンラインセッション" />
-            <CardComponent icon="smartphone" title="エングロース受講生 専用アプリの提供" />
-            <CardComponent icon="psychology" title="脳科学×AIの学習サービスを提供" />
-            <CardComponent icon="dynamic_feed" title="アダプティブラーニング※1を採用したカスタムカリキュラム" />
-            <CardComponent icon="school" title="世界の有名大学出身 コンサルタントがマンツーマンであなたに併走" />
-            <CardComponent icon="translate" title={"現地で使える\"生きた英語\"の習得をサポート"} />
-            <CardComponent icon="edit_calendar" title="卒業後の学習プランも 専任コンサルタントが提案" />
-            <CardComponent icon="public" title="全国どこからでも受講可能 セッション時間も柔軟に対応" />
-            <CardComponent icon="record_voice_over" title="AIによる発音、会話判定で１人でも英会話練習が可能" />
+            <CardComponent className="card-icon-top" icon="support_agent" title="専任のコンサルタントによる毎日の学習サポート" description="毎日のオンラインセッション" />
+            <CardComponent className="card-icon-top" icon="smartphone" title="エングロース受講生 専用アプリの提供" />
+            <CardComponent className="card-icon-top" icon="psychology" title="脳科学×AIの学習サービスを提供" />
+            <CardComponent className="card-icon-top" icon="dynamic_feed" title="アダプティブラーニング※1を採用したカスタムカリキュラム" />
+            <CardComponent className="card-icon-top" icon="school" title="世界の有名大学出身 コンサルタントがマンツーマンであなたに併走" />
+            <CardComponent className="card-icon-top" icon="translate" title={"現地で使える\"生きた英語\"の習得をサポート"} />
+            <CardComponent className="card-icon-top" icon="edit_calendar" title="卒業後の学習プランも 専任コンサルタントが提案" />
+            <CardComponent className="card-icon-top" icon="public" title="全国どこからでも受講可能 セッション時間も柔軟に対応" />
+            <CardComponent className="card-icon-top" icon="record_voice_over" title="AIによる発音、会話判定で１人でも英会話練習が可能" />
           </div>
         </div>
       </section>
@@ -288,16 +288,19 @@ const Business = () => {
           <h2 className="section-title">学習デザインの3つの柱</h2>
           <div className="pillars-grid">
             <CardComponent 
+              className="card-icon-top"
               icon="schedule"
               title="生活スタイル対応"
               description="多忙な日々の中でも無理なく学習を継続できるよう、個々のライフスタイルに合わせた柔軟なプランニングを行います。"
             />
             <CardComponent 
+              className="card-icon-top"
               icon="monitoring"
               title="進捗モニタリング"
               description="学習データに基づき進捗を可視化。定期的なフィードバックで課題を明確にし、学習効果を最大化します。"
             />
             <CardComponent 
+              className="card-icon-top"
               icon="tune"
               title="習熟度に応じた柔軟対応"
               description="現在のレベルと目標達成に必要なスキルに基づき、カリキュラムを最適化。常に最適な負荷で学習を進めます。"

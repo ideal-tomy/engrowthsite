@@ -25,10 +25,10 @@ const Reason3Content: React.FC = () => {
 
   // サポート体制のリストアイテム
   const supportItems = [
-    { icon: 'fa-check', text: 'コンサルタントとの毎日のやりとり' },
-    { icon: 'fa-check', text: '行動ログを反映した実行課題のフィードバック' },
-    { icon: 'fa-check', text: '行動の緊急レビューとリプラン修正' },
-    { icon: 'fa-check', text: '成功体験の分解と気づきの振り返り' }
+    { icon: 'check_circle', text: 'コンサルタントとの毎日のやりとり' },
+    { icon: 'check_circle', text: '行動ログを反映した実行課題のフィードバック' },
+    { icon: 'check_circle', text: '行動の緊急レビューとリプラン修正' },
+    { icon: 'check_circle', text: '成功体験の分解と気づきの振り返り' }
   ];
 
   return (
@@ -79,14 +79,22 @@ const Reason3Content: React.FC = () => {
         </div>
         
         <div className="card-grid">
-          {habitSteps.map((step, index) => (
-            <CardComponent 
-              key={index} 
-              title={step.title} 
-              description={step.description}
-              icon={step.icon}
-            />
-          ))}
+          {habitSteps.map((step, index) => {
+            // Material Symbols に対応するアイコン名を決定
+            // let msIcon = ''; // icon 使わないので不要
+            // if (step.title === "目標設定と行動計画の徹底設計") msIcon = 'track_changes';
+            // else if (step.title === "毎日連絡によるマイクロチェックイン") msIcon = 'smartphone';
+            // else if (step.title === "成功体験の積み上げとモチベーション維持") msIcon = 'emoji_events';
+
+            return (
+              <CardComponent 
+                key={index} 
+                title={step.title} 
+                description={step.description}
+                /* icon={msIcon} */ // icon プロパティを削除
+              />
+            );
+          })}
         </div>
       </section>
       

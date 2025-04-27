@@ -5,7 +5,6 @@
 
 .simulation-table-container {
   overflow-x: auto; /* モバイルで横スクロール */
-  margin-bottom: 2.5rem;
 }
 
 .simulation-table {
@@ -61,7 +60,7 @@
   padding: 0.8rem;
   width: 100%;
   max-width: 800px;
-  margin: 0 auto 2rem;
+  margin: 0 auto;
   text-align: left;
   font-size: 1.3rem;
   color: #333;

@@ -97,16 +97,19 @@ const Students = () => {
           <h2 className="section-title">こんな方におすすめ</h2>
           <div className="persona-grid">
             <CardComponent 
+              className="card-icon-top"
               icon="sentiment_dissatisfied" 
               title="英語に苦手意識がある"
               description="文法や単語は知っているのに、実践で使えない方"
             />
             <CardComponent 
+              className="card-icon-top"
               icon="flight_takeoff" 
               title="留学・進学を目指す"
               description="海外大学への進学や留学を考えている方"
             />
             <CardComponent 
+              className="card-icon-top"
               icon="work"
               title="就活で必要"
               description="外資系企業への就職を視野に入れている方"
@@ -159,16 +162,19 @@ const Students = () => {
             </div>
             <div className="step-features">
               <CardComponent 
+                className="card-icon-top"
                 icon="psychology"
                 title="脳科学に基づいたアプローチ"
                 description="言語習得の科学的メカニズムを活用した効率的な学習法"
               />
               <CardComponent 
+                className="card-icon-top"
                 icon="replay"
                 title="反復練習の重視"
                 description="適切な間隔での復習により長期記憶への定着を促進"
               />
               <CardComponent 
+                className="card-icon-top"
                 icon="adjust"
                 title="実用的な内容に焦点"
                 description="実際の留学生活で必要となるフレーズや表現を優先的に学習"

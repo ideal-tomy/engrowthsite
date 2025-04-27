@@ -25,7 +25,7 @@ const IconListComponent: React.FC<IconListComponentProps> = ({
       {items.map((item, index) => (
         <li key={index} className="icon-list-item">
           <div className="icon-container">
-            <i className={`fas ${item.icon}`} aria-hidden="true"></i>
+            <span className="material-symbols-outlined">{item.icon}</span>
           </div>
           <div className="text-container">
             <span className="icon-list-text">{item.text}</span>

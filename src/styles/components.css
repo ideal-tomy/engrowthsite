@@ -267,8 +267,6 @@
   overflow: hidden;
   transition: var(--transition);
   height: 100%;
-  display: flex;
-  flex-direction: column;
   padding: 2rem;
   position: relative;
   border: 1px solid rgba(0, 0, 0, 0.03);
@@ -400,35 +398,36 @@
 .icon-list {
   list-style-type: none;
   padding: 0;
-  margin: 0 0 2rem 0;
+  margin: 2rem 0; /* 上下のマージンを調整 */
 }
 
 .icon-list-item {
   display: flex;
-  align-items: flex-start;
-  margin-bottom: 1.2rem;
-  padding-bottom: 1.2rem;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+  align-items: flex-start; /* アイコンとテキストの上端揃え */
+  margin-bottom: 1.5rem; /* アイテム間のマージン */
+  /* padding: 1.5rem; */ /* パディング削除 */
+  /* background-color: #f9f9f9; */ /* 背景色削除 */
+  border-left: 3px solid var(--color-main); /* 左ボーダーを追加 */
+  padding-left: 1.5rem; /* テキストの左にスペース */
+  /* border-radius: var(--border-radius); */ /* 不要 */
 }
 
 .icon-list-item:last-child {
-  border-bottom: none;
   margin-bottom: 0;
-  padding-bottom: 0;
 }
 
 .icon-container {
-  margin-right: 1.2rem;
-  color: var(--color-primary);
+  margin-right: 1rem; /* アイコンとテキストの間隔 */
+  color: var(--color-main); /* アイコン色 */
   flex-shrink: 0;
-  width: 24px;
-  display: flex;
-  justify-content: center;
-  background-color: rgba(139, 0, 0, 0.05);
-  height: 24px;
-  border-radius: 50%;
+  width: auto; /* 幅は自動に */
+  height: auto; /* 高さは自動に */
+  display: inline-flex; /* インラインフレックス */
+  /* background-color: rgba(139, 0, 0, 0.08); */ /* アイコン背景削除 */
+  /* border-radius: 50%; */ /* 不要 */
   align-items: center;
-  font-size: 0.8rem;
+  font-size: 1.6rem; /* アイコンサイズを少し大きく */
+  line-height: 1.6; /* テキストの行の高さに合わせる */
 }
 
 .text-container {
@@ -437,26 +436,25 @@
 
 .icon-list-text {
   display: block;
-  font-weight: 500;
-  margin-bottom: 0.5rem;
+  font-weight: 600; /* テキストを少し太く */
+  /* margin-bottom: 0.3rem; */ /* 説明がない場合は不要かも */
   color: var(--color-navy);
+  line-height: 1.6; /* アイコンと高さを合わせる */
 }
 
-.icon-list-description {
-  color: #666;
-  font-size: 0.95rem;
-  line-height: 1.6;
-  margin: 0;
+/* Specific list types */
+.check-list .icon-list-item {
+   border-left-color: #2c8a43; /* チェックリストは緑ボーダー */
 }
-
 .check-list .icon-container {
-  color: #2c8a43;
-  background-color: rgba(44, 138, 67, 0.05);
+  color: #2c8a43; /* チェックリストは緑アイコン */
 }
 
+.arrow-list .icon-list-item {
+   border-left-color: var(--color-main); /* 矢印リストは赤ボーダー */
+}
 .arrow-list .icon-container {
-  color: var(--color-accent);
-  background-color: rgba(212, 175, 55, 0.05);
+  color: var(--color-main); /* 矢印リストは赤アイコン */
 }
 
 /* グリッドレイアウト（カード用） */
@@ -736,4 +734,21 @@
   background-color: #d3d3d3; /* ライトグレー */
   color: var(--color-navy); /* ネイビー */
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08); /* 影を少し調整 */
+}
+
+/* アイコンが上に来るカード用のスタイル */
+.card.card-icon-top {
+  display: flex;
+  flex-direction: column;
+}
+
+.card.card-icon-top .card-icon {
+  /* 必要であれば上アイコン用のスタイル調整 (マージンなど) */
+  margin-bottom: 1.5rem; /* アイコンとコンテンツの間のマージン */
+  text-align: center; /* アイコンを中央揃え */
+}
+
+.card.card-icon-top .card-content {
+  /* 必要であれば上アイコン用のスタイル調整 */
+  text-align: center; /* テキストも中央揃えにする場合 */
 } 

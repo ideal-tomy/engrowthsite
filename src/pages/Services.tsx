@@ -51,15 +51,14 @@ const Services: React.FC = () => {
             
             <div className="cta-box">
               <BannerTitle 
-                title="あなたの英語習得の旅を始めましょう"
-                subtitle="Engrowtの効果的なメソッドで、ビジネスで通用する英語力を手に入れませんか？"
+                title="英会話で広がる無限の可能性を"
+                subtitle="Engrowtの科学的根拠に基づくプログラムで、英会話習得を目指しましょう"
               />
               <p>
-                無料カウンセリングであなたに最適なプランをご提案します。
+                どんな環境の型にも最適な英会話習得プログラムを提案します。
               </p>
               <div className="action-buttons">
-                <a href="/contact" className="primary-button">無料カウンセリングを予約する</a>
-                <a href="/pricing" className="secondary-button">料金プランを確認する</a>
+                <a href="/contact" className="primary-button">お問い合わせはこちら</a>
               </div>
             </div>
           </div>

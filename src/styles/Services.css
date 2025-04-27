@@ -119,6 +119,13 @@
   z-index: 0;
 }
 
+/* Reasonコンテンツ用の仕切り線 */
+.reason-separator {
+  border: none;
+  border-top: 1px solid #e0e0e0; /* 細いグレーの線 */
+  margin: 3rem 0 2rem; /* 上下の余白を調整 */
+}
+
 .hero {
   background-color: var(--color-off-white);
   padding: 6rem 0;
@@ -275,4 +282,30 @@
   .results-grid {
     grid-template-columns: 1fr;
   }
+}
+
+/* Services.css - Add specific styles for the Services page */
+
+.services-page .stylish-title-container {
+  margin-bottom: 0 !important; /* 既存のスタイルを上書きするため !important を使用 */
+}
+
+.services-page .cta-box {
+  text-align: center; /* cta-box 内のテキストを中央揃え */
+}
+
+.services-page .cta-box .luxury-banner-title h2,
+.services-page .cta-box .luxury-banner-title p {
+  /* BannerTitle 内のテキストはデフォルトで中央揃えされている場合があるので、
+     必要に応じて text-align: center; を追加または確認 */
+}
+
+.services-page .cta-box p {
+  /* cta-box 直下のpタグも中央揃え */
+  text-align: center;
+}
+
+.services-page .cta-box .action-buttons {
+  /* ボタンコンテナも中央揃えにする */
+  text-align: center;
 } 
