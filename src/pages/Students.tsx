@@ -85,7 +85,7 @@ const Students = () => {
             </p>
           </div>
           <div className="intro-image">
-            <img src="/images/student-campus.jpg" alt="海外キャンパスで学ぶ学生" />
+            <img src="/images/留学生活01.jpeg" alt="海外キャンパスで学ぶ学生" />
           </div>
         </div>
       </section>
