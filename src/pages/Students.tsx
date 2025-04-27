@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import '../styles/Students.css';
 import SimulationSection from '../components/SimulationSection';
 import HeroSection from '../components/HeroSection';
+import CardComponent from '../components/CardComponent';
 
 // シミュレーションデータ
 const simulationTables = [
@@ -95,21 +96,21 @@ const Students = () => {
         <div className="container">
           <h2 className="section-title">こんな方におすすめ</h2>
           <div className="persona-grid">
-            <div className="persona-card">
-              <div className="persona-icon">🎓</div>
-              <h3>英語に苦手意識がある</h3>
-              <p>文法や単語は知っているのに、実践で使えない方</p>
-            </div>
-            <div className="persona-card">
-              <div className="persona-icon">✈️</div>
-              <h3>留学・進学を目指す</h3>
-              <p>海外大学への進学や留学を考えている方</p>
-            </div>
-            <div className="persona-card">
-              <div className="persona-icon">💼</div>
-              <h3>就活で必要</h3>
-              <p>外資系企業への就職を視野に入れている方</p>
-            </div>
+            <CardComponent 
+              icon="sentiment_dissatisfied" 
+              title="英語に苦手意識がある"
+              description="文法や単語は知っているのに、実践で使えない方"
+            />
+            <CardComponent 
+              icon="flight_takeoff" 
+              title="留学・進学を目指す"
+              description="海外大学への進学や留学を考えている方"
+            />
+            <CardComponent 
+              icon="work"
+              title="就活で必要"
+              description="外資系企業への就職を視野に入れている方"
+            />
           </div>
         </div>
       </section>
@@ -157,21 +158,21 @@ const Students = () => {
               </p>
             </div>
             <div className="step-features">
-              <div className="feature">
-                <div className="feature-icon">🧠</div>
-                <h4>脳科学に基づいたアプローチ</h4>
-                <p>言語習得の科学的メカニズムを活用した効率的な学習法</p>
-              </div>
-              <div className="feature">
-                <div className="feature-icon">🔄</div>
-                <h4>反復練習の重視</h4>
-                <p>適切な間隔での復習により長期記憶への定着を促進</p>
-              </div>
-              <div className="feature">
-                <div className="feature-icon">🎯</div>
-                <h4>実用的な内容に焦点</h4>
-                <p>実際の留学生活で必要となるフレーズや表現を優先的に学習</p>
-              </div>
+              <CardComponent 
+                icon="psychology"
+                title="脳科学に基づいたアプローチ"
+                description="言語習得の科学的メカニズムを活用した効率的な学習法"
+              />
+              <CardComponent 
+                icon="replay"
+                title="反復練習の重視"
+                description="適切な間隔での復習により長期記憶への定着を促進"
+              />
+              <CardComponent 
+                icon="adjust"
+                title="実用的な内容に焦点"
+                description="実際の留学生活で必要となるフレーズや表現を優先的に学習"
+              />
             </div>
           </div>
         </div>

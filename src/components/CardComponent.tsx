@@ -27,11 +27,7 @@ const CardComponent: React.FC<CardProps> = ({
       )}
       {icon && (
         <div className="card-icon">
-          {icon.startsWith('fa-') ? (
-            <i className={`fas ${icon}`} aria-hidden="true"></i>
-          ) : (
-            <span className="emoji-icon">{icon}</span>
-          )}
+          <span className="material-symbols-outlined">{icon}</span>
         </div>
       )}
       <div className="card-content">
