@@ -186,8 +186,16 @@
 
 /* タイトルのタイプバリエーション (背景色と文字色を設定) */
 .title-section .stylish-title {
-  background-color: var(--color-primary);
-  color: white;
+  /* background-color: var(--color-primary); */ /* Original red */
+  background-color: var(--color-accent); /* Change to accent gray */
+  /* color: white; */ /* Original white */
+  color: var(--color-navy); /* Change text color to navy */
+  /* Add white text outline using text-shadow */
+  text-shadow:
+    1px 1px 0 #fff,
+    -1px -1px 0 #fff,
+    1px -1px 0 #fff,
+    -1px 1px 0 #fff; 
 }
 
 .title-major .stylish-title {
@@ -261,15 +269,13 @@
 
 /* CardComponent Styles */
 .card {
-  background-color: #fff;
+  background-color: var(--color-white);
   border-radius: var(--border-radius);
   box-shadow: var(--shadow-card);
-  overflow: hidden;
+  padding: 2rem; /* Base padding */
   transition: var(--transition);
-  height: 100%;
-  padding: 2rem;
-  position: relative;
-  border: 1px solid rgba(0, 0, 0, 0.03);
+  position: relative; /* Needed for overlay */
+  overflow: hidden; /* Ensure overlay covers */
 }
 
 .card:hover {
@@ -277,19 +283,64 @@
   box-shadow: var(--shadow-hover);
 }
 
-.card::before {
-  content: '';
+/* Styles for cards with background images */
+.card.has-background-image {
+  background-size: cover;
+  background-position: center;
+  padding: 0; /* Remove base padding, apply to inner content */
+}
+
+.card-background-overlay {
   position: absolute;
   top: 0;
   left: 0;
-  width: 4px;
-  height: 0;
-  background: linear-gradient(to bottom, var(--color-primary), #a1a1a1); /* 少し明るいグレーへ */
-  transition: var(--transition);
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6); /* Dark overlay, adjust opacity (0.6) */
+  z-index: 0; /* Below content */
+  transition: background-color 0.3s ease;
 }
 
-.card:hover::before {
-  height: 100%;
+.card.has-background-image:hover .card-background-overlay {
+  background-color: rgba(0, 0, 0, 0.75); /* Darken overlay on hover */
+}
+
+.card-inner-content {
+  position: relative;
+  z-index: 1; /* Above overlay */
+  padding: 2.5rem; /* Apply padding here */
+  height: 100%; /* Allow flex alignment */
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Center content vertically */
+}
+
+/* Adjust text colors for background image cards */
+.card.has-background-image .card-title,
+.card.has-background-image .card-description,
+.card.has-background-image p {
+  color: var(--color-white); /* White text */
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5); /* Add shadow for readability */
+}
+
+.card.has-background-image .card-title {
+  /* Adjust title style if needed */
+}
+
+.card.has-background-image .primary-button {
+  /* Adjust button colors if needed */
+  /* Example: make button brighter */
+  background-color: var(--color-white);
+  color: var(--color-primary);
+  border: 1px solid var(--color-white);
+  padding: 0.8rem 1.5rem; /* Reduce horizontal padding */
+  width: fit-content;     /* Set width based on content */
+  display: block;         /* Ensure margin auto works */
+  margin: 1.5rem auto 0; /* Add top margin and center horizontally */
+}
+.card.has-background-image .primary-button:hover {
+  background-color: rgba(255, 255, 255, 0.9);
+  color: var(--color-primary);
 }
 
 .card-image-container {
@@ -590,7 +641,7 @@
 
 .primary-button {
   display: inline-block;
-  background: linear-gradient(45deg, var(--color-primary), #a1a1a1); /* 少し明るいグレーへ */
+  background: var(--color-accent);
   color: white;
   padding: 1rem 2rem;
   border-radius: 30px;
@@ -598,6 +649,7 @@
   text-decoration: none;
   transition: var(--transition);
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+  border: none;
 }
 
 .secondary-button {
@@ -615,6 +667,11 @@
 .primary-button:hover, .secondary-button:hover {
   transform: translateY(-3px);
   box-shadow: 0 7px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Add specific hover style for primary-button to restore gradient */
+.primary-button:hover {
+  background: linear-gradient(45deg, var(--color-primary), #a1a1a1);
 }
 
 /* サービスコンテナ */
