@@ -3,7 +3,7 @@ import '../styles/components.css';
 
 interface HeroSectionProps {
   title: string;
-  subtitle?: string;
+  subtitle?: string | string[];
   bgColor?: 'primary' | 'dark' | 'light' | 'gradient';
   textColor?: 'light' | 'dark';
   align?: 'left' | 'center' | 'right';
@@ -48,6 +48,21 @@ const HeroSection: React.FC<HeroSectionProps> = ({
     }
   };
 
+  const renderSubtitle = () => {
+    if (!subtitle) return null;
+
+    if (Array.isArray(subtitle)) {
+      return subtitle.map((line, index) => (
+        <React.Fragment key={index}>
+          {line}
+          {index < subtitle.length - 1 && <br />}
+        </React.Fragment>
+      ));
+    } else {
+      return subtitle;
+    }
+  };
+
   return (
     <div className={`hero-section ${getBgClass()} ${getTextClass()} ${getAlignClass()} ${getHeightClass()}`}>
       <div className="hero-container">
@@ -55,7 +70,11 @@ const HeroSection: React.FC<HeroSectionProps> = ({
           {title}
           <span className="hero-underline"></span>
         </h1>
-        {subtitle && <p className="hero-subtitle">{subtitle}</p>}
+        {subtitle && 
+          <p className="hero-subtitle">
+            {renderSubtitle()}
+          </p>
+        }
       </div>
     </div>
   );

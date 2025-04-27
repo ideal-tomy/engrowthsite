@@ -1,71 +1,171 @@
 import '../styles/Vision.css';
 import HeroSection from '../components/HeroSection';
+import StylishTitle from '../components/StylishTitle';
+import CardComponent from '../components/CardComponent';
+import IconListComponent from '../components/IconListComponent';
+
+// Story data (icon removed)
+const storyItems = [
+  {
+    // icon: 'palette',
+    text: '私たちは、どんな環境で生まれ育っても、自分が生きたい人生を描き、実現する力をすべての人に持ってほしいと願っています。'
+  },
+  {
+    // icon: 'rocket_launch',
+    text: '日本の教育制度や文化的背景の中で、多くの人が英語を学ぶ機会を十分に得られず、グローバル社会での挑戦を遠くに感じているかもしれません。しかし、英語というスキルは単なる言語の習得にとどまらず、新たなビジネスの扉を開き、人生の選択肢を大きく広げる「武器」となります。'
+  },
+  {
+    // icon: 'handshake',
+    text: 'Engrowthでは、「パートナー」と呼ぶクライアント一人ひとりが、自らの人生を切り拓くためのサポートを全力で提供しています。ただ英語を教えるだけでなく、より多くの方々が世界とつながり、可能性を最大限に引き出せるような環境を創り上げることを目指しています。'
+  },
+  {
+    // icon: 'groups',
+    text: '同時に、コンサルタントもまた、未来への挑戦者です。自身の力で成長し、パートナーの皆様に価値を提供しながら、自らの人生を豊かにしていく。私たちは、すべてのステークホルダーがWin-Winの関係で結ばれることを信念とし、共に日本の未来を切り拓いていく存在でありたいと考えています。'
+  },
+  {
+    // icon: 'flag',
+    text: 'Engrowthは、クライアントもコンサルタントも共に「挑戦者」として歩む場所です。可能性を信じ、行動し、未来を変える力を手にする。失敗を恐れず学び、成長し続ける場所となり、真の価値を社会に送り出すプラットフォームを目指します。'
+  }
+];
+
+// Value Statement data
+const valueItems = [
+  { icon: 'self_improvement', text: '自律した学習' },
+  { icon: 'record_voice_over', text: '誠実な対話' },
+  { icon: 'groups', text: '相互成長' },
+  { icon: 'volunteer_activism', text: '学び＝社会貢献' }
+];
 
 const Vision = () => {
   return (
-    <div className="vision">
+    <div className="vision-page">
       <HeroSection 
         title="Vision"
-        subtitle="誰もが第二言語（英語）を使い、夢を掴む社会を目指して"
+        subtitle={[
+          "「すべての人に、可能性を信じて生きる力を」", 
+          "誰もが第二言語（英語）を使い、夢を掴む社会を目指して"
+        ]}
         bgColor="primary"
         textColor="light"
         align="center"
         height="medium"
       />
 
-      <section className="message">
+      <section className="message section-padding">
         <div className="container">
-          <h2>創業の背景と理念</h2>
-          <div className="message-content">
-            <p>経済的な制約により、学びの機会を失う若者を一人でも減らす。</p>
-            <p>私たちは、第二言語習得メソッドと伴走型サポートを通じて、確実な成長と挑戦の場を提供します。</p>
+          <StylishTitle 
+            title="創業の背景と理念"
+            type="section"
+            align="center"
+            size="large"
+          />
+          <div className="story-container"> 
+            {storyItems.map((item, index) => (
+              <div key={index} className="story-item">
+                <div className="story-text">
+                  <p>{item.text}</p>
+                </div>
+              </div>
+            ))}
           </div>
         </div>
       </section>
 
-      <section className="solution">
+      <section className="solution section-padding alt-bg">
         <div className="container">
-          <h2>社会課題に対する解決策</h2>
-          <div className="solution-grid">
-            <div className="solution-card">
-              <h3>科学的アプローチ</h3>
-              <p>第二言語習得理論に基づいた効果的な学習方法</p>
-            </div>
-            <div className="solution-card">
-              <h3>個別サポート</h3>
-              <p>一人一人に合わせた丁寧な伴走型サポート</p>
-            </div>
-            <div className="solution-card">
-              <h3>実践的な環境</h3>
-              <p>実際のビジネスシーンを想定した学習プログラム</p>
-            </div>
+          <StylishTitle 
+            title="社会課題に対する解決策"
+            type="section"
+            align="center"
+            size="large"
+          />
+          <div className="solution-grid card-grid">
+            <CardComponent
+              icon="science"
+              title="科学的アプローチ"
+              description="第二言語習得理論に基づいた効果的な学習方法"
+              className="card-icon-top"
+            />
+            <CardComponent 
+              icon="support_agent"
+              title="個別サポート"
+              description="一人一人に合わせた丁寧な伴走型サポート"
+              className="card-icon-top"
+            />
+            <CardComponent 
+              icon="business_center"
+              title="実践的な環境"
+              description="実際のビジネスシーンを想定した学習プログラム"
+              className="card-icon-top"
+            />
           </div>
         </div>
       </section>
 
-      <section className="ecosystem">
+      <section className="ecosystem section-padding alt-bg">
         <div className="container">
-          <h2>教える側と学ぶ側のエコシステム</h2>
-          <div className="ecosystem-content">
-            <div className="ecosystem-item">
-              <h3>教える側</h3>
-              <ul>
-                <li>専門知識を持つ講師陣</li>
-                <li>経験豊富なコンサルタント</li>
-                <li>サポートスタッフ</li>
-              </ul>
+          <StylishTitle 
+            title="教える側と学ぶ側のエコシステム"
+            type="section"
+            align="center"
+            size="large"
+          />
+          <div className="ecosystem-diagram">
+            <div className="ecosystem-diagram-side">
+              <CardComponent title="学ぶ側（挑戦者）" className="ecosystem-card">
+                <ul>
+                  <li><span className="material-symbols-outlined">business_center</span> ビジネスパーソン</li>
+                  <li><span className="material-symbols-outlined">school</span> 学生</li>
+                  <li><span className="material-symbols-outlined">groups</span> 社会人</li>
+                </ul>
+              </CardComponent>
             </div>
-            <div className="ecosystem-item">
-              <h3>学ぶ側</h3>
-              <ul>
-                <li>ビジネスパーソン</li>
-                <li>学生</li>
-                <li>社会人</li>
-              </ul>
+            <div className="ecosystem-diagram-center">
+              <div className="engrowth-hub">
+                <span className="material-symbols-outlined">hub</span>
+                Engrowth<br/>(共創の場)
+              </div>
+              <div className="ecosystem-arrows">
+                <span className="material-symbols-outlined">arrow_right_alt</span>
+                <span className="material-symbols-outlined">arrow_left_alt</span>
+              </div>
             </div>
+            <div className="ecosystem-diagram-side">
+              <CardComponent title="教える側（挑戦者）" className="ecosystem-card">
+                  <ul>
+                    <li><span className="material-symbols-outlined">school</span> 専門知識を持つ講師陣</li>
+                    <li><span className="material-symbols-outlined">person_pin</span> 経験豊富なコンサルタント</li>
+                    <li><span className="material-symbols-outlined">support</span> サポートスタッフ</li>
+                  </ul>
+              </CardComponent>
+            </div>
+          </div>
+          <div className="ecosystem-cycle">
+            <span className="material-symbols-outlined">cycle</span>
+            教育 → 自立 → 貢献 (社会への価値循環)
           </div>
         </div>
       </section>
+
+      <section className="values section-padding">
+        <div className="container">
+          <StylishTitle 
+            title="私たちが大切にしていること"
+            type="section"
+            align="center"
+            size="large"
+          />
+          <IconListComponent items={valueItems} className="value-list" />
+        </div>
+      </section>
+
+      <section className="vision-cta section-padding alt-bg">
+        <div className="container">
+          <h2 className="cta-title">あなたも、挑戦者として未来を切り拓きませんか？</h2>
+          <a href="/contact" className="primary-button">お問い合わせはこちら</a>
+        </div>
+      </section>
+
     </div>
   );
 };

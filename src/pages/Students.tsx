@@ -3,6 +3,7 @@ import '../styles/Students.css';
 import SimulationSection from '../components/SimulationSection';
 import HeroSection from '../components/HeroSection';
 import CardComponent from '../components/CardComponent';
+import StylishTitle from '../components/StylishTitle';
 
 // シミュレーションデータ
 const simulationTables = [
@@ -149,37 +150,35 @@ const Students = () => {
       <section id="step1" className="step-detail">
         <div className="container">
           <h2 className="section-title">ステップ1：基礎英語力の底上げ</h2>
-          <div className="step-content">
-            <div className="step-description">
-              <p>
-                英語でのコミュニケーションに自信を持つために、まずは基礎固めから始めましょう。
-                文法や語彙の理解を深めることよりも、英語を聞くことや話すことになれることが何よりも重要です。
-              </p>
-              <p>
-                スピーキング、リスニングを中心に、発話することで聞き取れるようになる脳のメカニズムを利用し、
-                英語への苦手意識や恐怖心が無くなるように基礎英語力の底上げを行います。
-              </p>
-            </div>
-            <div className="step-features">
-              <CardComponent 
-                className="card-icon-top"
-                icon="psychology"
-                title="脳科学に基づいたアプローチ"
-                description="言語習得の科学的メカニズムを活用した効率的な学習法"
-              />
-              <CardComponent 
-                className="card-icon-top"
-                icon="replay"
-                title="反復練習の重視"
-                description="適切な間隔での復習により長期記憶への定着を促進"
-              />
-              <CardComponent 
-                className="card-icon-top"
-                icon="adjust"
-                title="実用的な内容に焦点"
-                description="実際の留学生活で必要となるフレーズや表現を優先的に学習"
-              />
-            </div>
+          <div className="step-description">
+            <p>
+              英語でのコミュニケーションに自信を持つために、まずは基礎固めから始めましょう。
+              文法や語彙の理解を深めることよりも、英語を聞くことや話すことになれることが何よりも重要です。
+            </p>
+            <p>
+              スピーキング、リスニングを中心に、発話することで聞き取れるようになる脳のメカニズムを利用し、
+              英語への苦手意識や恐怖心が無くなるように基礎英語力の底上げを行います。
+            </p>
+          </div>
+          <div className="step-features">
+            <CardComponent 
+              className="card-icon-top"
+              icon="psychology"
+              title="脳科学に基づいたアプローチ"
+              description="言語習得の科学的メカニズムを活用した効率的な学習法"
+            />
+            <CardComponent 
+              className="card-icon-top"
+              icon="replay"
+              title="反復練習の重視"
+              description="適切な間隔での復習により長期記憶への定着を促進"
+            />
+            <CardComponent 
+              className="card-icon-top"
+              icon="adjust"
+              title="実用的な内容に焦点"
+              description="実際の留学生活で必要となるフレーズや表現を優先的に学習"
+            />
           </div>
         </div>
       </section>
@@ -194,7 +193,12 @@ const Students = () => {
                 アメリカの大学で成功するためには、学術的なライティングスキルが必要不可欠です。
                 多くの日本人留学生が直面する最大の課題の一つが、英語でのアカデミックライティングの習得です。
               </p>
-              <h3>なぜ英語でのエッセイは難しいのか</h3>
+              <StylishTitle 
+                title="なぜ英語でのエッセイは難しいのか"
+                type="feature"
+                size="small"
+                align="left"
+              />
               <p>
                 英語で記述する論文では、エッセイやレポートの評価において「内容」だけでなく「構造」が重視されます。
                 優れた考察や分析を行っても、学術界で求められる独特の形式やルールに従っていなければ、高評価を得ることは困難です。
@@ -212,7 +216,12 @@ const Students = () => {
               </p>
             </div>
             <div className="support-box">
-              <h3>私たちのサポート体制</h3>
+              <StylishTitle 
+                title="私たちのサポート体制"
+                type="feature"
+                size="small"
+                align="left"
+              />
               <p>当社では、海外の名門大学出身の専任コンサルタントが、きめ細かな添削サービスを提供しています。</p>
               <ul>
                 <li>英語のエッセイで求められる文章構成の基礎から応用まで</li>
@@ -220,7 +229,13 @@ const Students = () => {
                 <li>添削だけでなく、改善点の詳細な解説と実践的なアドバイス</li>
                 <li>オンラインでの個別相談と継続的なサポート</li>
               </ul>
-              <h3>なぜ事前準備が重要か</h3>
+              <StylishTitle 
+                title="なぜ事前準備が重要か"
+                type="feature"
+                size="small"
+                align="left"
+                className="mt-large"
+              />
               <p>
                 海外の大学では、入学後すぐに本格的なアカデミックライティングが求められます。
                 準備が不十分な状態で留学を開始すると、授業についていけない、課題をこなせないという事態に陥りかねません。

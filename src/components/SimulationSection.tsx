@@ -1,6 +1,6 @@
 import React from 'react';
 import SimulationTable from './SimulationTable';
-import SimulationAccordion from './SimulationAccordion';
+import Accordion from './Accordion';
 import '../styles/SimulationSection.css';
 
 interface SimulationItem {
@@ -31,7 +31,7 @@ const SimulationSection: React.FC<SimulationSectionProps> = ({ tables }) => {
               title={table.title}
               data={table.data}
             />
-            <SimulationAccordion items={table.accordionItems} />
+            <Accordion items={table.accordionItems} />
           </div>
         ))}
       </div>

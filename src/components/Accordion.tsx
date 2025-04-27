@@ -3,43 +3,33 @@ import './Accordion.css';
 
 interface AccordionItem {
   title: string;
-  content: string | React.ReactNode;
+  content: string;
 }
 
 interface AccordionProps {
   items: AccordionItem[];
-  defaultOpen?: number;
 }
 
-const Accordion: React.FC<AccordionProps> = ({ items, defaultOpen = -1 }) => {
-  const [openIndex, setOpenIndex] = useState<number>(defaultOpen);
+const Accordion: React.FC<AccordionProps> = ({ items }) => {
+  const [openIndex, setOpenIndex] = useState<number | null>(null);
 
   const toggleAccordion = (index: number) => {
-    setOpenIndex(openIndex === index ? -1 : index);
+    setOpenIndex(openIndex === index ? null : index);
   };
 
   return (
-    <div className="accordion">
+    <div className="simulation-accordion">
       {items.map((item, index) => (
-        <div 
-          key={index} 
-          className={`accordion-item ${openIndex === index ? 'open' : ''}`}
-        >
+        <div key={index} className={`accordion-item ${openIndex === index ? 'open' : ''}`}>
           <button
             className="accordion-header"
             onClick={() => toggleAccordion(index)}
           >
             <span>{item.title}</span>
-            <span className="accordion-icon">
-              {openIndex === index ? '−' : '＋'}
-            </span>
+            <span className="accordion-icon">{openIndex === index ? '-' : '+'}</span>
           </button>
           <div className="accordion-content">
-            {typeof item.content === 'string' ? (
-              <p>{item.content}</p>
-            ) : (
-              item.content
-            )}
+            <p>{item.content}</p>
           </div>
         </div>
       ))}

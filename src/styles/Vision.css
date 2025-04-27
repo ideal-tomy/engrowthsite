@@ -1,127 +1,298 @@
-.vision {
-  padding-top: 80px;
+/* Remove old Vision.css specific styles for elements now handled by components */
+
+.vision-page {
+  /* Add explicit padding-top to ensure space below header */
+  padding-top: 100px; /* Match the global main padding-top */
+  /* Add any page-specific base styles if needed */
 }
 
-.hero {
-  background-color: var(--color-off-white);
-  padding: 6rem 0;
-  text-align: center;
+/* Common Section Padding */
+.section-padding {
+  padding: 5rem 0;
 }
 
-.hero h1 {
-  font-size: 2.5rem;
-  margin-bottom: 1.5rem;
-  color: var(--color-main);
+/* Alternating Background Color */
+.alt-bg {
+  background-color: var(--color-off-white); /* Or light-gray */
 }
 
-.hero p {
-  font-size: 1.2rem;
-  margin-bottom: 2rem;
+/* Common Text Block Styling - Remove as it's replaced by story-container */
+/* .text-block { ... } */
+/* .text-block p { ... } */
+
+/* Story Container */
+.story-container {
+  max-width: 750px; /* Slightly narrower for better readability */
+  margin: 3rem auto 0;
 }
 
-.message {
-  padding: 4rem 0;
-  text-align: center;
-  background-color: var(--color-white);
-}
-
-.message h2 {
-  color: var(--color-main);
-  margin-bottom: 2rem;
-}
-
-.message-content {
-  max-width: 800px;
-  margin: 0 auto;
-}
-
-.message-content p {
-  margin-bottom: 1rem;
-  font-size: 1.1rem;
-}
-
-.solution {
-  padding: 4rem 0;
-  background-color: var(--color-off-white);
-}
-
-.solution h2 {
-  text-align: center;
-  color: var(--color-main);
+.story-item {
+  border-left: 3px solid var(--color-primary);
+  padding-left: 2rem; 
   margin-bottom: 3rem;
 }
 
-.solution-grid {
+.story-item:last-child {
+  margin-bottom: 0;
+}
+
+/* Remove story-icon styles */
+/* .story-icon { ... } */
+/* .story-icon .material-symbols-outlined { ... } */
+
+.story-text p {
+  font-size: 1.15rem; /* Slightly larger */
+  line-height: 1.9;
+  color: var(--color-text); /* Darker text */
+}
+
+/* Card Grid Layout (Assuming similar to other pages) */
+.card-grid {
   display: grid;
+  gap: 2rem;
+}
+
+/* Default to 3 columns */
+.solution-grid.card-grid {
   grid-template-columns: repeat(3, 1fr);
-  gap: 2rem;
+  margin-top: 3rem;
 }
 
-.solution-card {
-  background-color: var(--color-white);
-  padding: 2rem;
-  border-radius: 8px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  text-align: center;
-}
-
-.solution-card h3 {
-  color: var(--color-main);
-  margin-bottom: 1rem;
-}
-
-.ecosystem {
-  padding: 4rem 0;
-  background-color: var(--color-white);
-}
-
-.ecosystem h2 {
-  text-align: center;
-  color: var(--color-main);
-  margin-bottom: 3rem;
-}
-
-.ecosystem-content {
-  display: grid;
+/* 2 columns for ecosystem */
+.ecosystem-content.card-grid {
   grid-template-columns: repeat(2, 1fr);
-  gap: 2rem;
+  max-width: 900px; /* Optional: constrain width */
+  margin: 2rem auto 0; /* Add top margin */
 }
 
-.ecosystem-item {
-  background-color: var(--color-off-white);
-  padding: 2rem;
-  border-radius: 8px;
-  text-align: center;
-}
-
-.ecosystem-item h3 {
-  color: var(--color-main);
-  margin-bottom: 1rem;
-}
-
-.ecosystem-item ul {
+/* Styling for list inside ecosystem cards */
+.ecosystem-card ul {
   list-style: none;
   padding: 0;
+  margin: 1rem 0 0 0;
+  text-align: left;
+  margin-top: 1.5rem;
 }
 
-.ecosystem-item li {
+.ecosystem-card li {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1rem;
+  font-size: 1rem;
+  color: var(--color-text-light); /* Adjust color if needed */
+  justify-content: center; /* Center list items */
+}
+
+.ecosystem-card li .material-symbols-outlined {
+  margin-right: 0.8rem;
+  color: var(--color-main); /* Icon color */
+  font-size: 1.4rem;
+}
+
+/* --- Remove or Comment Out Old Styles --- */
+
+/* Remove old .hero styles if HeroSection component handles it */
+/* .hero { ... } */
+/* .hero h1 { ... } */
+/* .hero p { ... } */
+
+/* Remove rule that hides h2 inside sections */
+/* .message h2, .solution h2, .ecosystem h2 {
+  display: none; 
+} */
+
+/* .message { ... } */
+/* .message-content { ... } */
+/* .message-content p { ... } */ /* Now handled by .text-block p */
+
+/* Remove old .solution styles */
+/* .solution { ... } */
+/* .solution-grid { ... } */ /* Now handled by .card-grid */
+.solution-card {
+   display: none; /* Hide as CardComponent is used */
+}
+/* .solution-card h3 { ... } */
+
+/* Remove old .ecosystem styles */
+/* .ecosystem { ... } */
+/* .ecosystem-content { ... } */ /* Now handled by .card-grid */
+.ecosystem-item {
+  display: none; /* Hide as CardComponent is used */
+}
+/* .ecosystem-item h3 { ... } */
+/* .ecosystem-item ul { ... } */ /* Replaced by .ecosystem-card ul */
+/* .ecosystem-item li { ... } */ /* Replaced by .ecosystem-card li */
+
+/* Ecosystem Diagram Section */
+.ecosystem-diagram {
+  display: flex;
+  align-items: center; /* Vertically align items */
+  justify-content: space-between;
+  margin: 3rem auto;
+  max-width: 1000px;
+  gap: 1.5rem;
+}
+
+.ecosystem-diagram-side {
+  flex: 1; /* Allow cards to take space */
+}
+
+.ecosystem-card {
+ /* Styles for cards in ecosystem are in Vision.css or inherited */
+ text-align: center;
+}
+
+.ecosystem-diagram-center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  color: var(--color-primary);
+}
+
+.engrowth-hub {
+  font-size: 1.1rem;
+  font-weight: 600;
   margin-bottom: 0.5rem;
 }
 
+.engrowth-hub .material-symbols-outlined {
+  font-size: 3rem;
+  display: block;
+  margin-bottom: 0.2rem;
+}
+
+.ecosystem-arrows .material-symbols-outlined {
+  font-size: 2rem;
+  margin: 0 0.3rem;
+}
+
+.ecosystem-cycle {
+  text-align: center;
+  margin-top: 2.5rem;
+  font-weight: 500;
+  color: var(--color-text-light);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.ecosystem-cycle .material-symbols-outlined {
+  margin-right: 0.5rem;
+  font-size: 1.5rem;
+  color: var(--color-primary);
+}
+
+/* Value Statement Section */
+.values {
+  background-color: var(--color-white); /* Ensure background if needed */
+}
+
+.value-list {
+  max-width: 900px;
+  margin: 3rem auto 0;
+  /* Assuming IconListComponent uses .icon-list */
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Responsive grid */
+  gap: 2rem;
+}
+
+/* Style items if IconListComponent defaults aren't enough */
+.value-list .icon-list-item {
+  /* Example: Add background/border */
+  /* background-color: var(--color-gray); */
+  /* padding: 1.5rem; */
+  /* border-radius: var(--border-radius); */
+  /* box-shadow: var(--shadow-standard); */
+  text-align: center; /* Center align items */
+}
+
+.value-list .icon-container {
+   margin-bottom: 1rem; /* Space below icon */
+}
+.value-list .icon-container .material-symbols-outlined {
+  font-size: 2.5rem;
+}
+.value-list .text-container {
+   margin-left: 0; /* Override default margin if needed */
+}
+
+/* Closing CTA Section */
+.vision-cta {
+  text-align: center;
+  background-color: var(--color-navy); /* Dark background */
+  color: white;
+}
+
+.cta-title {
+  font-size: 2rem;
+  font-weight: 600;
+  margin-bottom: 2rem;
+  color: white; /* Ensure title is white */
+}
+
+.vision-cta .primary-button {
+  /* Adjust button style if needed */
+  /* background-color: var(--color-accent-gold); */
+  /* border-color: var(--color-accent-gold); */
+  /* color: var(--color-navy); */
+}
+
+/* --- Responsive Adjustments --- */
+
+@media (max-width: 992px) {
+  .ecosystem-diagram {
+    flex-direction: column; /* Stack diagram elements */
+    gap: 2rem;
+  }
+  .ecosystem-arrows {
+     transform: rotate(90deg); /* Rotate arrows */
+     margin: 1rem 0;
+  }
+  .ecosystem-content.card-grid {
+    grid-template-columns: 1fr; /* Stack on medium */
+  }
+  .solution-grid.card-grid {
+    grid-template-columns: repeat(2, 1fr); /* 2 columns on medium */
+  }
+}
+
 @media (max-width: 768px) {
-  .hero {
-    padding: 4rem 0;
+  .section-padding {
+    padding: 3rem 0;
   }
+  .solution-grid.card-grid {
+    grid-template-columns: 1fr; /* Stack on small */
+  }
+  /* Ecosystem already stacked */
+  .story-item {
+    padding-left: 1.5rem;
+  }
+  .value-list {
+     grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+     gap: 1.5rem;
+  }
+  .cta-title {
+     font-size: 1.6rem;
+  }
+  /* Remove icon related responsive styles */
+  /* .story-icon { ... } */
+  /* .story-icon .material-symbols-outlined { ... } */
 
-  .hero h1 {
-    font-size: 2rem;
+  .story-text p {
+    font-size: 1rem;
   }
+}
 
-  .solution-grid {
-    grid-template-columns: 1fr;
-  }
+/* Override StylishTitle background for Vision page */
+.vision-page .stylish-title-container.title-section .stylish-title {
+  background-color: var(--color-gray); /* Use light gray background */
+  color: var(--color-navy); /* Use dark text color for contrast */
+  /* Optionally remove or adjust shadow if it looks odd on gray */
+  /* box-shadow: none; */ 
+}
 
-  .ecosystem-content {
-    grid-template-columns: 1fr;
-  }
+/* Ensure subtitle color is appropriate if title background changes */
+.vision-page .stylish-title-container.title-section .stylish-subtitle {
+  /* color: var(--color-text-light); */ /* Adjust if needed */
 } 
