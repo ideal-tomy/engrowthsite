@@ -16,9 +16,9 @@ interface TabItem {
 
 const Services: React.FC = () => {
   const tabs: TabItem[] = [
-    { id: '1', label: 'ビジネス特化', content: <Reason1Content /> },
-    { id: '2', label: '効率的学習', content: <Reason2Content /> },
-    { id: '3', label: '結果重視', content: <Reason3Content /> },
+    { id: '1', label: 'コンサルタント', content: <Reason1Content /> },
+    { id: '2', label: '科学的根拠', content: <Reason2Content /> },
+    { id: '3', label: '実践の仕組み', content: <Reason3Content /> },
   ];
 
   return (

@@ -43,16 +43,25 @@
 .accordion-content {
   max-height: 0;
   overflow: hidden;
-  transition: max-height 0.4s ease-out, padding 0.4s ease-out;
-  padding: 1rem;
+  /* Ensure padding is 0 when closed */
+  padding: 0;
+  border-width: 0; /* Add border-width 0 */
+  font-size: 0; /* Add font-size 0 */
+  line-height: 0; /* Add line-height 0 */
+  transition: max-height 0.4s ease-out, visibility 0s 0.4s; /* Adjust transition */
   background-color: #f9f9f9;
+  visibility: hidden; /* Add visibility hidden */
   font-family: var(--font-body);
-  line-height: 1.6;
 }
 
 .accordion-item.open .accordion-content {
-  max-height: 500px; /* 十分な高さを確保 */
-  padding: 1.5rem;
+  max-height: 500px;
+  padding: 1.5rem; /* Restore padding */
+  visibility: visible; /* Restore visibility */
+  /* Restore necessary text styles, children should inherit normally */
+  font-size: inherit; 
+  line-height: 1.6; /* Or inherit/specific value */
+  transition: max-height 0.4s ease-in, padding 0.4s ease-in, visibility 0s; /* Adjust transition */
 }
 
 .accordion-content p {
@@ -68,7 +77,20 @@
     font-size: 1rem;
   }
   
-  .accordion-content p {
-    font-size: 0.9rem;
+  .accordion-content { /* Ensure closed state values apply */
+    padding: 0;
+    font-size: 0;
+    line-height: 0;
   }
+
+  .accordion-item.open .accordion-content {
+    padding: 1.2rem; /* Adjust padding for mobile open state */
+    font-size: 0.9rem; /* Restore mobile font size */
+    line-height: 1.7; /* Restore mobile line height */
+  }
+
+  /* Remove the standalone .accordion-content p rule if it's redundant */
+  /* .accordion-content p {
+    font-size: 0.9rem;
+  } */
 } 
