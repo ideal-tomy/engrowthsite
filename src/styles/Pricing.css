@@ -1,0 +1,170 @@
+/* src/styles/Pricing.css */
+
+.pricing-page {
+  /* Remove or override any global padding-top that might be affecting this page */
+  padding-top: 0; 
+}
+
+.pricing-page .section-padding {
+  /* Adjust padding based on overall layout and HeroSection */
+  padding-top: 3rem; 
+  padding-bottom: 5rem;
+}
+
+.pricing-section {
+  margin-bottom: 4rem;
+}
+
+.pricing-section:last-of-type {
+  margin-bottom: 0; /* Remove margin from the last section */
+}
+
+.pricing-table-container {
+  margin-top: 1.5rem;
+  overflow-x: auto; /* Allow horizontal scroll on small screens */
+}
+
+.pricing-table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: var(--color-white);
+  box-shadow: var(--shadow-card);
+  border-radius: var(--border-radius);
+  overflow: hidden; /* Ensures border-radius clips content */
+  min-width: 600px; /* Minimum width before scrollbar appears */
+  border: 1px solid #eee; /* Add a light border around the table */
+}
+
+.pricing-table th,
+.pricing-table td {
+  padding: 1.2rem 1rem;
+  text-align: center;
+  border-bottom: 1px solid #eee; /* Light border for rows */
+  font-size: 1rem;
+  vertical-align: middle; /* Vertically align content */
+}
+
+.pricing-table thead th {
+  background-color: #f87171; /* Light red similar to image */
+  color: white;
+  font-weight: 600;
+  font-size: 1.1rem;
+  border-bottom: none; /* Remove bottom border for header */
+}
+.pricing-table thead th:first-child {
+  background-color: #e5e7eb; /* Light gray for the first header cell */
+  border-top-left-radius: var(--border-radius); /* Adjust radius for border */
+  color: var(--color-navy); /* Darker text for gray header */
+}
+.pricing-table thead th:last-child {
+   border-top-right-radius: var(--border-radius); /* Adjust radius for border */
+}
+
+
+.pricing-table tbody tr:last-child td {
+  border-bottom: none; /* Remove border for the last row */
+}
+
+.pricing-table tbody td:first-child {
+  background-color: #f9fafb; /* Very light gray for the first column */
+  font-weight: 600;
+  text-align: left; /* Left align period */
+  color: var(--color-navy);
+  width: 15%; /* Adjust width as needed */
+  padding-left: 1.5rem;
+}
+
+.original-price {
+  text-decoration: line-through;
+  color: #999;
+  margin-right: 0.5em;
+  font-weight: normal;
+  display: inline-block; /* Ensure it aligns properly */
+}
+
+.pricing-table strong {
+  color: var(--color-primary); /* Highlight the final price */
+  font-size: 1.1em; /* Make final price slightly larger */
+  font-weight: bold;
+  display: inline-block; /* Ensure it aligns properly */
+}
+
+.footnote-marker {
+  font-size: 0.8em;
+  vertical-align: super;
+  color: var(--color-primary);
+  margin-left: 0.2em;
+}
+
+.footnote {
+  margin-top: 1.5rem;
+  font-size: 0.9rem;
+  color: #555;
+  text-align: left;
+  padding-left: 0.5rem;
+}
+
+.footnote .footnote-marker {
+   margin-right: 0.3em;
+}
+
+.service-summary-section {
+  margin-top: 4rem;
+  padding: 2.5rem; /* Increased padding */
+  background-color: var(--color-gray); /* Light background for this section */
+  border-radius: var(--border-radius);
+}
+
+.service-summary-section .stylish-title-container {
+  margin-bottom: 1.5rem; /* Adjust margin below title */
+}
+
+.service-summary-section p {
+  margin-bottom: 1rem;
+  line-height: 1.7;
+  color: var(--color-text);
+}
+
+.service-summary-section .action-buttons {
+  margin-top: 2.5rem;
+  display: flex;
+  flex-wrap: wrap; /* Allow buttons to wrap on smaller screens */
+  gap: 1.5rem; /* Increased gap */
+  justify-content: center; /* Center buttons */
+}
+
+/* Ensure secondary button style is visible on light gray background */
+.service-summary-section .secondary-button {
+  background-color: var(--color-white);
+  color: var(--color-primary);
+  border: 1px solid var(--color-primary);
+}
+
+.service-summary-section .secondary-button:hover {
+  background-color: #f0f0f0; /* Slightly darker white on hover */
+  border-color: var(--color-main);
+}
+
+
+/* Responsive adjustments for table */
+@media (max-width: 768px) {
+  .pricing-table th,
+  .pricing-table td {
+    padding: 0.8rem 0.6rem;
+    font-size: 0.9rem;
+  }
+  .pricing-table thead th {
+     font-size: 1rem;
+  }
+   .pricing-table strong {
+    font-size: 1em;
+  }
+   .service-summary-section .action-buttons {
+     flex-direction: column; /* Stack buttons vertically */
+     align-items: center;
+   }
+   .pricing-table tbody td:first-child {
+     width: 25%; /* Increase width slightly on smaller screens */
+     padding-left: 1rem;
+   }
+} 

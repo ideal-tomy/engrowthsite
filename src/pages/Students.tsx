@@ -247,9 +247,9 @@ const Students = () => {
               </p>
               <div className="benefits">
                 <h4>事前に正しい知識とスキルを身につけることで</h4>
-                <div className="benefit-item">✅ 入学後のスムーズな学習開始</div>
-                <div className="benefit-item">✅ 高い学業成績の維持</div>
-                <div className="benefit-item">✅ 充実した留学生活の実現</div>
+                <div className="benefit-item">　入学後のスムーズな学習開始</div>
+                <div className="benefit-item">　高い学業成績の維持</div>
+                <div className="benefit-item">　充実した留学生活の実現</div>
               </div>
               <div className="important-note">
                 <p>

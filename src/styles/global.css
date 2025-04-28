@@ -105,4 +105,8 @@ a {
   .container {
     padding: 0 15px;
   }
+}
+
+main {
+  /* padding-top: 80px; */ /* Revert this global change */
 } 

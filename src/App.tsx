@@ -1,3 +1,4 @@
+import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Header from './components/Header';
 import Footer from './components/Footer';
@@ -10,6 +11,7 @@ import Students from './pages/Students';
 import FAQ from './pages/FAQ';
 import Contact from './pages/Contact';
 import Reason1 from './pages/Reason1';
+import Pricing from './pages/Pricing';
 
 function App() {
   return (
@@ -27,6 +29,7 @@ function App() {
             <Route path="/faq" element={<FAQ />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="/reason1" element={<Reason1 />} />
+            <Route path="/pricing" element={<Pricing />} />
           </Routes>
         </main>
         <Footer />

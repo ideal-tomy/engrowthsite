@@ -1,9 +1,7 @@
 /* Remove old Vision.css specific styles for elements now handled by components */
 
 .vision-page {
-  /* Add explicit padding-top to ensure space below header */
-  padding-top: 100px; /* Match the global main padding-top */
-  /* Add any page-specific base styles if needed */
+  padding-top: 80px; /* Add padding-top specifically for Vision page to account for fixed header */
 }
 
 /* Common Section Padding */

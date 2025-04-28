@@ -580,4 +580,24 @@ ul.essay-features li::before,
 
 .important-note p:last-child {
   margin-bottom: 0;
+}
+
+/* Add styles for support-box within step-detail */
+.step-detail .support-box {
+  /* Add any specific styles for the support box itself if needed */
+  margin-top: 2rem; /* Example: Add some space above the support box */
+  padding: 1.5rem;
+  background-color: #fff; /* White background for contrast */
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow-card);
+}
+
+/* Target StylishTitle containers specifically within the support-box */
+.step-detail .support-box .stylish-title-container {
+  margin-bottom: 0rem; /* Reduce bottom margin for titles inside support-box */
+}
+
+/* Target StylishTitle containers specifically within the step-description */
+.step-detail .step-description .stylish-title-container {
+  margin-bottom: 0; /* Remove bottom margin for this specific title */
 } 

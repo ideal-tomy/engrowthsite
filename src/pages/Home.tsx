@@ -115,7 +115,6 @@ const Home = () => {
           />
           <div className="support-links">
             <p>学習方法や料金について</p><p><Link to="/faq">よくあるご質問はこちら</Link></p>
-            <Link to="/contact" className="primary-button">無料カウンセリング予約</Link>
           </div>
         </div>
       </section>
