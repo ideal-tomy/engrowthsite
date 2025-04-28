@@ -23,9 +23,9 @@ const Pricing = () => {
         <section className="pricing-section">
           <StylishTitle 
             title="ビジネスパーソン向け料金"
-            type="feature" // 指示書通り feature を使用
-            align="left" // 指示書通り left を使用
-            size="medium"
+            type="section"
+            align="center"
+            size="large"
           />
           <div className="pricing-table-container">
             <table className="pricing-table">
@@ -67,9 +67,9 @@ const Pricing = () => {
         <section className="pricing-section">
            <StylishTitle 
             title="学生向け料金"
-            type="feature" // 指示書通り feature を使用
-            align="left" // 指示書通り left を使用
-            size="medium"
+            type="section"
+            align="center"
+            size="large"
           />
           <div className="pricing-table-container">
             <table className="pricing-table">

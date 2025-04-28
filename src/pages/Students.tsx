@@ -1,9 +1,10 @@
-import React, { useState } from 'react';
+import React from 'react';
 import '../styles/Students.css';
 import SimulationSection from '../components/SimulationSection';
 import HeroSection from '../components/HeroSection';
 import CardComponent from '../components/CardComponent';
 import StylishTitle from '../components/StylishTitle';
+import studentImage from '../assets/images/留学生活01.jpeg';
 
 // シミュレーションデータ
 const simulationTables = [
@@ -56,12 +57,6 @@ const pricingData = [
 ];
 
 const Students = () => {
-  const [openAccordionIndex, setOpenAccordionIndex] = useState<number | null>(null);
-  
-  const toggleAccordion = (index: number) => {
-    setOpenAccordionIndex(openAccordionIndex === index ? null : index);
-  };
-
   return (
     <div className="students-page">
       {/* ヒーローセクション */}
@@ -76,18 +71,25 @@ const Students = () => {
 
       {/* 導入セクション */}
       <section className="students-introduction fade-in">
-        <div className="container intro-grid">
-          <div className="intro-text">
-            <h2>留学を成功させるために</h2>
-            <p>
-              海外留学は新しい価値観や環境に触れる貴重な機会です。
-              しかし、準備が不十分だと貴重な留学期間を有効に活用できません。
-              Engrowthでは、科学的根拠に基づいた英語学習プログラムで、
-              自信を持って英語で自己表現できる状態へと導きます。
-            </p>
-          </div>
-          <div className="intro-image">
-            <img src="/images/留学生活01.jpeg" alt="海外キャンパスで学ぶ学生" />
+        <div className="container">
+          <StylishTitle 
+            title="留学を成功させるために"
+            type="section" 
+            align="left"
+            size="large"
+          />
+          <div className="content-grid">
+            <div className="content-text">
+              <p>
+                海外留学は新しい価値観や環境に触れる貴重な機会です。
+                しかし、準備が不十分だと貴重な留学期間を有効に活用できません。
+                Engrowthでは、科学的根拠に基づいた英語学習プログラムで、
+                自信を持って英語で自己表現できる状態へと導きます。
+              </p>
+            </div>
+            <div className="content-image student-feature-image">
+              <img src={studentImage} alt="海外キャンパスで学ぶ学生" />
+            </div>
           </div>
         </div>
       </section>
@@ -247,9 +249,9 @@ const Students = () => {
               </p>
               <div className="benefits">
                 <h4>事前に正しい知識とスキルを身につけることで</h4>
-                <div className="benefit-item">　入学後のスムーズな学習開始</div>
-                <div className="benefit-item">　高い学業成績の維持</div>
-                <div className="benefit-item">　充実した留学生活の実現</div>
+                <div className="benefit-item">入学後のスムーズな学習開始</div>
+                <div className="benefit-item">高い学業成績の維持</div>
+                <div className="benefit-item">充実した留学生活の実現</div>
               </div>
               <div className="important-note">
                 <p>

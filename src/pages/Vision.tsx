@@ -3,6 +3,7 @@ import HeroSection from '../components/HeroSection';
 import StylishTitle from '../components/StylishTitle';
 import CardComponent from '../components/CardComponent';
 import IconListComponent from '../components/IconListComponent';
+import ecosystemImage from '../assets/images/visionimage01.png'; // Import the image
 
 // Story data (icon removed)
 const storyItems = [
@@ -79,24 +80,33 @@ const Vision = () => {
             align="center"
             size="large"
           />
+          <div className="solution-lead-text">
+            <p>
+              Engrowthは、単なる英語学習ではなく、<br/>
+              <strong>「自ら学び、共有し、未来に挑む」</strong><br/>
+              人材を社会に送り出すための環境を本気で作っています。
+            </p>
+            <p>
+              英語は、単なる言葉ではありません。<br/>
+              世界を広げ、可能性を拓き、挑戦を支える力です。<br/>
+              私たちは、一人ひとりの中に眠るその力を引き出します。
+            </p>
+          </div>
           <div className="solution-grid card-grid">
             <CardComponent
-              icon="science"
-              title="科学的アプローチ"
-              description="第二言語習得理論に基づいた効果的な学習方法"
-              className="card-icon-top"
+              title="自律を育む"
+              description="自ら問い、自ら選び、自ら行動できる人へ。"
+              className="card-icon-top solution-card-custom"
             />
             <CardComponent 
-              icon="support_agent"
-              title="個別サポート"
-              description="一人一人に合わせた丁寧な伴走型サポート"
-              className="card-icon-top"
+              title="共有と支援の文化"
+              description="成長も葛藤も、共に分かち合い支え合う環境を。"
+              className="card-icon-top solution-card-custom"
             />
             <CardComponent 
-              icon="business_center"
-              title="実践的な環境"
-              description="実際のビジネスシーンを想定した学習プログラム"
-              className="card-icon-top"
+              title="挑戦と許容の場づくり"
+              description="失敗を恐れず挑戦し、可能性を拓く力を育む。"
+              className="card-icon-top solution-card-custom"
             />
           </div>
         </div>
@@ -110,6 +120,7 @@ const Vision = () => {
             align="center"
             size="large"
           />
+          <img src={ecosystemImage} alt="Engrowth Ecosystem Concept" className="ecosystem-image" />
           <div className="ecosystem-diagram">
             <div className="ecosystem-diagram-side">
               <CardComponent title="学ぶ側（挑戦者）" className="ecosystem-card">

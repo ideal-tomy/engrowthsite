@@ -181,6 +181,16 @@
   color: var(--color-primary);
 }
 
+/* Style for the added ecosystem image */
+.ecosystem-image {
+  display: block; /* Ensure it takes block display */
+  width: 100%; /* Make it responsive */
+  max-width: 700px; /* Limit maximum width */
+  margin: 2.5rem auto; /* Add vertical and horizontal margin */
+  /* border-radius: var(--border-radius); */ /* Remove border radius */
+  /* box-shadow: var(--shadow-card); */ /* Remove shadow */
+}
+
 /* Value Statement Section */
 .values {
   background-color: var(--color-white); /* Ensure background if needed */
@@ -293,4 +303,106 @@
 /* Ensure subtitle color is appropriate if title background changes */
 .vision-page .stylish-title-container.title-section .stylish-subtitle {
   /* color: var(--color-text-light); */ /* Adjust if needed */
+}
+
+/* Override alt-bg for solution section with gradient */
+/* Remove or comment out the existing background style */
+/* .vision-page section.solution {
+  background: linear-gradient(to bottom, #fffaf0, var(--color-white)); /* Cream to white gradient */
+/* } */
+
+/* Add new styles for background image and parallax effect */
+.vision-page section.solution {
+  background-image: url('../assets/images/vision01.png'); /* Correct path relative to Vision.css */
+  background-attachment: fixed; /* This creates the parallax effect */
+  background-position: center; /* Center the image */
+  background-repeat: no-repeat; /* Do not repeat the image */
+  background-size: cover; /* Cover the entire section */
+  position: relative; /* Needed for pseudo-element overlay */
+  color: white; /* Change default text color to white for better contrast */
+}
+
+/* Add an overlay for better text readability */
+.vision-page section.solution::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(26, 42, 58, 0.7); /* Dark overlay (adjust color and opacity) */
+  z-index: 0; /* Place overlay behind content */
+}
+
+/* Ensure content is above the overlay */
+.vision-page section.solution > .container {
+  position: relative;
+  z-index: 1;
+}
+
+/* Styles for the new lead text */
+.solution-lead-text {
+  max-width: 800px; /* Limit width */
+  margin: 2rem auto 3rem; /* Center align and add margins */
+  text-align: center;
+  line-height: 1.9; /* Increase line height for readability */
+  font-size: 1.1rem;
+}
+
+/* Adjust text colors within the solution section for white background */
+.vision-page section.solution .solution-lead-text,
+.vision-page section.solution .solution-lead-text strong,
+.vision-page section.solution .solution-card-custom .card-description {
+  /* color: var(--color-text-light); */ /* Original color */
+  color: white; /* Make text white */
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.5); /* Add subtle shadow for readability */
+}
+
+.solution-lead-text p {
+  margin-bottom: 1.5rem;
+}
+
+.solution-lead-text strong {
+  /* color: var(--color-primary); */ /* Original color */
+  font-size: 1.2em; /* Make strong text slightly larger */
+}
+
+/* Custom styles for solution cards */
+.solution-card-custom {
+  border: none; /* Remove the faint border */
+  /* background-color: var(--color-off-white); */ /* Slightly off-white background */
+  background-color: rgba(255, 255, 255, 0.1); /* Very transparent white */
+  backdrop-filter: blur(5px); /* Add blur effect */
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.06); /* Softer shadow */
+  /* border-top: 4px solid var(--color-primary); */ /* Accent border on top */
+  border-top: 4px solid rgba(255, 255, 255, 0.8); /* Adjust border color/opacity */
+  padding: 2rem; /* Add padding directly to the card */
+  text-align: center; /* Center align text */
+}
+
+.solution-card-custom .card-inner-content {
+  padding: 0; /* Remove padding from inner content */
+  justify-content: flex-start; /* Align content to top */
+}
+
+.solution-card-custom .card-title {
+  font-size: 1.5rem; /* Increase title size */
+  margin-bottom: 1rem;
+  /* color: var(--color-primary); */ /* Make title primary color */
+  color: #ffdddd; /* Light red/pink for title, adjust as needed */
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+}
+
+.solution-card-custom .card-description {
+  font-size: 1rem;
+  /* color: var(--color-text-light); */ /* Original color */
+  line-height: 1.8;
+}
+
+.solution-card-custom:hover {
+  /* border-color: var(--color-accent-red); */ /* Change border color on hover */
+  border-color: white; /* Change border color on hover */
+  background-color: rgba(255, 255, 255, 0.2);
+  transform: translateY(-8px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.1); /* Enhance shadow on hover */
 } 

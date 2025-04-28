@@ -4,19 +4,8 @@ import '../styles/Business.css'; // CSSファイルを正しくインポート
 import SimulationSection from '../components/SimulationSection';
 import HeroSection from '../components/HeroSection';
 import CardComponent from '../components/CardComponent';
-
-// 3. 9つの強み グリッド表示 - 内容：アイコン＋強調テキスト＋補足テキスト
-const strengthsData = [
-  { icon: '👨‍🏫', title: '専任のコンサルタントによる 毎日の学習サポート', description: '毎週のオンラインセッション' },
-  { icon: '📱', title: 'エングロース受講生 専用アプリの提供', description: '' },
-  { icon: '🧠', title: '脳科学×AIの 学習サービスを提供', description: '' },
-  { icon: '🔄', title: 'アダプティブラーニング※1を 採用したカスタムカリキュラム', description: '' },
-  { icon: '🎓', title: '世界の名門大学出身 コンサルタントが マンツーマンであなたに伴走', description: '' },
-  { icon: '🌍', title: '現地で使える"生きた英語"の 習得をサポート', description: '' },
-  { icon: '📝', title: '卒業後の学習プランも 専任コンサルタントが提案', description: '' },
-  { icon: '🏠', title: '全国どこからでも受講可能 セッション時間も柔軟に対応', description: '' },
-  { icon: '🤖', title: 'AIによる発音、会話判定で 1人でも英会話練習が可能', description: '' },
-];
+import meetingImage from '../assets/images/ビジネスミーティング01.jpeg'; // Import image
+import StylishTitle from '../components/StylishTitle';
 
 // 4. 学習スケジュール - 表示：時間ごとのタイムブロック
 const weekdaySchedule = [
@@ -135,35 +124,42 @@ const Business = () => {
     <div className="business-page">
       {/* 1. ヒーローセクション */}
       <HeroSection 
-        title="ビジネス"
-        subtitle="プロフェッショナル向け英語力向上プログラム"
+        title="ビジネスパーソン向け英語コーチング" 
+        subtitle="グローバルビジネスで成功するための英語力を、Engrowthと共に。" 
         bgColor="primary"
         textColor="light"
         align="center"
         height="medium"
       />
 
-      {/* 2. 導入：基礎英語力の底上げ */}
-      {/*
-      mdファイル：
-      2. 導入：基礎英語力の底上げ
-      形式：テキスト＋画像の2カラム
-      内容：「英語でのコミュニケーションに自信を持つために～」
-      演出：上品なフェードインアニメーション
-      */}
-      <section className="business-introduction fade-in">
-        <div className="container intro-grid">
-          <div className="intro-text">
-            <h2>英語でのコミュニケーションに自信を持つために</h2>
-            <p>
-              グローバル化が進む現代のビジネスシーンにおいて、英語での円滑なコミュニケーション能力は必須スキルです。
-              Engrowthでは、忙しいビジネスパーソンが限られた時間の中で最大限の成果を出せるよう設計された、
-              科学的根拠に基づく英語学習プログラムを提供します。自信を持って世界と渡り合える英語力を、私たちと共に築き上げましょう。
-            </p>
-          </div>
-          <div className="intro-image">
-            {/* 画像はpublic/images/に配置想定 */}
-            <img src="/images/ビジネスミーティング01.jpeg" alt="英語でコミュニケーションをとるビジネスパーソン" />
+      {/* Introduction Section */}
+      <section className="introduction-section section-padding">
+        <div className="container">
+          <StylishTitle 
+            title="ビジネス英語、その先へ"
+            subtitle="単語や文法だけではない、成果に繋がるコミュニケーション能力を。"
+            type="section"
+            align="center" 
+            size="large"
+          />
+          <div className="content-grid">
+            <div className="content-text">
+              <p>
+                グローバル化が進む現代ビジネスにおいて、英語力は不可欠なスキルです。
+                しかし、多くのビジネスパーソンが「使える英語」の壁に直面しています。
+                Engrowthでは、インプット学習に加え、徹底的なアウトプットトレーニングと、
+                ビジネスシーンで実際に求められる論理的思考力、異文化理解力、交渉力などを
+                総合的に鍛え上げます。
+              </p>
+              <p>
+                あなたのキャリア目標達成に向けた、最適な学習プランを個別に設計し、
+                経験豊富なコンサルタントが伴走します。
+              </p>
+            </div>
+            {/* Place the image here */}
+            <div className="content-image">
+              <img src={meetingImage} alt="英語でコミュニケーションをとるビジネスパーソン" />
+            </div>
           </div>
         </div>
       </section>

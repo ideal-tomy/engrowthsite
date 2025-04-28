@@ -1,8 +1,17 @@
+import React from 'react';
 import { Link } from 'react-router-dom';
 import '../styles/Home.css';
 import HeroSection from '../components/HeroSection';
 import StylishTitle from '../components/StylishTitle';
 import CardComponent from '../components/CardComponent';
+// import TabComponent from '../components/TabComponent'; // Unused
+// import Reason1Content from '../components/Reason1Content'; // Unused
+// import Reason2Content from '../components/Reason2Content'; // Unused
+// import Reason3Content from '../components/Reason3Content'; // Unused
+// import IconListComponent from '../components/IconListComponent'; // Unused
+import visionImage from '../assets/images/vision01.png';
+import meetingImage from '../assets/images/ビジネスミーティング01.jpeg';
+import campusImage from '../assets/images/キャンパスライフ01.webp';
 
 // Data for Features section
 const featureItems = [
@@ -45,8 +54,8 @@ const Home = () => {
             </p>
             <Link to="/vision" className="secondary-button">私たちの想い</Link> 
           </div>
-          <div className="vision-image">
-            <img src="/images/vision01.png" alt="Engrowth Vision" />
+          <div className="content-image image-right vision-image-container">
+            <img src={visionImage} alt="Engrowth Vision" />
           </div>
         </div>
       </section>
@@ -86,20 +95,20 @@ const Home = () => {
           />
           <div className="target-grid card-grid">
             <CardComponent 
-              title="ビジネスパーソン向け" 
-              className="target-card"
-              backgroundImageUrl="/images/ビジネスミーティング01.jpeg"
+              title="ビジネスパーソン向け"
+              backgroundImageUrl={meetingImage}
+              className="service-card"
             >
-              <p>グローバルな舞台で活躍するための実践的な英語力を習得。</p>
-              <Link to="/business" className="primary-button">詳細はこちら</Link>
+              <p>グローバルな舞台で活躍するための実践的英語力を習得。キャリアアップを加速させます。</p>
+              <Link to="/business" className="primary-button">詳細を見る</Link>
             </CardComponent>
             <CardComponent 
-              title="学生向け" 
-              className="target-card"
-              backgroundImageUrl="/images/キャンパスライフ01.webp"
+              title="学生向け"
+              backgroundImageUrl={campusImage}
+              className="service-card"
             >
-              <p>留学や就職活動で差をつける、将来に繋がる英語スキルを養成。</p>
-              <Link to="/students" className="primary-button">詳細はこちら</Link>
+              <p>留学や国際的なキャリアを見据え、アカデミックな英語力と異文化理解力を養います。</p>
+              <Link to="/students" className="primary-button">詳細を見る</Link>
             </CardComponent>
           </div>
         </div>

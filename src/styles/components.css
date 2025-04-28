@@ -308,11 +308,16 @@
 .card-inner-content {
   position: relative;
   z-index: 1; /* Above overlay */
-  padding: 2.5rem; /* Apply padding here */
+  /* padding: 2.5rem; */ /* ★ デスクトップ表示のパディングを削除 */
   height: 100%; /* Allow flex alignment */
   display: flex;
   flex-direction: column;
   justify-content: center; /* Center content vertically */
+}
+
+/* ★ 背景画像付きカードの内部コンテンツにはパディングを再設定 */
+.card.has-background-image .card-inner-content {
+  padding: 2.5rem;
 }
 
 /* Adjust text colors for background image cards */
@@ -530,6 +535,7 @@
   grid-template-columns: repeat(2, 1fr);
   gap: 3rem;
   margin: 2.5rem 0;
+  align-items: center; /* テキストと画像を縦方向に中央揃え */
 }
 
 /* コンテンツボックス */
@@ -539,11 +545,24 @@
 }
 
 .content-text {
-  margin-bottom: 1.5rem;
+  /* margin-bottom: 1.5rem; */ /* 縦中央揃えのため、一旦コメントアウト (必要ならpタグのマージンで調整) */
+  padding: 1rem 2rem; /* テキストエリアの左右にパディングを追加 (上下にも少し追加) */
+}
+
+/* .content-text 内の p タグのスタイルを調整 */
+.content-text p {
+  font-size: 1.1rem;  /* テキストサイズを調整 (例: 1.1rem) */
+  line-height: 1.8; /* 行間を調整 */
+  margin-bottom: 1.5em; /* 段落間のマージン */
+}
+.content-text p:last-child {
+  margin-bottom: 0; /* 最後の段落の下マージンを削除 */
 }
 
 .content-image img {
   width: 100%;
+  height: auto; /* 高さを自動にしてアスペクト比を維持 */
+  display: block; /* 画像下の余分なスペースを削除 */
   border-radius: var(--border-radius);
   box-shadow: var(--shadow-card);
   transition: var(--transition);
@@ -792,51 +811,13 @@
   }
 
   /* Card Component Adjustments */
-  .card-inner-content {
-    padding: 1rem 1.5rem; /* Reduced vertical padding */
-  }
-  /* General reduction for icon/title/desc sizes and spacing */
-  .card-icon {
-    font-size: 2rem; /* Reduced general icon size */
-    /* margin-bottom: 1rem; */ /* REMOVE general margin override here */
-  }
-  .card-title {
-    font-size: 1.2rem;
-    margin-bottom: 0.7rem;
-  }
-  .card-description {
-    font-size: 0.9rem;
-    line-height: 1.6;
-    margin-bottom: 1rem;
-  }
-
-  /* SPECIFIC adjustments for icon-top cards on mobile */
-  .card.card-icon-top {
-    display: flex;         /* Ensure flex display */
-    flex-direction: row;   /* Icon left, content right */
-    align-items: center;   /* Vertically center icon and content block */
-    padding: 0.5rem 1.5rem; /* REDUCE vertical padding further */
-    text-align: left;      
-  }
-
-  .card.card-icon-top .card-inner-content {
-     padding: 0; /* Parent card handles padding */
-     width: 100%;
-  }
-
-  .card.card-icon-top .card-icon {
-    margin-bottom: 0;     /* Ensure no bottom margin */
-    margin-right: 1rem;   /* Space between icon and text */
-    flex-shrink: 0;       
-  }
-
-  .card.card-icon-top .card-content {
-    text-align: left;     
-    flex-grow: 1;         
-    padding-left: 0;      
-  }
+  /* Base inner content padding adjusted for mobile, but we removed the desktop one, keeping mobile override if needed */
+  /* .card-inner-content {
+    padding: 1rem 1.5rem; 
+  } */
   
   /* Keep adjustments for background image cards */
+  /* ★ Mobile padding override for background image cards (keep this) */
   .card.has-background-image .card-inner-content {
      padding: 1rem 1.5rem;
   }

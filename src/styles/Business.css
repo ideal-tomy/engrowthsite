@@ -30,7 +30,7 @@
 /* 1. ヒーローセクション */
 .business-hero {
   background-color: #333; /* 暗め背景 */
-  background-image: url('/images/business-meeting.jpg'); /* 背景画像 */
+  background-image: url('../assets/images/ビジネスミーティング01.jpeg'); /* Update path */
   background-size: cover;
   background-position: center;
   padding: 8rem 0;

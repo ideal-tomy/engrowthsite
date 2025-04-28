@@ -2,7 +2,7 @@
 
 .pricing-page {
   /* Remove or override any global padding-top that might be affecting this page */
-  padding-top: 0; 
+  padding-top: 80px; /* Add padding for fixed header */
 }
 
 .pricing-page .section-padding {
@@ -12,7 +12,10 @@
 }
 
 .pricing-section {
-  margin-bottom: 4rem;
+  margin-bottom: 5rem; /* Increase spacing between sections */
+  display: flex; /* Enable flexbox for centering */
+  flex-direction: column; /* Stack children vertically */
+  align-items: center; /* Center children horizontally */
 }
 
 .pricing-section:last-of-type {
@@ -20,73 +23,77 @@
 }
 
 .pricing-table-container {
-  margin-top: 1.5rem;
-  overflow-x: auto; /* Allow horizontal scroll on small screens */
+  margin-top: 0.5rem; /* ★ タイトル下のマージンを減らす */
+  overflow-x: auto;
+  width: 100%;
+  /* max-width: 800px; */ /* 最大幅指定を削除して広げる */
 }
 
 .pricing-table {
   width: 100%;
-  border-collapse: collapse;
+  border-collapse: separate;
+  border-spacing: 0;
   background-color: var(--color-white);
-  box-shadow: var(--shadow-card);
-  border-radius: var(--border-radius);
-  overflow: hidden; /* Ensures border-radius clips content */
-  min-width: 600px; /* Minimum width before scrollbar appears */
-  border: 1px solid #eee; /* Add a light border around the table */
+  /* box-shadow: 0 8px 25px rgba(0, 0, 0, 0.06); */ /* 影を削除 */
+  /* border-radius: 12px; */ /* 角丸を削除 */
+  /* overflow: hidden; */ /* overflow: hidden を削除 */
+  min-width: 600px;
 }
 
 .pricing-table th,
 .pricing-table td {
-  padding: 1.2rem 1rem;
+  padding: 1.5rem 1.8rem; /* ★ 左右のパディングをさらに増やす */
   text-align: center;
-  border-bottom: 1px solid #eee; /* Light border for rows */
-  font-size: 1rem;
-  vertical-align: middle; /* Vertically align content */
+  border-bottom: 1px solid #f0f0f0;
+  font-size: 1.1rem; /* ★ 基本フォントサイズを少し大きく */
+  vertical-align: middle;
 }
 
 .pricing-table thead th {
-  background-color: #f87171; /* Light red similar to image */
+  /* background-color: var(--color-navy); */ /* Remove navy */
+  background-color: var(--color-accent); /* ★ アクセントグレーに変更 */
   color: white;
   font-weight: 600;
-  font-size: 1.1rem;
-  border-bottom: none; /* Remove bottom border for header */
+  font-size: 1.2rem; /* ★ ヘッダーフォントサイズを少し大きく */
+  border-bottom: none;
 }
 .pricing-table thead th:first-child {
-  background-color: #e5e7eb; /* Light gray for the first header cell */
-  border-top-left-radius: var(--border-radius); /* Adjust radius for border */
-  color: var(--color-navy); /* Darker text for gray header */
+  /* background-color: #2a3f54; */ /* Remove dark shade */
+  background-color: #f0f0f0; /* ★ 薄いグレーに変更 */
+  /* color: #e0e0e0; */ /* Remove light text */
+  color: var(--color-navy); /* ★ 濃いテキストカラーに戻す */
 }
-.pricing-table thead th:last-child {
-   border-top-right-radius: var(--border-radius); /* Adjust radius for border */
-}
-
+/* Remove border-radius rules as they were deleted in previous step */
+/* .pricing-table thead th:last-child { } */
 
 .pricing-table tbody tr:last-child td {
-  border-bottom: none; /* Remove border for the last row */
+  border-bottom: none;
 }
 
 .pricing-table tbody td:first-child {
-  background-color: #f9fafb; /* Very light gray for the first column */
-  font-weight: 600;
-  text-align: left; /* Left align period */
+  /* background-color: #f9fafb; */ /* Remove background */
+  background-color: #ffffff; /* Keep white */
+  font-weight: 500; /* Normal weight for period */
+  text-align: left;
   color: var(--color-navy);
-  width: 15%; /* Adjust width as needed */
-  padding-left: 1.5rem;
+  width: 20%; /* Adjust width */
+  padding-left: 1.8rem;
 }
 
 .original-price {
   text-decoration: line-through;
-  color: #999;
-  margin-right: 0.5em;
-  font-weight: normal;
-  display: inline-block; /* Ensure it aligns properly */
+  color: #a0a0a0;
+  margin-right: 0.6em;
+  font-weight: 400;
+  display: inline-block;
+  font-size: 1em; /* ★ 元の価格のサイズ調整 (基本サイズに追従) */
 }
 
 .pricing-table strong {
-  color: var(--color-primary); /* Highlight the final price */
-  font-size: 1.1em; /* Make final price slightly larger */
-  font-weight: bold;
-  display: inline-block; /* Ensure it aligns properly */
+  color: var(--color-primary);
+  font-size: 1.2em; /* ★ 強調価格のサイズを少し大きく */
+  font-weight: 700;
+  display: inline-block;
 }
 
 .footnote-marker {
@@ -100,8 +107,10 @@
   margin-top: 1.5rem;
   font-size: 0.9rem;
   color: #555;
-  text-align: left;
-  padding-left: 0.5rem;
+  text-align: center; /* Center footnote */
+  /* padding-left: 0.5rem; */ /* Remove left padding */
+  width: 100%; /* Ensure takes width for centering */
+  max-width: 800px; /* Match table container max-width */
 }
 
 .footnote .footnote-marker {
@@ -145,6 +154,10 @@
   border-color: var(--color-main);
 }
 
+/* Reduce bottom margin of the title container specifically in pricing sections */
+.pricing-section .stylish-title-container {
+  margin-bottom: 1rem; /* Adjust this value as needed, e.g., 0.5rem or 0 */
+}
 
 /* Responsive adjustments for table */
 @media (max-width: 768px) {

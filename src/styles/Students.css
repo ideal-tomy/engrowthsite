@@ -18,7 +18,7 @@
 /* ヒーローセクション */
 .students-hero {
   background-color: #222;
-  background-image: url('/images/students-hero.jpg');
+  background-image: url('../assets/images/留学生活01.jpeg');
   background-size: cover;
   background-position: center;
   background-blend-mode: overlay;
@@ -73,17 +73,19 @@
   align-items: center;
 }
 
-.intro-text h2 {
+/* Remove style for h2 inside intro-text as it's moved out */
+/* .intro-text h2 {
   font-family: 'Playfair Display', serif;
   font-size: 2.5rem;
   margin-bottom: 1.5rem;
   color: var(--color-main);
-}
+} */
 
 .intro-text p {
   font-size: 1.1rem;
   line-height: 1.8;
   margin-bottom: 1.5rem;
+  word-break: break-word;
 }
 
 .intro-image img {

@@ -44,6 +44,7 @@ const Header: React.FC = () => {
           <Link to="/services" className={location.pathname === '/services' ? 'active' : ''}>Services</Link>
           <Link to="/business" className={location.pathname === '/business' ? 'active' : ''}>Business</Link>
           <Link to="/students" className={location.pathname === '/students' ? 'active' : ''}>Students</Link>
+          <Link to="/pricing" className={location.pathname === '/pricing' ? 'active' : ''}>料金</Link>
           <Link to="/faq" className={location.pathname === '/faq' ? 'active' : ''}>FAQ</Link>
           <Link to="/contact" className="contact-button">お問い合わせ</Link>
         </nav>
