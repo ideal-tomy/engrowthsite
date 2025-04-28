@@ -719,8 +719,8 @@
 
 @media (max-width: 768px) {
   .card-grid, .card-grid-2, .card-grid-5 {
-    grid-template-columns: 1fr;
-    gap: 1.5rem;
+    gap: 1rem; 
+    margin: 1.5rem 0; 
   }
   
   .tab-header {
@@ -755,16 +755,95 @@
     font-size: 1.1rem;
   }
   
+  .stylish-title-container {
+    margin-bottom: 1.5rem; /* Reduce bottom margin */
+  }
+
+  .stylish-title {
+     line-height: 1.4; /* Adjust line height */
+     padding: 0.7rem 1.2rem; /* Adjust padding slightly */
+  }
+
   .title-size-xlarge .stylish-title {
-    font-size: 2rem;
+    /* font-size: 2rem; */ /* Original */
+    font-size: 1.8rem; /* Further reduce */
   }
   
   .title-size-large .stylish-title {
-    font-size: 1.8rem;
+    /* font-size: 1.8rem; */ /* Original */
+    font-size: 1.6rem; /* Further reduce */
   }
   
   .title-size-medium .stylish-title {
-    font-size: 1.6rem;
+    /* font-size: 1.6rem; */ /* Original */
+    font-size: 1.4rem; /* Further reduce */
+  }
+  
+  .title-size-small .stylish-title {
+     /* Add rule for small if needed */
+     font-size: 1.2rem; 
+  }
+  
+  /* Adjust feature title size too if necessary */
+  .title-feature .stylish-title {
+     font-size: 1.1rem; 
+     padding: 0.4rem 0.8rem;
+     margin-bottom: 0.8rem;
+  }
+
+  /* Card Component Adjustments */
+  .card-inner-content {
+    padding: 1rem 1.5rem; /* Reduced vertical padding */
+  }
+  /* General reduction for icon/title/desc sizes and spacing */
+  .card-icon {
+    font-size: 2rem; /* Reduced general icon size */
+    /* margin-bottom: 1rem; */ /* REMOVE general margin override here */
+  }
+  .card-title {
+    font-size: 1.2rem;
+    margin-bottom: 0.7rem;
+  }
+  .card-description {
+    font-size: 0.9rem;
+    line-height: 1.6;
+    margin-bottom: 1rem;
+  }
+
+  /* SPECIFIC adjustments for icon-top cards on mobile */
+  .card.card-icon-top {
+    display: flex;         /* Ensure flex display */
+    flex-direction: row;   /* Icon left, content right */
+    align-items: center;   /* Vertically center icon and content block */
+    padding: 0.5rem 1.5rem; /* REDUCE vertical padding further */
+    text-align: left;      
+  }
+
+  .card.card-icon-top .card-inner-content {
+     padding: 0; /* Parent card handles padding */
+     width: 100%;
+  }
+
+  .card.card-icon-top .card-icon {
+    margin-bottom: 0;     /* Ensure no bottom margin */
+    margin-right: 1rem;   /* Space between icon and text */
+    flex-shrink: 0;       
+  }
+
+  .card.card-icon-top .card-content {
+    text-align: left;     
+    flex-grow: 1;         
+    padding-left: 0;      
+  }
+  
+  /* Keep adjustments for background image cards */
+  .card.has-background-image .card-inner-content {
+     padding: 1rem 1.5rem;
+  }
+  .card.has-background-image .primary-button {
+     padding: 0.6rem 1.2rem;
+     margin-top: 0.8rem;
+     font-size: 0.9rem;
   }
 }
 
