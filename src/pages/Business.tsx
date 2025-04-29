@@ -50,14 +50,14 @@ const simulationData1 = [
   { week: '1-2', topic: '挨拶' },
   { week: '3-4', topic: '自己紹介' },
   { week: '5-6', topic: '道の聞き方/\n聞かれた際の答え方' },
-  { week: '7-8', topic: '旅行編\n（チェックイン、観光）' },
-  { week: '9-10', topic: 'ホテル\n（チェックイン/アウト）' },
-  { week: '11-12', topic: 'カフェ＆レストラン\n（予約、注文）' },
+  { week: '7-8', topic: '旅行編' },
+  { week: '9-10', topic: 'ホテル' },
+  { week: '11-12', topic: 'カフェ＆レストラン' },
 ];
 
 const simulationData2 = [
-  { week: '13-14', topic: 'ショッピング（試着、会計）' },
-  { week: '15-16', topic: '交通機関（電車、バス）' },
+  { week: '13-14', topic: 'ショッピング' },
+  { week: '15-16', topic: '交通機関' },
   { week: '17-18', topic: 'ビジネスメール' },
   { week: '19-20', topic: 'ビジネスプレゼンテーション①' },
   { week: '21-22', topic: 'ビジネスプレゼンテーション②' },

@@ -31,12 +31,13 @@
 
 .pricing-table {
   width: 100%;
-  border-collapse: separate;
-  border-spacing: 0;
-  background-color: var(--color-white);
-  /* box-shadow: 0 8px 25px rgba(0, 0, 0, 0.06); */ /* 影を削除 */
-  /* border-radius: 12px; */ /* 角丸を削除 */
-  /* overflow: hidden; */ /* overflow: hidden を削除 */
+  /* max-width: 800px; */ /* Remove or adjust max-width if needed */
+  margin: 0 auto;
+  border-collapse: collapse;
+  /* box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08); */ /* Removed box-shadow */
+  border: 1px solid #e0e0e0; /* Add a subtle border instead */
+  border-radius: var(--border-radius);
+  overflow: hidden; /* Ensures border-radius applies to table */
   min-width: 960px; /* Increased min-width significantly */
   table-layout: fixed; /* Re-added for equal column widths */
 }

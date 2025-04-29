@@ -12,6 +12,7 @@ import CardComponent from '../components/CardComponent';
 import visionImage from '../assets/images/vision01.png';
 import meetingImage from '../assets/images/ビジネスミーティング01.jpeg';
 import campusImage from '../assets/images/キャンパスライフ01.webp';
+import supportImage from '../assets/images/top06.png'; // 画像パスを確認・修正してください
 
 // Data for Features section
 const featureItems = [
@@ -119,15 +120,15 @@ const Home = () => {
           <div className="support-title">
             <StylishTitle
               title="安心して学習を始めるために"
-              align="left"
               size="large"
               className="title-custom-underline"
             />
-          </div>
-          <div className="support-links-detailed">
             <p className="support-intro-text">
               学習を始める前の疑問や不安は、こちらで解消できます。
             </p>
+            <img src={supportImage} alt="安心して学習を始めるために" className="support-image" />
+          </div>
+          <div className="support-links-detailed">
             <div className="support-link-items">
               <div className="support-link-item">
                 <span className="material-symbols-outlined support-icon">quiz</span>

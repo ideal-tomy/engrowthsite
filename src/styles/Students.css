@@ -394,14 +394,17 @@
 .pricing-table-container {
   /* background-color: var(--color-white); */ /* Remove white background */
   border-radius: 8px;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  /* box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1); */ /* Removed box-shadow */
   overflow: hidden;
   margin-bottom: 1rem;
 }
 
 .pricing-table {
   width: 100%;
+  max-width: 650px; /* Adjust max-width as needed */
+  margin: 0 auto;
   border-collapse: collapse;
+  /* box-shadow: 0 2px 5px rgba(0,0,0,0.05); */ /* Removed box-shadow */
 }
 
 .pricing-table th,

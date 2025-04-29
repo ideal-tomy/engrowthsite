@@ -21,7 +21,15 @@
 /* Story Container */
 .story-container {
   max-width: 750px; /* Slightly narrower for better readability */
-  margin: 3rem auto 0;
+  margin: 3rem auto 0; /* Keep top margin, center horizontally */
+}
+
+/* Container for the story title to match alignment */
+.story-title-container {
+  max-width: 750px; /* Match story container width */
+  margin-left: auto;  /* Center horizontally */
+  margin-right: auto; /* Center horizontally */
+  /* No top margin needed here, bottom margin is handled by StylishTitle */
 }
 
 .story-item {
@@ -405,4 +413,19 @@
   background-color: rgba(255, 255, 255, 0.2);
   transform: translateY(-8px);
   box-shadow: 0 12px 30px rgba(0, 0, 0, 0.1); /* Enhance shadow on hover */
+}
+
+/* Style the "solution" section title specifically */
+.vision-page section.solution .stylish-title-container .stylish-title {
+  background-color: transparent; /* 背景を透明に */
+  color: white;                  /* テキストを白に */
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5); /* 読みやすさのため影を少し追加 */
+  box-shadow: none;              /* ボックスシャドウを削除 */
+  padding: 0;                    /* パディングを削除 */
+  border-radius: 0;              /* 角丸を削除 */
+  font-size: 2.8rem;             /* フォントサイズを大きく (例: 2.8rem、調整可) */
+  margin-bottom: 2rem;           /* 下のマージンを調整 */
+  line-height: 1.3;              /* 行の高さを調整 */
+  width: 100%;                   /* 幅を100%に戻す */
+  text-align: center;            /* 中央揃えを維持 */
 } 

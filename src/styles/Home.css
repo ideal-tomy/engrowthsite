@@ -43,6 +43,7 @@
 
 .vision-text {
   /* Styles for text alignment, etc. */
+  text-align: center; /* Center align text and button */
 }
 
 .vision-text p {
@@ -111,16 +112,19 @@
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Responsive grid */
   gap: 3rem;
-  align-items: start; /* Align items to the top */
+  align-items: center; /* Changed from start to center */
 }
 
-.support-title .stylish-title-container {
+.support-title {
   /* Adjust title margin if needed */
   margin-bottom: 0;
+  text-align: center; /* Center align title and intro text */
 }
 
 .support-links-detailed {
   /* Styles for the right column container */
+  /* display: flex; */ /* Removed */
+  /* align-items: center; */ /* Removed */
 }
 
 .support-intro-text {
@@ -183,6 +187,19 @@
   line-height: 1.6;
 }
 
+/* Styles for the image added in the support section */
+.support-image {
+  display: block; /* Ensure it takes block layout */
+  width: 100%; /* Make image responsive within the column */
+  /* max-width: 350px; */ /* Removed max-width */
+  height: auto; /* Maintain aspect ratio */
+  margin-top: 2rem; /* Add space below the title */
+  /* margin-left: auto; */ /* Removed centering */
+  /* margin-right: auto; */ /* Removed centering */
+  border-radius: var(--border-radius); /* Optional: Add rounded corners */
+  /* box-shadow: var(--shadow-card); */ /* Optional: Add shadow */
+}
+
 /* --- Remove or Comment Out Old Styles --- */
 /* .home { ... } */
 /* .hero { ... } */ /* Handled by HeroSection component */
@@ -232,6 +249,17 @@
   }
   .support-title {
      margin-bottom: 2rem; /* Add space below title when stacked */
+     text-align: center; /* Center title when stacked */
   }
+  .support-title .stylish-title-container {
+     /* Adjust title alignment if needed when stacked */
+     /* Example: Make title align center */
+     /* display: flex;
+     justify-content: center; */
+  }
+   .support-image {
+     margin-top: 1.5rem;
+     max-width: 80%; /* Adjust max width for stacked view */
+   }
   /* Target and Vision already stacked */
 } 

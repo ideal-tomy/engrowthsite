@@ -70,7 +70,7 @@ const Contact: React.FC = () => {
             </div>
 
             <div className="form-group">
-              <label htmlFor="category">お問い合わせ種別 *</label>
+              <label htmlFor="category">お問い合わせ内容 *</label>
               <select
                 id="category"
                 name="category"
@@ -78,10 +78,11 @@ const Contact: React.FC = () => {
                 onChange={handleChange}
                 required
               >
-                <option value="">選択してください</option>
-                <option value="business">法人向けプログラムについて</option>
-                <option value="student">学生向けプログラムについて</option>
-                <option value="price">料金について</option>
+                <option value="">以下から選択してください</option>
+                <option value="business">ビジネスパーソン</option>
+                <option value="student">学生の方</option>
+                <option value="executive">経営者の方</option>
+                <option value="parent">親御様</option>
                 <option value="other">その他</option>
               </select>
             </div>

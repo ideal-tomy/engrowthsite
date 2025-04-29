@@ -331,7 +331,6 @@
 
 .week-cell {
   text-align: center;
-  background-color: #d3d3d3 !important;
   font-weight: bold;
 }
 
@@ -471,7 +470,6 @@
   max-width: 650px;
   margin: 0 auto;
   border-collapse: collapse;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
 }
 .pricing-table th,
 .pricing-table td {

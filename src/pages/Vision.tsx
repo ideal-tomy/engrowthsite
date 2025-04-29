@@ -49,12 +49,14 @@ const Vision = () => {
 
       <section className="message section-padding">
         <div className="container">
-          <StylishTitle 
-            title="創業の背景と理念"
-            align="left"
-            size="large"
-            className="title-custom-underline"
-          />
+          <div className="story-title-container">
+            <StylishTitle 
+              title="創業の背景と理念"
+              align="left"
+              size="large"
+              className="title-custom-underline"
+            />
+          </div>
           <div className="story-container"> 
             {storyItems.map((item, index) => (
               <div key={index} className="story-item">

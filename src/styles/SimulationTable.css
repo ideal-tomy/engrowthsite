@@ -19,22 +19,32 @@
 .simulation-table th,
 .simulation-table td {
   padding: 1rem;
-  text-align: left;
   border: 1px solid #e0e0e0;
+  text-align: center;
+  font-weight: bold;
 }
 
 .simulation-table th {
-  background-color: #ff7f7f; /* ヘッダー: #ff7f7f */
-  color: #fff;
-  font-weight: 700;
+  background-color: var(--color-light-gray);
+  color: var(--color-navy);
+  font-weight: bold;
 }
 
-.simulation-table tbody tr:nth-child(odd) td {
-  background-color: #ffe6e6; /* 奇数行: #ffe6e6 */
+/* Apply default background for all cells first */
+.simulation-table tbody td {
+  background-color: #fdfdfd; /* Default to even row color */
 }
 
-.simulation-table tbody tr:nth-child(even) td {
-  background-color: #fdfdfd; /* 偶数行: #fdfdfd */
+/* Override odd rows specifically */
+.simulation-table tbody tr:nth-child(odd) td, /* Target all td in odd rows */
+.simulation-table tbody tr:nth-child(odd) td.week-cell { /* Explicitly target .week-cell in odd rows */
+  background-color: #ffe6e6;
+}
+
+/* Ensure even rows have the default color (redundant but safe) */
+.simulation-table tbody tr:nth-child(even) td, /* Target all td in even rows */
+.simulation-table tbody tr:nth-child(even) td.week-cell { /* Explicitly target .week-cell in even rows */
+  background-color: #fdfdfd;
 }
 
 /* テーブルセルスタイル */
@@ -51,7 +61,6 @@
 
 .week-cell {
   text-align: center;
-  background-color: #d3d3d3 !important;
   font-weight: bold;
 }
 
@@ -73,4 +82,15 @@
     font-size: 1.1rem;
     padding: 0.6rem;
   }
+}
+
+/* Specific column widths */
+.simulation-table .week-column,
+.simulation-table .week-cell {
+  width: 15%;
+  min-width: 80px;
+}
+
+.simulation-table .theme-column {
+  width: 85%;
 } 

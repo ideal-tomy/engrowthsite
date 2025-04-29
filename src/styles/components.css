@@ -186,16 +186,14 @@
 
 /* タイトルのタイプバリエーション (背景色と文字色を設定) */
 .title-section .stylish-title {
-  /* background-color: var(--color-primary); */ /* Original red */
-  background-color: var(--color-accent); /* Change to accent gray */
-  /* color: white; */ /* Original white */
-  color: var(--color-navy); /* Change text color to navy */
-  /* Add white text outline using text-shadow */
-  text-shadow:
-    1px 1px 0 #fff,
-    -1px -1px 0 #fff,
-    1px -1px 0 #fff,
-    -1px 1px 0 #fff; 
+  background-color: transparent !important; /* Remove background forcefully */
+  color: var(--color-navy) !important; /* Set text color forcefully (adjust if needed) */
+  text-shadow: none !important;            /* Remove text shadow forcefully */
+  box-shadow: none !important;             /* Remove box shadow (inherited) forcefully */
+  padding: 0 !important;                   /* Remove padding (inherited) forcefully */
+  border-radius: 0 !important;           /* Remove border-radius (inherited) forcefully */
+  border: none !important;                 /* Remove any border forcefully */
+  /* Keep other inherited styles like font-family, font-weight, etc. */
 }
 
 .title-major .stylish-title {
@@ -683,8 +681,8 @@
 .secondary-button {
   display: inline-block;
   background-color: transparent;
-  color: white;
-  border: 2px solid white;
+  color: var(--color-navy);
+  border: 2px solid var(--color-navy);
   padding: 1rem 2rem;
   border-radius: 30px;
   font-weight: bold;
