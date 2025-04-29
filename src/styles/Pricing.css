@@ -37,48 +37,77 @@
   /* box-shadow: 0 8px 25px rgba(0, 0, 0, 0.06); */ /* 影を削除 */
   /* border-radius: 12px; */ /* 角丸を削除 */
   /* overflow: hidden; */ /* overflow: hidden を削除 */
-  min-width: 600px;
+  min-width: 960px; /* Increased min-width significantly */
+  table-layout: fixed; /* Re-added for equal column widths */
 }
 
-.pricing-table th,
-.pricing-table td {
-  padding: 1.5rem 1.8rem; /* ★ 左右のパディングをさらに増やす */
+/* Common styles for horizontal table cells */
+.horizontal-pricing th,
+.horizontal-pricing td {
+  padding: 1.5rem 1rem; /* Adjusted padding slightly */
   text-align: center;
   border-bottom: 1px solid #f0f0f0;
-  font-size: 1.1rem; /* ★ 基本フォントサイズを少し大きく */
+  font-size: 1.1rem;
   vertical-align: middle;
+  /* white-space: nowrap; */ /* Ensure this is removed or commented out */
 }
 
-.pricing-table thead th {
-  /* background-color: var(--color-navy); */ /* Remove navy */
-  background-color: var(--color-accent); /* ★ アクセントグレーに変更 */
-  color: white;
+/* Header specific styles */
+.horizontal-pricing thead th {
+  /* background-color: var(--color-accent); */
+  background-color: #f0f0f0; /* Changed to light gray */
+  /* color: white; */
+  color: var(--color-navy); /* Changed to navy text */
   font-weight: 600;
-  font-size: 1.2rem; /* ★ ヘッダーフォントサイズを少し大きく */
+  font-size: 1.1rem; /* Adjusted header font size */
   border-bottom: none;
 }
-.pricing-table thead th:first-child {
-  /* background-color: #2a3f54; */ /* Remove dark shade */
-  background-color: #f0f0f0; /* ★ 薄いグレーに変更 */
-  /* color: #e0e0e0; */ /* Remove light text */
-  color: var(--color-navy); /* ★ 濃いテキストカラーに戻す */
+.horizontal-pricing thead th:first-child {
+  /* background-color: #f0f0f0; */ /* Background is now common */
+  color: var(--color-navy);
 }
-/* Remove border-radius rules as they were deleted in previous step */
-/* .pricing-table thead th:last-child { } */
 
-.pricing-table tbody tr:last-child td {
+/* Body row label cell styles */
+.horizontal-pricing tbody .row-label-cell {
+  /* background-color: #f9fafb; */ /* Light background for row labels */
+  background-color: #ffe6e6 !important; /* Confirmed light pink, added !important */
+  font-weight: 600; /* Make labels bold */
+  /* text-align: left; */
+  text-align: center; /* Center text horizontally */
+  vertical-align: middle; /* Ensure vertical centering */
+  color: var(--color-navy);
+  min-width: 140px; /* Keep min-width for labels */
+  white-space: normal; /* Ensure labels can wrap if needed */
+}
+
+/* Ensure price value cells allow wrapping */
+.horizontal-pricing tbody .price-value-cell {
+   white-space: normal; /* Explicitly allow wrapping */
+   background-color: #ffffff; /* Set background to white */
+}
+
+.horizontal-pricing tbody tr:last-child td {
   border-bottom: none;
 }
 
+/* Styling for the first data cell (1 month price) */
+.horizontal-pricing tbody tr td:nth-child(2) { /* Target first data cell */
+  font-size: 1.2em; /* Match strong tag size */
+  font-weight: 700; /* Match strong tag weight */
+  color: var(--color-primary); /* Match strong tag color */
+}
+
+/* Remove or comment out old first-child rule for vertical table */
+/*
 .pricing-table tbody td:first-child {
-  /* background-color: #f9fafb; */ /* Remove background */
-  background-color: #ffffff; /* Keep white */
-  font-weight: 500; /* Normal weight for period */
+  background-color: #ffffff;
+  font-weight: 500;
   text-align: left;
   color: var(--color-navy);
-  width: 20%; /* Adjust width */
+  width: 20%; 
   padding-left: 1.8rem;
 }
+*/
 
 .original-price {
   text-decoration: line-through;
@@ -108,9 +137,8 @@
   font-size: 0.9rem;
   color: #555;
   text-align: center; /* Center footnote */
-  /* padding-left: 0.5rem; */ /* Remove left padding */
   width: 100%; /* Ensure takes width for centering */
-  max-width: 800px; /* Match table container max-width */
+  /* max-width: 800px; */ /* Removed max-width */
 }
 
 .footnote .footnote-marker {
@@ -180,4 +208,46 @@
      width: 25%; /* Increase width slightly on smaller screens */
      padding-left: 1rem;
    }
+} 
+
+.service-summary-list {
+  margin-top: 2.5rem; /* Adjust spacing above the list */
+  margin-bottom: 1.5rem; /* Adjust spacing below the list */
+  padding: 1.5rem; /* Add padding inside the list container */
+  background-color: var(--color-gray); /* Optional: Light background */
+  border-radius: var(--border-radius);
+  max-width: 800px; /* Match table width if desired */
+  width: 100%; /* Take full width of container */
+  box-sizing: border-box;
+  /* Center the list container itself if the parent (.pricing-section) is a flex container */
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.summary-list-title {
+  margin-top: 0;
+  margin-bottom: 1.5rem;
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: var(--color-navy);
+  text-align: left;
+  padding-left: 0.5rem; /* Align with list items if needed */
+}
+
+/* Adjust IconListComponent style within this context */
+.service-summary-list .check-list .icon-list-item {
+  border-left: 3px solid var(--color-primary); /* Example: Use primary color border */
+  padding: 0.8rem 0 0.8rem 1rem;
+  margin-bottom: 0.8rem;
+  background-color: #fff; /* White background for items */
+  border-radius: 4px;
+}
+
+.service-summary-list .check-list .icon-container {
+  color: var(--color-primary); /* Example: Use primary color icon */
+  margin-right: 0.8rem;
+}
+
+.service-summary-list .check-list .icon-list-text {
+  font-weight: 500;
 } 

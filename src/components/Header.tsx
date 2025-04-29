@@ -45,12 +45,12 @@ const Header: React.FC = () => {
           <span className={isMenuOpen ? 'open' : ''}></span>
         </div>
         <nav className={`nav ${isMenuOpen ? 'menu-open' : ''}`}>
-          <Link to="/vision" className={location.pathname === '/vision' ? 'active' : ''} onClick={closeMenu}>Vision</Link>
-          <Link to="/services" className={location.pathname === '/services' ? 'active' : ''} onClick={closeMenu}>Services</Link>
-          <Link to="/business" className={location.pathname === '/business' ? 'active' : ''} onClick={closeMenu}>Business</Link>
-          <Link to="/students" className={location.pathname === '/students' ? 'active' : ''} onClick={closeMenu}>Students</Link>
+          <Link to="/vision" className={location.pathname === '/vision' ? 'active' : ''} onClick={closeMenu}>ビジョン</Link>
+          <Link to="/services" className={location.pathname === '/services' ? 'active' : ''} onClick={closeMenu}>サービス</Link>
+          <Link to="/business" className={location.pathname === '/business' ? 'active' : ''} onClick={closeMenu}>ビジネス</Link>
+          <Link to="/students" className={location.pathname === '/students' ? 'active' : ''} onClick={closeMenu}>学生</Link>
           <Link to="/pricing" className={location.pathname === '/pricing' ? 'active' : ''} onClick={closeMenu}>料金</Link>
-          <Link to="/faq" className={location.pathname === '/faq' ? 'active' : ''} onClick={closeMenu}>FAQ</Link>
+          <Link to="/faq" className={location.pathname === '/faq' ? 'active' : ''} onClick={closeMenu}>よくある質問</Link>
           <Link to="/contact" className="contact-button" onClick={closeMenu}>お問い合わせ</Link>
         </nav>
       </div>

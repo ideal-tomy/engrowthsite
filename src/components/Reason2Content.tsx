@@ -79,9 +79,9 @@ const Reason2Content: React.FC = () => {
       <section>
         <StylishTitle 
           title="「努力しても伸びない」を科学的に撃破する"
-          type="section"
-          align="center"
+          align="left"
           size="medium"
+          className="title-custom-underline"
         />
         <div className="content-box">
           <p>「頑張って勉強しているのに、なかなか英語が話せるようにならない」——<br />
@@ -98,9 +98,9 @@ const Reason2Content: React.FC = () => {
       <section>
         <StylishTitle 
           title="なぜ多くの英会話教室では話せるようにならないのか"
-          type="section"
-          align="center"
+          align="left"
           size="medium"
+          className="title-custom-underline"
         />
         <div className="card-grid">
           {failureReasons.map((item, index) => {
@@ -130,9 +130,9 @@ const Reason2Content: React.FC = () => {
       <section>
         <StylishTitle 
           title="本質を理解すれば誰でも「話せる」ようになる"
-          type="section"
-          align="center"
+          align="left"
           size="medium"
+          className="title-custom-underline"
         />
         <div className="content-box">
           <p>英語習得には必ず必要な"5つのステップ"があります。<br />
@@ -145,9 +145,9 @@ const Reason2Content: React.FC = () => {
       <section>
         <StylishTitle 
           title="「5つのステップ」"
-          type="section"
-          align="center"
+          align="left"
           size="medium"
+          className="title-custom-underline"
         />
         <div className="five-steps-container">
           {fiveSteps.map((step, index) => {
@@ -175,9 +175,9 @@ const Reason2Content: React.FC = () => {
       <section>
         <StylishTitle 
           title="言語学＋脳科学に基づくアプローチ"
-          type="section"
-          align="center"
+          align="left"
           size="medium"
+          className="title-custom-underline"
         />
         
         <div className="content-box">
@@ -205,9 +205,9 @@ const Reason2Content: React.FC = () => {
       <section className="highlight-section">
         <StylishTitle 
           title="Engrowthでは"
-          type="section"
-          align="center"
+          align="left"
           size="medium"
+          className="title-custom-underline"
         />
         <div className="content-box">
           <p>Engrowthでは、これらの研究結果に基づいたプログラムを完全にカリキュラム化。<br />

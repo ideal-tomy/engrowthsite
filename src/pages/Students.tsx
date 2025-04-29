@@ -4,6 +4,7 @@ import SimulationSection from '../components/SimulationSection';
 import HeroSection from '../components/HeroSection';
 import CardComponent from '../components/CardComponent';
 import StylishTitle from '../components/StylishTitle';
+import IconListComponent from '../components/IconListComponent';
 import studentImage from '../assets/images/留学生活01.jpeg';
 
 // シミュレーションデータ
@@ -48,13 +49,30 @@ const simulationTables = [
   }
 ];
 
-// 料金プラン
-const pricingData = [
-  { period: '1ヶ月', price: '¥20,000', note: '<sup>※1</sup>', monthlyPrice: '' },
-  { period: '3ヶ月', price: '¥60,000 → ¥54,000', monthlyPrice: '¥20,000 → ¥18,000' },
-  { period: '6ヶ月', price: '¥120,000 → ¥102,000', monthlyPrice: '¥20,000 → ¥17,000' },
-  { period: '12ヶ月', price: '¥240,000 → ¥192,000', monthlyPrice: '¥20,000 → ¥16,000' },
-];
+// 料金プランデータ (学生向け - Pricing.tsxからコピー)
+const studentPricingData = {
+  headers: ['1ヶ月', '3ヶ月', '6ヶ月', '12ヶ月'],
+  rows: [
+    {
+      label: '受講料',
+      values: [
+        '¥1,780<sup class="footnote-marker">※1</sup>',
+        '<s class="original-price">¥5,340</s> → <strong>¥4,980</strong>',
+        '<s class="original-price">¥10,680</s> → <strong>¥9,480</strong>',
+        '<s class="original-price">¥21,360</s> → <strong>¥17,980</strong>'
+      ]
+    },
+    {
+      label: '1ヶ月あたり',
+      values: [
+        '-',
+        '<s class="original-price">¥1,780</s> → <strong>¥1,660</strong>',
+        '<s class="original-price">¥1,780</s> → <strong>¥1,580</strong>',
+        '<s class="original-price">¥1,780</s> → <strong>¥1,498</strong>'
+      ]
+    }
+  ]
+};
 
 const Students = () => {
   return (
@@ -189,15 +207,20 @@ const Students = () => {
       <section id="step2" className="step-detail alt-bg">
         <div className="container">
           <h2 className="section-title">ステップ2：エッセイ添削の重要性</h2>
-          <div className="step-content">
-            <div className="step-description">
-              <p>
-                アメリカの大学で成功するためには、学術的なライティングスキルが必要不可欠です。
-                多くの日本人留学生が直面する最大の課題の一つが、英語でのアカデミックライティングの習得です。
-              </p>
-              <StylishTitle 
+
+          {/* Introductory text (moved here, full width) */}
+          <p className="step-intro-text">
+            アメリカの大学で成功するためには、学術的なライティングスキルが必要不可欠です。
+            多くの日本人留学生が直面する最大の課題の一つが、英語でのアカデミックライティングの習得です。
+          </p>
+
+          {/* First content-grid (Difficulties & Support/Importance Text) */}
+          <div className="step-content content-grid">
+            {/* Column 1: Why Essay is Difficult */}
+            <div className="content-text">
+              <StylishTitle
                 title="なぜ英語でのエッセイは難しいのか"
-                size="small"
+                size="medium"
                 align="left"
                 className="title-custom-underline"
               />
@@ -205,35 +228,41 @@ const Students = () => {
                 英語で記述する論文では、エッセイやレポートの評価において「内容」だけでなく「構造」が重視されます。
                 優れた考察や分析を行っても、学術界で求められる独特の形式やルールに従っていなければ、高評価を得ることは困難です。
               </p>
-              <ul className="essay-features">
-                <li>明確な論理構造が必須（Introduction、Thesis、Body Paragraphs、Conclusion）</li>
-                <li>アカデミックな語彙や表現の使用が求められる</li>
-                <li>適切な引用方法（APA、MLAなど）の厳密な遵守</li>
-                <li>批判的思考に基づく議論の展開</li>
-                <li>客観的な証拠や具体例による主張の裏付け</li>
-              </ul>
+              <IconListComponent
+                items={[
+                  { icon: 'check_circle', text: '明確な論理構造が必須（Introduction、Thesis、Body Paragraphs、Conclusion）' },
+                  { icon: 'check_circle', text: 'アカデミックな語彙や表現の使用が求められる' },
+                  { icon: 'check_circle', text: '適切な引用方法（APA、MLAなど）の厳密な遵守' },
+                  { icon: 'check_circle', text: '批判的思考に基づく議論の展開' },
+                  { icon: 'check_circle', text: '客観的な証拠や具体例による主張の裏付け' }
+                ]}
+                className="check-list mb-medium"
+              />
               <p>
                 起承転結のような定型的な型が、日本語と英語では異なっており、その違いを理解していないと
                 優れた考察に基づく論文やエッセイ、レポートも正当に評価されないといったケースが、留学生の共通した課題です。
               </p>
             </div>
             <div className="support-box">
-              <StylishTitle 
+              <StylishTitle
                 title="私たちのサポート体制"
-                size="small"
+                size="medium"
                 align="left"
                 className="title-custom-underline"
               />
               <p>当社では、海外の名門大学出身の専任コンサルタントが、きめ細かな添削サービスを提供しています。</p>
-              <ul>
-                <li>英語のエッセイで求められる文章構成の基礎から応用まで</li>
-                <li>各大学・学部特有の要求事項への対応</li>
-                <li>添削だけでなく、改善点の詳細な解説と実践的なアドバイス</li>
-                <li>オンラインでの個別相談と継続的なサポート</li>
-              </ul>
-              <StylishTitle 
+              <IconListComponent
+                items={[
+                  { icon: 'check_circle', text: '英語のエッセイで求められる文章構成の基礎から応用まで' },
+                  { icon: 'check_circle', text: '各大学・学部特有の要求事項への対応' },
+                  { icon: 'check_circle', text: '添削だけでなく、改善点の詳細な解説と実践的なアドバイス' },
+                  { icon: 'check_circle', text: 'オンラインでの個別相談と継続的なサポート' }
+                ]}
+                className="check-list mb-medium"
+              />
+              <StylishTitle
                 title="なぜ事前準備が重要か"
-                size="small"
+                size="medium"
                 align="left"
                 className="title-custom-underline mt-large"
               />
@@ -246,25 +275,30 @@ const Students = () => {
                 Honor Council（学校内の裁判のようなもの）にかけられるなど、海外の大学は非常にプロフェッショナルでシビアです。
                 最悪のケースでは、退学処分の場合もあります。
               </p>
-              <div className="benefits">
-                <h4>事前に正しい知識とスキルを身につけることで</h4>
-                <div className="benefit-item">入学後のスムーズな学習開始</div>
-                <div className="benefit-item">高い学業成績の維持</div>
-                <div className="benefit-item">充実した留学生活の実現</div>
-              </div>
-              <div className="important-note">
-                <p>
-                  何より重要なのは、多くの留学生が初期段階で抱える『留学への不安』
-                  この不安は、留学先での積極的な活動に大きな障壁となります。
-                </p>
-                <p>
-                  そして、その障壁は学習への積極的な取り組みや、コミュニケーションへの消極的な姿勢に影響を与え、
-                  大切な留学期間での成長を著しく阻害してしまいます。
-                </p>
-                <p>
-                  事前の準備は、留学期間すべての学習効率に大きな影響を与えるため、事前の準備が重要なのです。
-                </p>
-              </div>
+            </div>
+          </div>
+
+          {/* New content-grid for benefits and important-note */}
+          <div className="content-grid step2-subgrid">
+            <div className="benefits">
+              <h4><span className="material-symbols-outlined">task_alt</span> 事前に正しい知識とスキルを身につけることで</h4>
+              <div className="benefit-item">入学後のスムーズな学習開始</div>
+              <div className="benefit-item">高い学業成績の維持</div>
+              <div className="benefit-item">充実した留学生活の実現</div>
+            </div>
+            <div className="important-note">
+            <h4><span className="material-symbols-outlined">report_problem</span> 留学への不安と事前準備の重要性</h4>
+              <p>
+                何より重要なのは、多くの留学生が初期段階で抱える『留学への不安』
+                この不安は、留学先での積極的な活動に大きな障壁となります。
+              </p>
+              <p>
+                そして、その障壁は学習への積極的な取り組みや、コミュニケーションへの消極的な姿勢に影響を与え、
+                大切な留学期間での成長を著しく阻害してしまいます。
+              </p>
+              <p>
+                事前の準備は、留学期間すべての学習効率に大きな影響を与えるため、事前の準備が重要なのです。
+              </p>
             </div>
           </div>
         </div>
@@ -289,26 +323,28 @@ const Students = () => {
         <div className="container">
           <h2 className="section-title">料金</h2>
           <div className="pricing-table-container">
-            <table className="pricing-table">
+            <table className="pricing-table horizontal-pricing">
               <thead>
                 <tr>
-                  <th></th>
-                  <th className="price-header">受講料</th>
-                  <th className="monthly-header">1ヶ月あたり</th>
+                  <th></th> {/* Empty corner cell */}
+                  {studentPricingData.headers.map((header, index) => (
+                    <th key={index}>{header}</th>
+                  ))}
                 </tr>
               </thead>
               <tbody>
-                {pricingData.map((item, index) => (
-                  <tr key={index}>
-                    <td className="period-cell">{item.period}</td>
-                    <td className="price-cell" dangerouslySetInnerHTML={{ __html: item.price + (item.note || '') }}></td>
-                    <td className="monthly-cell">{item.monthlyPrice}</td>
+                {studentPricingData.rows.map((row, rowIndex) => (
+                  <tr key={rowIndex}>
+                    <td className="row-label-cell">{row.label}</td>
+                    {row.values.map((value, valueIndex) => (
+                      <td key={valueIndex} className="price-value-cell" dangerouslySetInnerHTML={{ __html: value }}></td>
+                    ))}
                   </tr>
                 ))}
               </tbody>
             </table>
           </div>
-          <p className="pricing-note" dangerouslySetInnerHTML={{ __html: '<sup>※1</sup> 1ヶ月プランは3ヶ月プラン以上を修了者のみが契約可' }}></p>
+          <p className="pricing-note" dangerouslySetInnerHTML={{ __html: '<sup>※1</sup> エッセイ添削のみ。3ヶ月プラン修了者は¥1,490、6ヶ月プラン修了者は¥780で利用可' }}></p>
         </div>
       </section>
     </div>

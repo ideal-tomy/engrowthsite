@@ -115,15 +115,42 @@ const Home = () => {
       </section>
 
       <section className="home-support section-padding alt-bg">
-        <div className="container support-content">
-          <StylishTitle 
-            title="安心して学習を始めるために"
-            align="left"
-            size="large"
-            className="title-custom-underline"
-          />
-          <div className="support-links">
-            <p>学習方法や料金について</p><p><Link to="/faq">よくあるご質問はこちら</Link></p>
+        <div className="container support-grid">
+          <div className="support-title">
+            <StylishTitle
+              title="安心して学習を始めるために"
+              align="left"
+              size="large"
+              className="title-custom-underline"
+            />
+          </div>
+          <div className="support-links-detailed">
+            <p className="support-intro-text">
+              学習を始める前の疑問や不安は、こちらで解消できます。
+            </p>
+            <div className="support-link-items">
+              <div className="support-link-item">
+                <span className="material-symbols-outlined support-icon">quiz</span>
+                <div className="support-link-text">
+                  <h4><Link to="/faq">よくあるご質問</Link></h4>
+                  <p>サービスや学習方法について多く寄せられる質問と回答をまとめました。</p>
+                </div>
+              </div>
+              <div className="support-link-item">
+                <span className="material-symbols-outlined support-icon">payments</span>
+                <div className="support-link-text">
+                  <h4><Link to="/pricing">料金プラン</Link></h4>
+                  <p>各プランの詳細な料金体系はこちらでご確認いただけます。</p>
+                </div>
+              </div>
+              <div className="support-link-item">
+                <span className="material-symbols-outlined support-icon">contact_support</span>
+                 <div className="support-link-text">
+                  <h4><Link to="/contact">直接相談する</Link></h4>
+                  <p>個別のご質問やご相談はこちらからどうぞ。</p>
+                 </div>
+              </div>
+            </div>
           </div>
         </div>
       </section>

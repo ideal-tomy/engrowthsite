@@ -602,4 +602,102 @@ ul.essay-features li::before,
 /* Target StylishTitle containers specifically within the step-description */
 .step-detail .step-description .stylish-title-container {
   margin-bottom: 0; /* Remove bottom margin for this specific title */
+}
+
+/* Add styles for Step 2 improvements */
+.step-detail#step2 .content-grid {
+  gap: 3rem; /* Add more gap between columns */
+}
+
+/* Style for the lists within Step 2 */
+.step-detail#step2 .check-list .icon-list-item {
+  border-left-color: var(--color-accent); /* Use accent color for border */
+  padding-left: 1rem; /* Adjust padding */
+  margin-bottom: 1rem; /* Adjust margin */
+}
+
+.step-detail#step2 .check-list .icon-container {
+  color: var(--color-accent); /* Use accent color for icon */
+  font-size: 1.2rem; /* Adjust icon size */
+  margin-right: 0.8rem; /* Adjust spacing */
+}
+
+.step-detail#step2 .check-list .icon-list-text {
+  font-weight: 500; /* Make text slightly less bold */
+}
+
+.mb-medium {
+  margin-bottom: 1.5rem !important; /* Utility class for margin */
+}
+
+.mt-large {
+  margin-top: 2.5rem !important; /* Utility class for margin */
+}
+
+/* Styling for benefits and important-note boxes */
+.benefits,
+.important-note {
+  margin-top: 2rem;
+  padding: 1.5rem;
+  border-radius: var(--border-radius);
+}
+
+.benefits {
+  background-color: rgba(44, 138, 67, 0.1); /* Light green background */
+  border-left: 4px solid #2c8a43; /* Green border */
+}
+
+.important-note {
+  background-color: rgba(255, 243, 205, 0.8); /* Light yellow background */
+  border-left: 4px solid #ffc107; /* Yellow border */
+}
+
+.benefits h4,
+.important-note h4 {
+  margin-top: 0;
+  margin-bottom: 1rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--color-navy);
+  display: flex;
+  align-items: center;
+}
+
+.benefits h4 .material-symbols-outlined,
+.important-note h4 .material-symbols-outlined {
+  margin-right: 0.5em;
+  font-size: 1.3em; /* Make icon slightly larger */
+}
+
+.benefits .benefit-item {
+  margin-bottom: 0.5rem;
+  padding-left: 1.5em; /* Indent items */
+  position: relative;
+}
+
+.benefits .benefit-item::before {
+  content: "✓"; /* Checkmark */
+  position: absolute;
+  left: 0;
+  color: #2c8a43; /* Green checkmark */
+  font-weight: bold;
+}
+
+.important-note p {
+  margin-bottom: 1em;
+  font-size: 0.95rem; /* Slightly smaller text */
+  line-height: 1.7;
+}
+
+.important-note p:last-child {
+  margin-bottom: 0;
+}
+
+/* Styles for Step 2 introductory text */
+.step-intro-text {
+  text-align: center; /* Center align the text */
+  max-width: 800px; /* Limit width for readability, adjust as needed */
+  margin: 0 auto 2.5rem auto; /* Center horizontally and add bottom margin */
+  font-size: 1.1rem; /* Optional: Adjust font size */
+  line-height: 1.8; /* Optional: Adjust line height */
 } 

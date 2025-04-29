@@ -204,16 +204,25 @@
 }
 
 .title-feature .stylish-title {
-  background-color: var(--color-gray);
+  /* background-color: var(--color-gray); */ /* Removed */
   color: var(--color-navy);
-  box-shadow: none;
-  border: 1px solid #eee;
+  box-shadow: none; /* Explicitly remove box-shadow */
+  /* border: 1px solid #eee; */ /* Removed */
   text-align: left;
-  width: fit-content;
-  display: inline-block;
-  padding: 0.5rem 1rem;
+  /* width: fit-content; */ /* Removed */
+  display: block; /* Changed from inline-block */
+  /* padding: 0.5rem 1rem; */ /* Removed */
+  padding-left: 0; /* Ensure no leftover padding */
   font-size: 1.3rem;
   margin-bottom: 1rem;
+  position: relative; /* Needed for ::before */
+}
+
+.title-feature .stylish-title::before {
+  content: "▶ "; /* Add triangle and space */
+  margin-right: 0.5em; /* Add space after triangle */
+  /* Optional: Adjust color or size if needed */
+  /* color: var(--color-primary); */
 }
 
 .title-feature + .stylish-subtitle {

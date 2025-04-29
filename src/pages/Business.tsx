@@ -91,13 +91,30 @@ const detailAccordionItems = [
   { title: 'プレゼンテーション実践演習', content: '構成、スライド作成、デリバリー、質疑応答まで、ビジネスシーンで求められる英語プレゼンテーションスキルを総合的にトレーニングします。' },
 ];
 
-// 8. 料金表セクション - 比較対象：1ヶ月／3ヶ月／6ヶ月／12ヶ月
-const pricingData = [
-    { period: '1ヶ月', price: '$1,480 ', note: '<sup>※1</sup>', monthlyPrice: '' },
-    { period: '3ヶ月', price: '$4,400 → $3,980', monthlyPrice: '$1,480 → $1,326' },
-    { period: '6ヶ月', price: '$8,880 → $7,480', monthlyPrice: '$1,480 → $1,246' },
-    { period: '12ヶ月', price: '$17,760 → $13,980', monthlyPrice: '$1,480 → $1,165' },
-];
+// ビジネスパーソン向け料金データ (from Pricing.tsx)
+const businessPricingData = {
+  headers: ['1ヶ月', '3ヶ月', '6ヶ月', '12ヶ月'],
+  rows: [
+    {
+      label: '受講料',
+      values: [
+        '$1,480<sup class="footnote-marker">※1</sup>',
+        '<s class="original-price">$4,400</s> → <strong>$3,980</strong>',
+        '<s class="original-price">$8,880</s> → <strong>$7,480</strong>',
+        '<s class="original-price">$17,760</s> → <strong>$13,980</strong>'
+      ]
+    },
+    {
+      label: '1ヶ月あたり',
+      values: [
+        '-',
+        '<s class="original-price">$1,480</s> → <strong>$1,326</strong>',
+        '<s class="original-price">$1,480</s> → <strong>$1,246</strong>',
+        '<s class="original-price">$1,480</s> → <strong>$1,165</strong>'
+      ]
+    }
+  ]
+};
 
 // 共通コンポーネント用のシミュレーションデータ
 const simulationTables = [
@@ -367,20 +384,22 @@ const Business = () => {
         <div className="container">
           <h2 className="section-title">料金</h2>
           <div className="pricing-table-container">
-            <table className="pricing-table">
+            <table className="pricing-table horizontal-pricing">
               <thead>
                 <tr>
-                  <th></th>
-                  <th className="price-header">受講料</th>
-                  <th className="monthly-header">1ヶ月あたり</th>
+                  <th></th> {/* Empty corner cell */}
+                  {businessPricingData.headers.map((header, index) => (
+                    <th key={index}>{header}</th>
+                  ))}
                 </tr>
               </thead>
               <tbody>
-                {pricingData.map((item, index) => (
-                  <tr key={index}>
-                    <td className="period-cell">{item.period}</td>
-                    <td className="price-cell" dangerouslySetInnerHTML={{ __html: item.price + (item.note || '') }}></td>
-                    <td className="monthly-cell">{item.monthlyPrice}</td>
+                {businessPricingData.rows.map((row, rowIndex) => (
+                  <tr key={rowIndex}>
+                    <td className="row-label-cell">{row.label}</td>
+                    {row.values.map((value, valueIndex) => (
+                      <td key={valueIndex} className="price-value-cell" dangerouslySetInnerHTML={{ __html: value }}></td>
+                    ))}
                   </tr>
                 ))}
               </tbody>

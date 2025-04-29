@@ -2,9 +2,9 @@ import '../styles/Vision.css';
 import HeroSection from '../components/HeroSection';
 import StylishTitle from '../components/StylishTitle';
 import CardComponent from '../components/CardComponent';
-import IconListComponent from '../components/IconListComponent';
+// import IconListComponent from '../components/IconListComponent';
 import ScrollFadeIn from '../components/ScrollFadeIn';
-import ecosystemImage from '../assets/images/visionimage01.png'; // Import the image
+import ecosystemImage from '../assets/images/visionimage01.png'; // Restore the image import
 
 // Story data (icon removed)
 const storyItems = [
@@ -30,13 +30,7 @@ const storyItems = [
   }
 ];
 
-// Value Statement data
-const valueItems = [
-  { icon: 'self_improvement', text: '自律した学習' },
-  { icon: 'record_voice_over', text: '誠実な対話' },
-  { icon: 'groups', text: '相互成長' },
-  { icon: 'volunteer_activism', text: '学び＝社会貢献' }
-];
+// Value Statement data removed
 
 const Vision = () => {
   return (
@@ -119,7 +113,7 @@ const Vision = () => {
         </div>
       </section>
 
-      <section className="ecosystem section-padding alt-bg">
+      <section className="ecosystem-title-image section-padding alt-bg">
         <div className="container">
           <StylishTitle 
             title="教える側と学ぶ側のエコシステム"
@@ -128,52 +122,6 @@ const Vision = () => {
             size="large"
           />
           <img src={ecosystemImage} alt="Engrowth Ecosystem Concept" className="ecosystem-image" />
-          <div className="ecosystem-diagram">
-            <div className="ecosystem-diagram-side">
-              <CardComponent title="学ぶ側（挑戦者）" className="ecosystem-card">
-                <ul>
-                  <li><span className="material-symbols-outlined">business_center</span> ビジネスパーソン</li>
-                  <li><span className="material-symbols-outlined">school</span> 学生</li>
-                  <li><span className="material-symbols-outlined">groups</span> 社会人</li>
-                </ul>
-              </CardComponent>
-            </div>
-            <div className="ecosystem-diagram-center">
-              <div className="engrowth-hub">
-                <span className="material-symbols-outlined">hub</span>
-                Engrowth<br/>(共創の場)
-              </div>
-              <div className="ecosystem-arrows">
-                <span className="material-symbols-outlined">arrow_right_alt</span>
-                <span className="material-symbols-outlined">arrow_left_alt</span>
-              </div>
-            </div>
-            <div className="ecosystem-diagram-side">
-              <CardComponent title="教える側（挑戦者）" className="ecosystem-card">
-                  <ul>
-                    <li><span className="material-symbols-outlined">school</span> 専門知識を持つ講師陣</li>
-                    <li><span className="material-symbols-outlined">person_pin</span> 経験豊富なコンサルタント</li>
-                    <li><span className="material-symbols-outlined">support</span> サポートスタッフ</li>
-                  </ul>
-              </CardComponent>
-            </div>
-          </div>
-          <div className="ecosystem-cycle">
-            <span className="material-symbols-outlined">cycle</span>
-            教育 → 自立 → 貢献 (社会への価値循環)
-          </div>
-        </div>
-      </section>
-
-      <section className="values section-padding">
-        <div className="container">
-          <StylishTitle 
-            title="私たちが大切にしていること"
-            type="section"
-            align="center"
-            size="large"
-          />
-          <IconListComponent items={valueItems} className="value-list" />
         </div>
       </section>
 

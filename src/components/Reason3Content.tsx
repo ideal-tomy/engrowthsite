@@ -44,9 +44,9 @@ const Reason3Content: React.FC = () => {
       <section>
         <StylishTitle 
           title="習慣化が成功の9割を決める"
-          type="section"
-          align="center"
+          align="left"
           size="medium"
+          className="title-custom-underline"
         />
         <div className="content-box">
           <p>英語習得で最も重要なのは「習慣化」です。多くの成功例にも「意志による続けよう」という避けられない力に依存したものはありません。</p>
@@ -72,9 +72,9 @@ const Reason3Content: React.FC = () => {
       <section>
         <StylishTitle 
           title="Engrowthが実施する「3ステップ習慣化プログラム」"
-          type="section"
-          align="center"
+          align="left"
           size="medium"
+          className="title-custom-underline"
         />
         <div className="content-box">
           <p>Engrowthでは、単純な言い換えや効果の不明確なものは実施しません。実際に習慣化を達成するため、実践的で科学的なプログラムを実行します。</p>
@@ -106,9 +106,9 @@ const Reason3Content: React.FC = () => {
       <section>
         <StylishTitle 
           title="なぜ「伴走型」が絶対に必要なのか"
-          type="section"
-          align="center"
+          align="left"
           size="medium"
+          className="title-custom-underline"
         />
         <div className="content-box">
           <p>自走できないフェーズは必ず登場します。他者と比較して落ち込んだり、第三者の言葉で自己否定しそうになったり、続ける意味が分からなくなったり…</p>
@@ -125,9 +125,9 @@ const Reason3Content: React.FC = () => {
       <section>
         <StylishTitle 
           title="Engrowth独自のサポート体制"
-          type="section"
-          align="center"
+          align="left"
           size="medium"
+          className="title-custom-underline"
         />
         <div className="content-box">
           <IconListComponent items={supportItems} className="check-list" />
@@ -140,9 +140,9 @@ const Reason3Content: React.FC = () => {
       <section className="highlight-section">
         <StylishTitle 
           title="習慣化によって得られる成果"
-          type="section"
-          align="center"
+          align="left"
           size="medium"
+          className="title-custom-underline"
         />
         <div className="content-grid">
           <div className="content-box">

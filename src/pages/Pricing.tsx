@@ -3,6 +3,57 @@ import { Link } from 'react-router-dom';
 import '../styles/Pricing.css'; // 新しいCSSファイルをインポート
 import StylishTitle from '../components/StylishTitle';
 import HeroSection from '../components/HeroSection'; // オプション: ページタイトル用
+import IconListComponent from '../components/IconListComponent';
+
+// ビジネスパーソン向け料金データ (新しい形式)
+const businessPricingData = {
+  headers: ['1ヶ月', '3ヶ月', '6ヶ月', '12ヶ月'],
+  rows: [
+    {
+      label: '受講料',
+      values: [
+        '$1,480<sup class="footnote-marker">※1</sup>',
+        '<s class="original-price">$4,400</s> → <strong>$3,980</strong>',
+        '<s class="original-price">$8,880</s> → <strong>$7,480</strong>',
+        '<s class="original-price">$17,760</s> → <strong>$13,980</strong>'
+      ]
+    },
+    {
+      label: '1ヶ月あたり',
+      values: [
+        '-',
+        '<s class="original-price">$1,480</s> → <strong>$1,326</strong>',
+        '<s class="original-price">$1,480</s> → <strong>$1,246</strong>',
+        '<s class="original-price">$1,480</s> → <strong>$1,165</strong>'
+      ]
+    }
+  ]
+};
+
+// 学生向け料金データ (新しい形式)
+const studentPricingData = {
+  headers: ['1ヶ月', '3ヶ月', '6ヶ月', '12ヶ月'],
+  rows: [
+    {
+      label: '受講料',
+      values: [
+        '$1,780<sup class="footnote-marker">※1</sup>',
+        '<s class="original-price">$5,340</s> → <strong>$4,980</strong>',
+        '<s class="original-price">$10,680</s> → <strong>$9,480</strong>',
+        '<s class="original-price">$21,360</s> → <strong>$17,980</strong>'
+      ]
+    },
+    {
+      label: '1ヶ月あたり',
+      values: [
+        '-',
+        '<s class="original-price">$1,780</s> → <strong>$1,660</strong>',
+        '<s class="original-price">$1,780</s> → <strong>$1,580</strong>',
+        '<s class="original-price">$1,780</s> → <strong>$1,498</strong>'
+      ]
+    }
+  ]
+};
 
 const Pricing = () => {
   return (
@@ -28,38 +79,40 @@ const Pricing = () => {
             className="title-custom-underline"
           />
           <div className="pricing-table-container">
-            <table className="pricing-table">
+            <table className="pricing-table horizontal-pricing">
               <thead>
                 <tr>
-                  <th></th>
-                  <th>受講料</th>
-                  <th>1ヶ月あたり</th>
+                  <th></th> {/* Empty corner cell */}
+                  {businessPricingData.headers.map((header, index) => (
+                    <th key={index}>{header}</th>
+                  ))}
                 </tr>
               </thead>
               <tbody>
-                <tr>
-                  <td>1ヶ月</td>
-                  <td>$1,480 <sup className="footnote-marker">※1</sup></td>
-                  <td>-</td>
-                </tr>
-                <tr>
-                  <td>3ヶ月</td>
-                  <td><s className="original-price">$4,400</s> → <strong>$3,980</strong></td>
-                  <td><s className="original-price">$1,480</s> → <strong>$1,326</strong></td>
-                </tr>
-                <tr>
-                  <td>6ヶ月</td>
-                  <td><s className="original-price">$8,880</s> → <strong>$7,480</strong></td>
-                  <td><s className="original-price">$1,480</s> → <strong>$1,246</strong></td>
-                </tr>
-                <tr>
-                  <td>12ヶ月</td>
-                  <td><s className="original-price">$17,760</s> → <strong>$13,980</strong></td>
-                  <td><s className="original-price">$1,480</s> → <strong>$1,165</strong></td>
-                </tr>
+                {businessPricingData.rows.map((row, rowIndex) => (
+                  <tr key={rowIndex}>
+                    <td className="row-label-cell">{row.label}</td>
+                    {row.values.map((value, valueIndex) => (
+                      <td key={valueIndex} className="price-value-cell" dangerouslySetInnerHTML={{ __html: value }}></td>
+                    ))}
+                  </tr>
+                ))}
               </tbody>
             </table>
             <p className="footnote"><sup className="footnote-marker">※1</sup> 1ヶ月プランは3ヶ月プラン以上を修了者のみが契約可</p>
+            {/* --- Business Service Summary (Below Footnote) --- */}
+            <div className="service-summary-list">
+              <h4 className="summary-list-title">主なサービス内容:</h4>
+              <IconListComponent
+                items={[
+                  { icon: 'support_agent', text: '専任コンサルタントによる毎日の伴走サポート' },
+                  { icon: 'psychology_alt', text: '脳科学・第二言語習得論に基づく科学的メソッド' },
+                  { icon: 'model_training', text: 'ビジネスシーン特化の実践的シミュレーション英会話' },
+                  { icon: 'school', text: '海外トップ大学・実務経験豊富なプロ講師陣' }
+                ]}
+                className="check-list" // スタイルは後で調整
+              />
+            </div>
           </div>
         </section>
 
@@ -72,45 +125,47 @@ const Pricing = () => {
             className="title-custom-underline"
           />
           <div className="pricing-table-container">
-            <table className="pricing-table">
+            <table className="pricing-table horizontal-pricing">
               <thead>
                 <tr>
-                  <th></th>
-                  <th>受講料</th>
-                  <th>1ヶ月あたり</th>
+                  <th></th> {/* Empty corner cell */}
+                  {studentPricingData.headers.map((header, index) => (
+                    <th key={index}>{header}</th>
+                  ))}
                 </tr>
               </thead>
               <tbody>
-                <tr>
-                  <td>1ヶ月</td>
-                  <td>$1,780 <sup className="footnote-marker">※1</sup></td>
-                  <td>-</td>
-                </tr>
-                <tr>
-                  <td>3ヶ月</td>
-                  <td><s className="original-price">$5,340</s> → <strong>$4,980</strong></td>
-                  <td><s className="original-price">$1,780</s> → <strong>$1,660</strong></td>
-                </tr>
-                <tr>
-                  <td>6ヶ月</td>
-                  <td><s className="original-price">$10,680</s> → <strong>$9,480</strong></td>
-                  <td><s className="original-price">$1,780</s> → <strong>$1,580</strong></td>
-                </tr>
-                <tr>
-                  <td>12ヶ月</td>
-                  <td><s className="original-price">$21,360</s> → <strong>$17,980</strong></td>
-                  <td><s className="original-price">$1,780</s> → <strong>$1,498</strong></td>
-                </tr>
+                {studentPricingData.rows.map((row, rowIndex) => (
+                  <tr key={rowIndex}>
+                    <td className="row-label-cell">{row.label}</td>
+                    {row.values.map((value, valueIndex) => (
+                      <td key={valueIndex} className="price-value-cell" dangerouslySetInnerHTML={{ __html: value }}></td>
+                    ))}
+                  </tr>
+                ))}
               </tbody>
             </table>
             <p className="footnote"><sup className="footnote-marker">※1</sup> エッセイ添削のみ。3ヶ月プラン修了者は$1,490、6ヶ月プラン修了者は$780で利用可</p>
+            {/* --- Student Service Summary (Below Footnote) --- */}
+            <div className="service-summary-list">
+              <h4 className="summary-list-title">主なサービス内容:</h4>
+              <IconListComponent
+                items={[
+                  { icon: 'school', text: '留学準備特化：基礎固めからアカデミック英語まで' },
+                  { icon: 'edit_note', text: '専門家によるエッセイ添削・ライティング指導' },
+                  { icon: 'record_voice_over', text: '留学生活で必須の場面を想定したシミュレーション英会話' },
+                  { icon: 'support_agent', text: '学習習慣化と目標達成のための伴走サポート' }
+                ]}
+                className="check-list" // スタイルは後で調整
+              />
+            </div>
           </div>
         </section>
 
         {/* --- サービス概要と詳細へのリンク --- */}
         <section className="service-summary-section">
           <StylishTitle 
-            title="各プランに含まれる主なサービス"
+            title="詳しくは各詳細ページへ"
             align="left"
             size="medium"
             className="title-custom-underline"
