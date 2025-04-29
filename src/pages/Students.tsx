@@ -1,4 +1,4 @@
-import React from 'react';
+// import React from 'react'; // Removed unused import
 import '../styles/Students.css';
 import SimulationSection from '../components/SimulationSection';
 import HeroSection from '../components/HeroSection';
@@ -92,7 +92,7 @@ const Students = () => {
         <div className="container">
           <StylishTitle 
             title="留学を成功させるために"
-            align="left"
+            align="center"
             size="large"
             className="title-custom-underline"
           />
@@ -221,7 +221,6 @@ const Students = () => {
               <StylishTitle
                 title="なぜ英語でのエッセイは難しいのか"
                 size="medium"
-                align="left"
                 className="title-custom-underline"
               />
               <p>
@@ -247,7 +246,6 @@ const Students = () => {
               <StylishTitle
                 title="私たちのサポート体制"
                 size="medium"
-                align="left"
                 className="title-custom-underline"
               />
               <p>当社では、海外の名門大学出身の専任コンサルタントが、きめ細かな添削サービスを提供しています。</p>
@@ -263,7 +261,6 @@ const Students = () => {
               <StylishTitle
                 title="なぜ事前準備が重要か"
                 size="medium"
-                align="left"
                 className="title-custom-underline mt-large"
               />
               <p>

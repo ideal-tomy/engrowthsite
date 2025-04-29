@@ -417,15 +417,16 @@
 
 /* Style the "solution" section title specifically */
 .vision-page section.solution .stylish-title-container .stylish-title {
-  background-color: transparent; /* 背景を透明に */
-  color: white;                  /* テキストを白に */
-  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5); /* 読みやすさのため影を少し追加 */
-  box-shadow: none;              /* ボックスシャドウを削除 */
-  padding: 0;                    /* パディングを削除 */
-  border-radius: 0;              /* 角丸を削除 */
-  font-size: 2.8rem;             /* フォントサイズを大きく (例: 2.8rem、調整可) */
-  margin-bottom: 2rem;           /* 下のマージンを調整 */
-  line-height: 1.3;              /* 行の高さを調整 */
-  width: 100%;                   /* 幅を100%に戻す */
-  text-align: center;            /* 中央揃えを維持 */
+  background-color: transparent !important; /* 背景を透明に */
+  color: white !important;                  /* テキストを白に (Force) */
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5) !important; /* 読みやすさのため影を少し追加 */
+  box-shadow: none !important;              /* ボックスシャドウを削除 */
+  padding: 0 !important;                    /* パディングを削除 */
+  border: none !important;                  /* Remove border */
+  border-radius: 0 !important;              /* 角丸を削除 */
+  font-size: 2.8rem !important;             /* フォントサイズを大きく (例: 2.8rem、調整可) */
+  margin-bottom: 2rem !important;           /* 下のマージンを調整 */
+  line-height: 1.3 !important;              /* 行の高さを調整 */
+  width: 100% !important;                   /* 幅を100%に戻す */
+  text-align: center !important;            /* 中央揃えを維持 */
 } 

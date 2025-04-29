@@ -1,4 +1,4 @@
-import React, { Children, cloneElement, isValidElement } from 'react';
+import React from 'react';
 import { useInView } from 'react-intersection-observer';
 
 interface ScrollFadeInProps {
@@ -19,18 +19,13 @@ const ScrollFadeIn: React.FC<ScrollFadeInProps> = ({
     triggerOnce,
   });
 
-  const child = Children.only(children);
+  const animationClassName = inView ? 'fade-in-scroll-visible' : 'fade-in-scroll-start';
 
-  if (!isValidElement(child)) { // Simplify type guard
-    return <>{children}</>;
-  }
-
-  // Clone the child element and add the ref and classes
-  // No complex type assertion needed now that CardComponent uses forwardRef
-  return cloneElement(child, {
-    ref,
-    className: `${child.props.className || ''} ${className} ${inView ? 'fade-in-scroll-visible' : 'fade-in-scroll-start'}`.trim(),
-  });
+  return (
+    <div ref={ref} className={`${className} ${animationClassName}`.trim()}>
+      {children}
+    </div>
+  );
 };
 
 export default ScrollFadeIn; 

@@ -507,14 +507,18 @@
 
 /* Specific list types */
 .check-list .icon-list-item {
-   border-left-color: #2c8a43; /* チェックリストは緑ボーダー */
+   /* border-left-color: #2c8a43; */ /* チェックリストは緑ボーダー - Removed */
+   border-left: none; /* Remove the left border */
+   padding-left: 0;   /* Remove left padding */
 }
 .check-list .icon-container {
   color: #2c8a43; /* チェックリストは緑アイコン */
 }
 
 .arrow-list .icon-list-item {
-   border-left-color: var(--color-main); /* 矢印リストは赤ボーダー */
+   /* border-left-color: var(--color-main); */ /* 矢印リストは赤ボーダー - Removed */
+   border-left: none; /* Remove left border */
+   padding-left: 0;   /* Remove left padding */
 }
 .arrow-list .icon-container {
   color: var(--color-main); /* 矢印リストは赤アイコン */

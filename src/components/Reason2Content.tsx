@@ -172,7 +172,7 @@ const Reason2Content: React.FC = () => {
       </section>
       
       {/* 言語学＋脳科学 */}
-      <section>
+      <section style={{ marginTop: '4rem' }}>
         <StylishTitle 
           title="言語学＋脳科学に基づくアプローチ"
           align="left"
@@ -182,7 +182,7 @@ const Reason2Content: React.FC = () => {
         
         <div className="content-box">
           <StylishTitle 
-            title="▶ 第二言語習得論（SLA）とは"
+            title="第二言語習得論（SLA）とは"
             type="feature"
             align="left"
             size="small"
@@ -192,7 +192,7 @@ const Reason2Content: React.FC = () => {
         
         <div className="content-box">
           <StylishTitle 
-            title="▶ 認知負荷理論とは"
+            title="認知負荷理論とは"
             type="feature"
             align="left"
             size="small"

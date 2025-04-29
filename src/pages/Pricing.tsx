@@ -1,4 +1,4 @@
-import React from 'react';
+// import React from 'react'; // Removed unused import
 import { Link } from 'react-router-dom';
 import '../styles/Pricing.css'; // 新しいCSSファイルをインポート
 import StylishTitle from '../components/StylishTitle';

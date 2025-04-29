@@ -111,6 +111,7 @@
   text-align: center;
   box-shadow: 0 2px 5px rgba(0,0,0,0.05);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+  height: 100%; /* グリッドアイテムの高さを揃える */
 }
 .strength-card:hover {
   transform: translateY(-8px); /* ホバー時に浮き上がり */

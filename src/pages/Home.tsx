@@ -1,4 +1,4 @@
-import React from 'react';
+// import React from 'react'; // Removed unused import
 import { Link } from 'react-router-dom';
 import '../styles/Home.css';
 import HeroSection from '../components/HeroSection';

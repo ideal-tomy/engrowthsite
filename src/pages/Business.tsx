@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import '../styles/Business.css'; // CSSファイルを正しくインポート
 // 共通コンポーネントをインポート
 import SimulationSection from '../components/SimulationSection';
@@ -195,7 +195,7 @@ const Business = () => {
           <h2 className="section-title">Engrowth ビジネスプログラムの9つの強み</h2>
           <div className="strengths-grid">
             <ScrollFadeIn>
-              <CardComponent className="card-icon-top" icon="support_agent" title="専任のコンサルタントによる毎日の学習サポート" description="毎日のオンラインセッション" />
+              <CardComponent className="card-icon-top" icon="support_agent" title="専任のコンサルタントによる毎日の学習サポート" />
             </ScrollFadeIn>
             <ScrollFadeIn>
               <CardComponent className="card-icon-top" icon="smartphone" title="エングロース受講生 専用アプリの提供" />
@@ -204,10 +204,10 @@ const Business = () => {
               <CardComponent className="card-icon-top" icon="psychology" title="脳科学×AIの学習サービスを提供" />
             </ScrollFadeIn>
             <ScrollFadeIn>
-              <CardComponent className="card-icon-top" icon="dynamic_feed" title="アダプティブラーニング※1を採用したカスタムカリキュラム" />
+              <CardComponent className="card-icon-top" icon="dynamic_feed" title="アダプティブラーニングを採用したカスタムカリキュラム" />
             </ScrollFadeIn>
             <ScrollFadeIn>
-              <CardComponent className="card-icon-top" icon="school" title="世界の有名大学出身 コンサルタントがマンツーマンであなたに併走" />
+              <CardComponent className="card-icon-top" icon="school" title="世界の有名大学出身あなたに併走" />
             </ScrollFadeIn>
             <ScrollFadeIn>
               <CardComponent className="card-icon-top" icon="translate" title={"現地で使える\"生きた英語\"の習得をサポート"} />
