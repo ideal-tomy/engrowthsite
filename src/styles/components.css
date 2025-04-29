@@ -868,4 +868,34 @@
 .card.card-icon-top .card-content {
   /* 必要であれば上アイコン用のスタイル調整 */
   text-align: center; /* テキストも中央揃えにする場合 */
+}
+
+/* Scroll Fade In Animation */
+.fade-in-scroll-start {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.fade-in-scroll-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Custom underline title style */
+.title-custom-underline .stylish-title {
+  background-color: transparent; /* Remove background */
+  color: var(--color-navy); /* Keep text color */
+  text-shadow: none; /* Remove text shadow if any */
+  box-shadow: none; /* Remove box shadow if any */
+  padding-bottom: 0.5rem; /* Add padding for the underline */
+  border-bottom: 3px solid #cccccc; /* Add gray underline */
+  width: fit-content; /* Adjust width to content */
+  text-align: left; /* Ensure left alignment */
+}
+
+/* Ensure subtitle alignment also follows if needed */
+.title-custom-underline .stylish-subtitle {
+  text-align: left;
+  padding: 0; /* Reset padding if needed */
 } 

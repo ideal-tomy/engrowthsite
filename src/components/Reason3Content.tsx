@@ -66,6 +66,8 @@ const Reason3Content: React.FC = () => {
         </div>
       </section>
       
+      <hr className="reason-separator" />
+
       {/* 3ステップ習慣化プログラム */}
       <section>
         <StylishTitle 
@@ -98,6 +100,8 @@ const Reason3Content: React.FC = () => {
         </div>
       </section>
       
+      <hr className="reason-separator" />
+
       {/* 伴走型の必要性 */}
       <section>
         <StylishTitle 
@@ -115,6 +119,8 @@ const Reason3Content: React.FC = () => {
         </div>
       </section>
       
+      <hr className="reason-separator" />
+
       {/* サポート体制 */}
       <section>
         <StylishTitle 

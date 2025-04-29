@@ -28,10 +28,15 @@ const Header: React.FC = () => {
     setIsMenuOpen(!isMenuOpen);
   };
 
+  // メニューを閉じる処理
+  const closeMenu = () => {
+    setIsMenuOpen(false);
+  };
+
   return (
     <header className={`header ${isScrolled ? 'scrolled' : ''}`}>
       <div className="header-container">
-        <Link to="/" className="logo">
+        <Link to="/" className="logo" onClick={closeMenu}>
           Engrowth
         </Link>
         <div className="hamburger-menu" onClick={toggleMenu}>
@@ -40,13 +45,13 @@ const Header: React.FC = () => {
           <span className={isMenuOpen ? 'open' : ''}></span>
         </div>
         <nav className={`nav ${isMenuOpen ? 'menu-open' : ''}`}>
-          <Link to="/vision" className={location.pathname === '/vision' ? 'active' : ''}>Vision</Link>
-          <Link to="/services" className={location.pathname === '/services' ? 'active' : ''}>Services</Link>
-          <Link to="/business" className={location.pathname === '/business' ? 'active' : ''}>Business</Link>
-          <Link to="/students" className={location.pathname === '/students' ? 'active' : ''}>Students</Link>
-          <Link to="/pricing" className={location.pathname === '/pricing' ? 'active' : ''}>料金</Link>
-          <Link to="/faq" className={location.pathname === '/faq' ? 'active' : ''}>FAQ</Link>
-          <Link to="/contact" className="contact-button">お問い合わせ</Link>
+          <Link to="/vision" className={location.pathname === '/vision' ? 'active' : ''} onClick={closeMenu}>Vision</Link>
+          <Link to="/services" className={location.pathname === '/services' ? 'active' : ''} onClick={closeMenu}>Services</Link>
+          <Link to="/business" className={location.pathname === '/business' ? 'active' : ''} onClick={closeMenu}>Business</Link>
+          <Link to="/students" className={location.pathname === '/students' ? 'active' : ''} onClick={closeMenu}>Students</Link>
+          <Link to="/pricing" className={location.pathname === '/pricing' ? 'active' : ''} onClick={closeMenu}>料金</Link>
+          <Link to="/faq" className={location.pathname === '/faq' ? 'active' : ''} onClick={closeMenu}>FAQ</Link>
+          <Link to="/contact" className="contact-button" onClick={closeMenu}>お問い合わせ</Link>
         </nav>
       </div>
     </header>

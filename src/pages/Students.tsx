@@ -74,9 +74,9 @@ const Students = () => {
         <div className="container">
           <StylishTitle 
             title="留学を成功させるために"
-            type="section" 
             align="left"
             size="large"
+            className="title-custom-underline"
           />
           <div className="content-grid">
             <div className="content-text">
@@ -197,9 +197,9 @@ const Students = () => {
               </p>
               <StylishTitle 
                 title="なぜ英語でのエッセイは難しいのか"
-                type="feature"
                 size="small"
                 align="left"
+                className="title-custom-underline"
               />
               <p>
                 英語で記述する論文では、エッセイやレポートの評価において「内容」だけでなく「構造」が重視されます。
@@ -220,9 +220,9 @@ const Students = () => {
             <div className="support-box">
               <StylishTitle 
                 title="私たちのサポート体制"
-                type="feature"
                 size="small"
                 align="left"
+                className="title-custom-underline"
               />
               <p>当社では、海外の名門大学出身の専任コンサルタントが、きめ細かな添削サービスを提供しています。</p>
               <ul>
@@ -233,10 +233,9 @@ const Students = () => {
               </ul>
               <StylishTitle 
                 title="なぜ事前準備が重要か"
-                type="feature"
                 size="small"
                 align="left"
-                className="mt-large"
+                className="title-custom-underline mt-large"
               />
               <p>
                 海外の大学では、入学後すぐに本格的なアカデミックライティングが求められます。

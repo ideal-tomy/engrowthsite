@@ -64,9 +64,9 @@ const Home = () => {
         <div className="container">
           <StylishTitle 
             title="Engrowthが提供する独自の価値"
-            type="section"
-            align="center"
+            align="left"
             size="large"
+            className="title-custom-underline"
           />
           <div className="feature-grid card-grid">
             {featureItems.map((item, index) => (
@@ -89,9 +89,9 @@ const Home = () => {
         <div className="container">
           <StylishTitle 
             title="あなたの目的達成を最適化"
-            type="section"
-            align="center"
+            align="left"
             size="large"
+            className="title-custom-underline"
           />
           <div className="target-grid card-grid">
             <CardComponent 
@@ -118,9 +118,9 @@ const Home = () => {
         <div className="container support-content">
           <StylishTitle 
             title="安心して学習を始めるために"
-            type="section"
-            align="center"
+            align="left"
             size="large"
+            className="title-custom-underline"
           />
           <div className="support-links">
             <p>学習方法や料金について</p><p><Link to="/faq">よくあるご質問はこちら</Link></p>

@@ -92,6 +92,8 @@ const Reason2Content: React.FC = () => {
         </div>
       </section>
       
+      <hr className="reason-separator" />
+
       {/* 英会話教室の問題点 */}
       <section>
         <StylishTitle 
@@ -139,6 +141,7 @@ const Reason2Content: React.FC = () => {
       </section>
       
       {/* 5つのステップ */}
+      <hr className="reason-separator" />
       <section>
         <StylishTitle 
           title="「5つのステップ」"

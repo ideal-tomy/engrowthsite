@@ -23,9 +23,9 @@ const Pricing = () => {
         <section className="pricing-section">
           <StylishTitle 
             title="ビジネスパーソン向け料金"
-            type="section"
-            align="center"
+            align="left"
             size="large"
+            className="title-custom-underline"
           />
           <div className="pricing-table-container">
             <table className="pricing-table">
@@ -67,9 +67,9 @@ const Pricing = () => {
         <section className="pricing-section">
            <StylishTitle 
             title="学生向け料金"
-            type="section"
-            align="center"
+            align="left"
             size="large"
+            className="title-custom-underline"
           />
           <div className="pricing-table-container">
             <table className="pricing-table">
@@ -111,9 +111,9 @@ const Pricing = () => {
         <section className="service-summary-section">
           <StylishTitle 
             title="各プランに含まれる主なサービス"
-            type="feature" // 指示書通り feature を使用
-            align="left" // 指示書通り left を使用
+            align="left"
             size="medium"
+            className="title-custom-underline"
           />
           {/* === 概要テキストは要調整 === */}
           <p>すべてのプランには、基本的な学習サポート、オンライン教材へのアクセス、定期的な進捗確認が含まれます。個別のニーズに合わせたカスタマイズも可能です。</p>

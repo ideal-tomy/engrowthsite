@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { forwardRef } from 'react';
 import '../styles/components.css';
 
 export interface CardProps {
@@ -11,21 +11,25 @@ export interface CardProps {
   children?: React.ReactNode;
 }
 
-const CardComponent: React.FC<CardProps> = ({
-  title,
-  description,
-  imageUrl,
-  icon,
-  backgroundImageUrl,
-  className = '',
-  children,
-}) => {
+const CardComponent = forwardRef<HTMLDivElement, CardProps>((
+  {
+    title,
+    description,
+    imageUrl,
+    icon,
+    backgroundImageUrl,
+    className = '',
+    children,
+  },
+  ref
+) => {
   const cardStyle = backgroundImageUrl ? {
     backgroundImage: `url(${backgroundImageUrl})`,
   } : {};
 
   return (
     <div 
+      ref={ref}
       className={`card ${backgroundImageUrl ? 'has-background-image' : ''} ${className}`}
       style={cardStyle}
     >
@@ -50,6 +54,6 @@ const CardComponent: React.FC<CardProps> = ({
       </div>
     </div>
   );
-};
+});
 
 export default CardComponent;

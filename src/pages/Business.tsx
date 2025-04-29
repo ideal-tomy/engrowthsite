@@ -4,6 +4,7 @@ import '../styles/Business.css'; // CSSファイルを正しくインポート
 import SimulationSection from '../components/SimulationSection';
 import HeroSection from '../components/HeroSection';
 import CardComponent from '../components/CardComponent';
+import ScrollFadeIn from '../components/ScrollFadeIn'; // Import ScrollFadeIn
 import meetingImage from '../assets/images/ビジネスミーティング01.jpeg'; // Import image
 import StylishTitle from '../components/StylishTitle';
 
@@ -79,7 +80,7 @@ const simulationAccordionItems2 = [
   { title: 'ビジネスメール', content: 'ビジネスシーンで必要なメールの書き方を学びます。件名の付け方、適切な挨拶、用件の伝え方、締めくくりの表現など、フォーマルなメールコミュニケーションのコツを練習します。' },
   { title: 'ビジネスプレゼンテーション①', content: 'プレゼンテーションの基本構成や導入部分の作り方を学びます。聴衆の注意を引く開始方法、アジェンダの説明、背景情報の提供など、効果的なプレゼンテーションの土台作りを練習します。' },
   { title: 'ビジネスプレゼンテーション②', content: 'プレゼンテーションの本編と質疑応答に焦点を当てます。データの説明方法、提案や結論の伝え方、質問への対応方法など、説得力のあるプレゼンテーションスキルを磨きます。' },
-  { title: 'カスタム', content: '受講者それぞれの業界や職種に特化したシミュレーションを行います。個別のビジネスシーンに合わせたボキャブラリーや表現方法を学び、実際の業務で即活用できるスキルを身につけます。' },
+  { title: 'カスタムマイズ', content: '受講者それぞれの業界や職種に特化したシミュレーションを行います。個別のビジネスシーンに合わせたボキャブラリーや表現方法を学び、実際の業務で即活用できるスキルを身につけます。' },
 ];
 
 // 7. アコーディオン展開 - 内容：各テーマごとの細かい学習内容
@@ -138,9 +139,9 @@ const Business = () => {
           <StylishTitle 
             title="ビジネス英語、その先へ"
             subtitle="単語や文法だけではない、成果に繋がるコミュニケーション能力を。"
-            type="section"
-            align="center" 
+            align="left"
             size="large"
+            className="title-custom-underline"
           />
           <div className="content-grid">
             <div className="content-text">
@@ -176,15 +177,33 @@ const Business = () => {
         <div className="container">
           <h2 className="section-title">Engrowth ビジネスプログラムの9つの強み</h2>
           <div className="strengths-grid">
-            <CardComponent className="card-icon-top" icon="support_agent" title="専任のコンサルタントによる毎日の学習サポート" description="毎日のオンラインセッション" />
-            <CardComponent className="card-icon-top" icon="smartphone" title="エングロース受講生 専用アプリの提供" />
-            <CardComponent className="card-icon-top" icon="psychology" title="脳科学×AIの学習サービスを提供" />
-            <CardComponent className="card-icon-top" icon="dynamic_feed" title="アダプティブラーニング※1を採用したカスタムカリキュラム" />
-            <CardComponent className="card-icon-top" icon="school" title="世界の有名大学出身 コンサルタントがマンツーマンであなたに併走" />
-            <CardComponent className="card-icon-top" icon="translate" title={"現地で使える\"生きた英語\"の習得をサポート"} />
-            <CardComponent className="card-icon-top" icon="edit_calendar" title="卒業後の学習プランも 専任コンサルタントが提案" />
-            <CardComponent className="card-icon-top" icon="public" title="全国どこからでも受講可能 セッション時間も柔軟に対応" />
-            <CardComponent className="card-icon-top" icon="record_voice_over" title="AIによる発音、会話判定で１人でも英会話練習が可能" />
+            <ScrollFadeIn>
+              <CardComponent className="card-icon-top" icon="support_agent" title="専任のコンサルタントによる毎日の学習サポート" description="毎日のオンラインセッション" />
+            </ScrollFadeIn>
+            <ScrollFadeIn>
+              <CardComponent className="card-icon-top" icon="smartphone" title="エングロース受講生 専用アプリの提供" />
+            </ScrollFadeIn>
+            <ScrollFadeIn>
+              <CardComponent className="card-icon-top" icon="psychology" title="脳科学×AIの学習サービスを提供" />
+            </ScrollFadeIn>
+            <ScrollFadeIn>
+              <CardComponent className="card-icon-top" icon="dynamic_feed" title="アダプティブラーニング※1を採用したカスタムカリキュラム" />
+            </ScrollFadeIn>
+            <ScrollFadeIn>
+              <CardComponent className="card-icon-top" icon="school" title="世界の有名大学出身 コンサルタントがマンツーマンであなたに併走" />
+            </ScrollFadeIn>
+            <ScrollFadeIn>
+              <CardComponent className="card-icon-top" icon="translate" title={"現地で使える\"生きた英語\"の習得をサポート"} />
+            </ScrollFadeIn>
+            <ScrollFadeIn>
+              <CardComponent className="card-icon-top" icon="edit_calendar" title="卒業後の学習プランも 専任コンサルタントが提案" />
+            </ScrollFadeIn>
+            <ScrollFadeIn>
+              <CardComponent className="card-icon-top" icon="public" title="全国どこからでも受講可能 セッション時間も柔軟に対応" />
+            </ScrollFadeIn>
+            <ScrollFadeIn>
+              <CardComponent className="card-icon-top" icon="record_voice_over" title="AIによる発音、会話判定で１人でも英会話練習が可能" />
+            </ScrollFadeIn>
           </div>
         </div>
       </section>
@@ -317,7 +336,7 @@ const Business = () => {
       */}
       <section className="business-details">
         <div className="container">
-          <h2 className="section-title">選択可能な詳細学習テーマ</h2>
+          <h2 className="section-title">カスタムマイズ詳細学習テーマ例</h2>
           <div className="details-accordion">
             {detailAccordionItems.map((item, index) => (
               <div key={index} className={`accordion-item ${openAccordionIndex === index ? 'open' : ''}`}>

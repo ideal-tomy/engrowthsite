@@ -3,6 +3,7 @@ import HeroSection from '../components/HeroSection';
 import StylishTitle from '../components/StylishTitle';
 import CardComponent from '../components/CardComponent';
 import IconListComponent from '../components/IconListComponent';
+import ScrollFadeIn from '../components/ScrollFadeIn';
 import ecosystemImage from '../assets/images/visionimage01.png'; // Import the image
 
 // Story data (icon removed)
@@ -56,9 +57,9 @@ const Vision = () => {
         <div className="container">
           <StylishTitle 
             title="創業の背景と理念"
-            type="section"
-            align="center"
+            align="left"
             size="large"
+            className="title-custom-underline"
           />
           <div className="story-container"> 
             {storyItems.map((item, index) => (
@@ -93,21 +94,27 @@ const Vision = () => {
             </p>
           </div>
           <div className="solution-grid card-grid">
-            <CardComponent
-              title="自律を育む"
-              description="自ら問い、自ら選び、自ら行動できる人へ。"
-              className="card-icon-top solution-card-custom"
-            />
-            <CardComponent 
-              title="共有と支援の文化"
-              description="成長も葛藤も、共に分かち合い支え合う環境を。"
-              className="card-icon-top solution-card-custom"
-            />
-            <CardComponent 
-              title="挑戦と許容の場づくり"
-              description="失敗を恐れず挑戦し、可能性を拓く力を育む。"
-              className="card-icon-top solution-card-custom"
-            />
+            <ScrollFadeIn>
+              <CardComponent
+                title="自律を育む"
+                description="自ら問い、自ら選び、自ら行動できる人へ。"
+                className="card-icon-top solution-card-custom"
+              />
+            </ScrollFadeIn>
+            <ScrollFadeIn>
+              <CardComponent 
+                title="共有と支援の文化"
+                description="成長も葛藤も、共に分かち合い支え合う環境を。"
+                className="card-icon-top solution-card-custom"
+              />
+            </ScrollFadeIn>
+            <ScrollFadeIn>
+              <CardComponent 
+                title="挑戦と許容の場づくり"
+                description="失敗を恐れず挑戦し、可能性を拓く力を育む。"
+                className="card-icon-top solution-card-custom"
+              />
+            </ScrollFadeIn>
           </div>
         </div>
       </section>

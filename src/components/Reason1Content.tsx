@@ -26,9 +26,9 @@ const Reason1Content: React.FC = () => {
       <section>
         <StylishTitle 
           title="なぜEngrowthでは「日本人コンサルタント」にこだわるのか"
-          type="section"
-          align="center"
+          align="left"
           size="medium"
+          className="title-custom-underline"
         />
         
         <div className="content-grid">
@@ -79,13 +79,15 @@ const Reason1Content: React.FC = () => {
         </div>
       </section>
       
+      <hr className="reason-separator" />
+
       {/* ネイティブスピーカーでは不十分な理由 */}
       <section>
         <StylishTitle 
           title="なぜネイティブスピーカーでは不十分なのか"
-          type="section"
-          align="center"
+          align="left"
           size="medium"
+          className="title-custom-underline"
         />
         
         <div className="content-box">
@@ -110,13 +112,15 @@ const Reason1Content: React.FC = () => {
         </div>
       </section>
       
+      <hr className="reason-separator" />
+
       {/* 脳科学的に証明された最適ルート */}
       <section>
         <StylishTitle 
           title="脳科学的に証明された「第二言語習得の最適ルート」"
-          type="section"
-          align="center"
+          align="left"
           size="medium"
+          className="title-custom-underline"
         />
         
         <div className="content-box">
@@ -147,9 +151,9 @@ const Reason1Content: React.FC = () => {
       <section className="highlight-section">
         <StylishTitle 
           title="留学経験･英語での学位取得が証明する本物の英語力"
-          type="section"
-          align="center"
+          align="left"
           size="medium"
+          className="title-custom-underline"
         />
         
         <div className="content-grid">

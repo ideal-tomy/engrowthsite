@@ -183,3 +183,15 @@ button:focus-visible {
     background-color: var(--color-navy);
   }
 }
+
+/* Scroll Fade In Animation */
+.fade-in-scroll-start {
+  opacity: 0;
+  transform: translateY(20px); /* 少し下から表示 */
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.fade-in-scroll-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
